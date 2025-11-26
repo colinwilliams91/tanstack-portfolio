@@ -3,13 +3,14 @@ import { useQuery } from "@tanstack/react-query";
 
 import { QUERY_KEYS } from "~/constants/query-keys";
 import { fetchProjects } from "~/handlers/fetch/projects";
+import { queryClient } from "~/router";
 
-
-// TODO: consider adding the fetchProjects (or query-client embedded fn equivalent..) to route loader for SSR prefetching
-// e.g. loader: fetchProjects inside the options arg of createFileRoute
-// with this, we can break out this file into container/presenter components (components/projects/container.projects.tsx and presenter.projects.tsx)
-// the Route still must be initialized and registered here for TanStacks file-based routing to work
 export const Route = createFileRoute("/projects")({
+  loader: () =>
+    queryClient.ensureQueryData({
+      queryKey: QUERY_KEYS.PROJECTS,
+      queryFn: fetchProjects,
+    }),
   component: ProjectsPage,
 });
 
