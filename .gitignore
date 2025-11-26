@@ -141,4 +141,3 @@ vite.config.ts.timestamp-*
 # TanStack
 .tanstack
 app.config.timestamp-*
-src/routeTree.gen.ts
