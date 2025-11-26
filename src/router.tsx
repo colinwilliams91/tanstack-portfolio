@@ -2,11 +2,14 @@ import { createRouter } from "@tanstack/react-router";
 import { QueryClient } from "@tanstack/react-query";
 import { routeTree } from "./routeTree.gen";
 
+const STALE_TIME_MS = 5 * 60 * 1000; // 5 minutes
+const GC_TIME_MS = 30 * 60 * 1000; // 30 minutes
+
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60 * 5, // 5 minutes
-      gcTime: 1000 * 60 * 30, // 30 minutes
+      staleTime: STALE_TIME_MS,
+      gcTime: GC_TIME_MS,
     },
   },
 });

@@ -25,9 +25,11 @@ const projects: Project[] = [
   },
 ];
 
+const SIMULATION_DELAY_MS = 500;
+
 async function fetchProjects(): Promise<Project[]> {
   // Simulate network delay to demonstrate caching
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, SIMULATION_DELAY_MS));
   return projects;
 }
 
