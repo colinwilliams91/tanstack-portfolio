@@ -1,37 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 
-interface Project {
-  id: number;
-  name: string;
-  description: string;
-}
+import { QUERY_KEYS } from "~/constants/query-keys";
+import { fetchProjects } from "~/handlers/fetch/projects";
 
-const projects: Project[] = [
-  {
-    id: 1,
-    name: "Project One",
-    description: "A sample project demonstrating TanStack Query caching.",
-  },
-  {
-    id: 2,
-    name: "Project Two",
-    description: "Another project showcasing clean architecture.",
-  },
-  {
-    id: 3,
-    name: "Project Three",
-    description: "A minimal project with SOLID principles.",
-  },
-];
-
-const SIMULATION_DELAY_MS = 500;
-
-async function fetchProjects(): Promise<Project[]> {
-  // Simulate network delay to demonstrate caching
-  await new Promise((resolve) => setTimeout(resolve, SIMULATION_DELAY_MS));
-  return projects;
-}
 
 export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
@@ -39,7 +11,7 @@ export const Route = createFileRoute("/projects")({
 
 function ProjectsPage() {
   const { data, isLoading } = useQuery({
-    queryKey: ["projects"],
+    queryKey: QUERY_KEYS.PROJECTS,
     queryFn: fetchProjects,
   });
 
