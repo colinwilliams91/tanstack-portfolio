@@ -1,46 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
-
-import { QUERY_KEYS } from "~/constants/query-keys";
-import { fetchProjects } from "~/handlers/fetch/projects";
 import { queryClient } from "~/router";
+import { ProjectsContainerPage } from "~/components/projects/projects.container";
+
+import { QUERY_OPTIONS } from "~/constants/query-options";
+
 
 export const Route = createFileRoute("/projects")({
   loader: () =>
-    queryClient.ensureQueryData({
-      queryKey: QUERY_KEYS.PROJECTS,
-      queryFn: fetchProjects,
-    }),
-  component: ProjectsPage,
+    queryClient.ensureQueryData(QUERY_OPTIONS.PROJECTS_LIST),
+  component: ProjectsContainerPage,
 });
-
-function ProjectsPage() {
-  const { data, isLoading } = useQuery({
-    queryKey: QUERY_KEYS.PROJECTS,
-    queryFn: fetchProjects,
-  });
-
-  if (isLoading) {
-    return (
-      <div className="flex justify-center py-8">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      <h1 className="text-3xl font-bold mb-6">Projects</h1>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {data?.map((project) => (
-          <div key={project.id} className="card bg-base-200">
-            <div className="card-body">
-              <h2 className="card-title">{project.name}</h2>
-              <p>{project.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
