@@ -31,3 +31,6 @@ npm run lint
 ```
 
 The dev server runs at `http://localhost:3000` by default.
+
+## Development Tooling
+- [TanStack Router Devtools](https://tanstack.com/router/latest/docs/framework/react/devtools)
