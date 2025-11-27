@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   return (
@@ -8,7 +9,7 @@ export function Header() {
           Portfolio
         </Link>
       </div>
-      <nav className="flex gap-4">
+      <nav className="flex items-center gap-4">
         <Link
           to="/"
           className="link link-hover"
@@ -30,6 +31,7 @@ export function Header() {
         >
           Projects
         </Link>
+        <ThemeToggle />
       </nav>
     </header>
   );
