@@ -1,15 +1,14 @@
-import * as React from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
+import { Theme, ThemeContextType } from "~/types/themes";
 
-type Theme = "light" | "dark";
-
-interface ThemeContextType {
-  theme: Theme;
-  toggleTheme: () => void;
-}
-
-const ThemeContext = React.createContext<ThemeContextType | undefined>(
-  undefined
-);
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 function getInitialTheme(): Theme {
   if (typeof window !== "undefined") {
@@ -21,14 +20,14 @@ function getInitialTheme(): Theme {
   return "dark";
 }
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = React.useState<Theme>(getInitialTheme);
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
-  React.useEffect(() => {
+  useEffect(() => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggleTheme = React.useCallback(() => {
+  const toggleTheme = useCallback(() => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   }, []);
 
@@ -40,7 +39,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function useTheme() {
-  const context = React.useContext(ThemeContext);
+  const context = useContext(ThemeContext);
   if (context === undefined) {
     throw new Error("useTheme must be used within a ThemeProvider");
   }
