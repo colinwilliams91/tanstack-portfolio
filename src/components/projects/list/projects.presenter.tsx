@@ -1,9 +1,4 @@
-import { Project } from "~/types/projects";
-
-interface ProjectsPresenterProps {
-  data?: Project[];
-  isLoading: boolean;
-}
+import { type ProjectsPresenterProps } from "../abstract";
 
 export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
   if (isLoading) {
