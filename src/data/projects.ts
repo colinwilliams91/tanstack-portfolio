@@ -3,17 +3,32 @@ import { type Project } from "~/types/projects/index";
 export const projects: Project[] = [
   {
     id: 1,
-    name: "Project One",
-    description: "A sample project demonstrating TanStack Query caching.",
+    name: "TanStack Portfolio",
+    description: "A portfolio web application built with TanStack Start, showcasing modern React patterns with file-based routing and React Query for server state management.",
   },
   {
     id: 2,
-    name: "Project Two",
-    description: "Another project showcasing clean architecture.",
+    name: "E-Commerce Dashboard",
+    description: "Full-stack dashboard application with real-time inventory tracking, analytics visualization, and role-based access control using TypeScript and PostgreSQL.",
   },
   {
     id: 3,
-    name: "Project Three",
-    description: "A minimal project with SOLID principles.",
+    name: "AI Chat Interface",
+    description: "Interactive chat application leveraging OpenAI APIs with streaming responses, conversation history, and markdown rendering support.",
+  },
+  {
+    id: 4,
+    name: "Weather Forecast App",
+    description: "Progressive web app displaying 7-day weather forecasts with geolocation support, interactive maps, and offline caching capabilities.",
+  },
+  {
+    id: 5,
+    name: "Task Management System",
+    description: "Kanban-style task manager with drag-and-drop functionality, team collaboration features, and real-time sync across devices.",
+  },
+  {
+    id: 6,
+    name: "Blog Platform",
+    description: "Content management system with MDX support, syntax highlighting, SEO optimization, and automated social media sharing.",
   },
 ];
