@@ -3,18 +3,26 @@ import { fetchProjects } from "~/handlers/fetch/projects";
 
 import { QUERY_KEYS } from "./query-keys";
 
-
-/* region Define query options */
-
-const projectsPageQueryOptions = queryOptions({
+/**
+ * @summary
+ * Query options for the Projects List Page.
+ */
+const listProjectsPageQueryOptions = queryOptions({
   queryKey: QUERY_KEYS.PROJECTS,
   queryFn: fetchProjects,
 });
 
 /**
- * Predefined query options (key/fn) for various queries used in the application.
- * Follow this naming convention: [DOMAIN]_[FETCH_VERB]
+ * @summary
+ * Predefined query options (query key, query function).
+ * @example
+ * PROJECTS.LIST = {
+ *   queryKey: QUERY_KEYS.PROJECTS as string,
+ *   queryFn: fetchProjects
+ * }
  */
 export const QUERY_OPTIONS = {
-    PROJECTS_LIST: projectsPageQueryOptions,
-};
+    PROJECTS: {
+        LIST: listProjectsPageQueryOptions,
+    }
+} as const;
