@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "@/*": ["./src/*"] // update to 2nd alias as needed
+      "~c/*": ["./src/components/*"] // update to 2nd alias as needed
     },
     "noEmit": true,
     "types": ["vite/client"]
