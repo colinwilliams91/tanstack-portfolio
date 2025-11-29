@@ -6,7 +6,7 @@ import {
   createRootRoute,
 } from "@tanstack/react-router";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Header } from "~/components/Header";
+import { Header } from "~/components/shared/Header";
 import { queryClient } from "~/router";
 import { ThemeProvider, useTheme } from "~/context/ThemeContext";
 import appCss from "~/styles/app.css?url";
