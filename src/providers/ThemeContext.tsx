@@ -6,29 +6,21 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { THEMES } from "~/constants/themes";
+import { getInitialTheme } from "~/handlers/utils";
 import { Theme, ThemeContextType } from "~/types/themes";
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-function getInitialTheme(): Theme {
-  if (typeof window !== "undefined") {
-    const stored = localStorage.getItem("theme");
-    if (stored === "light" || stored === "dark") {
-      return stored;
-    }
-  }
-  return "dark";
-}
-
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [theme, setTheme] = useState<Theme>(getInitialTheme());
 
   useEffect(() => {
-    localStorage.setItem("theme", theme);
+    localStorage.setItem(THEMES.KEY, theme);
   }, [theme]);
 
   const toggleTheme = useCallback(() => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme((prev) => (prev === THEMES.ABYSS ? THEMES.WINTER : THEMES.ABYSS));
   }, []);
 
   return (

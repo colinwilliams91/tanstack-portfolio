@@ -8,7 +8,7 @@ import {
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Header } from "~/components/shared/Header";
 import { queryClient } from "~/router";
-import { ThemeProvider, useTheme } from "~/context/ThemeContext";
+import { ThemeProvider, useTheme } from "~/providers/ThemeContext";
 import appCss from "~/styles/app.css?url";
 
 export const Route = createRootRoute({
@@ -35,6 +35,7 @@ function RootComponent() {
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   const { theme } = useTheme();
+  console.log("RootDocument theme:", theme);
 
   return (
     <html lang="en" data-theme={theme}>
