@@ -23,6 +23,7 @@
   "devDependencies": {
     "@netlify/vite-plugin-tanstack-start": "^1.2.1",
     "@tailwindcss/vite": "^4.1.17",
+    "@tanstack/react-router-devtools": "^1.139.12",
     "@types/node": "^22.5.4",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
