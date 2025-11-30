@@ -35,7 +35,6 @@ function RootComponent() {
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   const { theme } = useTheme();
-  console.log("RootDocument theme:", theme);
 
   return (
     <html lang="en" data-theme={theme}>
