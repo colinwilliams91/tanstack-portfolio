@@ -1,15 +1,29 @@
-import { useTheme } from "~/context/ThemeContext";
+import { useTheme } from "~/providers/ThemeContext";
+import { SvgIcon } from "./SvgIcon";
+import { useMemo } from "react";
+
+import { ICON_PATHS } from "~/constants/svg-icons";
+import { THEMES } from "~/constants/themes";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  console.log("Current theme in ThemeToggle:", theme);
+  const isDark = useMemo(() => theme === THEMES.ABYSS, [theme]);
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="btn btn-ghost text-xl"
-      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-    >
-      {theme === "dark" ? "🌙" : "🌻"}
-    </button>
+    <label className="swap swap-rotate btn btn-ghost">
+      <input
+        type="checkbox"
+        checked={isDark}
+        onChange={toggleTheme}
+        aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+        className="hidden"
+      />
+      {isDark ? (
+        <SvgIcon pathVal={ICON_PATHS.MOON} />
+      ) : (
+        <SvgIcon pathVal={ICON_PATHS.SUN} />
+      )}
+    </label>
   );
 }
