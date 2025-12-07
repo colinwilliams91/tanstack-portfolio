@@ -10,6 +10,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Header } from "~/components/shared/Header";
 import { queryClient } from "~/router";
 import { ThemeProvider, useTheme } from "~/providers/ThemeContext";
+import { ErrorComponent } from "~/components/shared/ErrorComponent";
 import appCss from "~/styles/app.css?url";
 
 export const Route = createRootRoute({
@@ -22,6 +23,7 @@ export const Route = createRootRoute({
     links: [{ rel: "stylesheet", href: appCss }],
   }),
   component: RootComponent,
+  errorComponent: ErrorComponent,
 });
 
 function RootComponent() {
