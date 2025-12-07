@@ -10,13 +10,14 @@
     "isolatedModules": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "strictNullChecks": true,
     "target": "ES2022",
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "~c/*": ["./src/components/*"] // update to 2nd alias as needed
+      "~c/*": ["./src/components/*"]
     },
     "noEmit": true,
     "types": ["vite/client"]
