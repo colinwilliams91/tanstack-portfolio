@@ -8,8 +8,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "tsc --noEmit",
-    "rirf": "ri .\\node_modules\\ -Recurse -Force && .\\package-lock.json"
+    "lint": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
