@@ -4,6 +4,7 @@ import { Theme } from "~/types/themes";
 
 import { ICON_PATHS } from "~/constants/svg-icons";
 import { THEMES } from "~/constants/themes";
+import { COOKIES } from "~/constants/cookies";
 
 /////////////////////
 //#region STYLES ////
@@ -28,7 +29,7 @@ export const setThemeCookie = createServerOnlyFn(
     setCookie(
       THEMES.KEY,
       theme,
-      { path: "/", maxAge: 60 * 60 * 24 * 30 } // Example: 30 days
+      { path: "/", maxAge: COOKIES.AGE.MONTH }
     );
   }
 );

@@ -17,12 +17,12 @@ const themeMiddleware = createMiddleware().server(async ({ next }) => {
         // Set a request header to pass the theme to the client
         setCookie(THEMES.KEY,
             storedTheme,
-            { path: COOKIES.BASE_PATH, maxAge: COOKIES.AGE_DEFAULT });
+            { path: COOKIES.BASE_PATH, maxAge: COOKIES.AGE.YEAR });
         return next({ context: { theme: storedTheme } });
     }
     setCookie(THEMES.KEY,
         THEMES.ABYSS,
-        { path: COOKIES.BASE_PATH, maxAge: COOKIES.AGE_DEFAULT });
+        { path: COOKIES.BASE_PATH, maxAge: COOKIES.AGE.YEAR });
     return next({ context: { theme: THEMES.ABYSS } });
 });
 
