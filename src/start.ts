@@ -14,7 +14,7 @@ import { COOKIES } from './constants/cookies';
 const themeMiddleware = createMiddleware().server(async ({ next }) => {
     const storedTheme = getCookie(THEMES.KEY)
     if (storedTheme === THEMES.WINTER || storedTheme === THEMES.ABYSS) {
-        // Set a request header to pass the theme to the client
+        // Set a cookie to persist the theme for the client
         setCookie(THEMES.KEY,
             storedTheme,
             { path: COOKIES.BASE_PATH, maxAge: COOKIES.AGE.YEAR });
