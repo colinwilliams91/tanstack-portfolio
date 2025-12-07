@@ -7,7 +7,6 @@ import { THEMES } from "~/constants/themes";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  console.log("Current theme in ThemeToggle:", theme);
   const isDark = useMemo(() => theme === THEMES.ABYSS, [theme]);
 
   return (

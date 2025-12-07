@@ -1,4 +1,4 @@
-import * as React from "react";
+import { ReactNode } from "react";
 import {
   HeadContent,
   Outlet,
@@ -36,7 +36,7 @@ function RootComponent() {
   );
 }
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootDocument({ children }: { children: ReactNode }) {
   const { theme } = useTheme();
 
   return (
