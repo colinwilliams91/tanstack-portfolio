@@ -1,8 +1,8 @@
-import { type Blog } from "~/types/blogs/index";
+import { type Article } from "~/types/blogs/index";
 
 // TODO: remove DEV environment check and diagnostic logging
 
-export async function fetchBlogs(): Promise<Blog[]> {
+export async function fetchBlogs(): Promise<Article[]> {
   if (import.meta.env.DEV) {
     console.log("[fetchBlogs] Fetching blogs data...");
   }

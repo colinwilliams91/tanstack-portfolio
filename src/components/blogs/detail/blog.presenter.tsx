@@ -31,10 +31,10 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
       </Link>
 
       {/* Cover image */}
-      {blog.coverImage && (
+      {blog.cover_image && (
         <figure className="mb-6">
           <img
-            src={blog.coverImage}
+            src={blog.cover_image}
             alt={blog.title}
             className="rounded-lg w-full max-h-96 object-cover"
           />
@@ -50,16 +50,16 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
           <div className="avatar">
             <div className="w-12 h-12 rounded-full">
               <img 
-                src={blog.author.profileImage} 
-                alt={blog.author.name}
+                src={blog.user.profile_image_90} 
+                alt={blog.user.name}
               />
             </div>
           </div>
-          <span className="font-medium">{blog.author.name}</span>
+          <span className="font-medium">{blog.user.name}</span>
         </Link>
         <span className="opacity-60">•</span>
         <span className="opacity-60">
-          {new Date(blog.publishedAt).toLocaleDateString('en-US', {
+          {new Date(blog.published_at).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
@@ -69,7 +69,7 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2 mb-8">
-        {blog.tags.map((tag, index) => (
+        {blog.tag_list.map((tag, index) => (
           <span key={index} className="badge badge-primary">
             {tag}
           </span>
@@ -82,7 +82,7 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
       {/* Markdown content */}
       <div className="prose max-w-none">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {blog.content}
+          {blog.body_markdown}
         </ReactMarkdown>
       </div>
     </div>

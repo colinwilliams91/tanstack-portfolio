@@ -1,11 +1,11 @@
-import { Blog } from "~/types/blogs";
+import { Article } from "~/types/blogs";
 
 export interface BlogsPresenterProps {
-  data?: Blog[];
+  data?: Article[];
   isLoading: boolean;
 }
 
 export interface BlogDetailPresenterProps {
-  blog?: Blog;
+  blog?: Article;
   isLoading: boolean;
 }

@@ -1,18 +1,39 @@
-import { type Blog } from "~/types/blogs/index";
+import { type Article } from "~/types/blogs/index";
 
-export const blogs: Blog[] = [
+export const blogs: Article[] = [
   {
+    type_of: "article",
     id: 1,
     title: "Getting Started with TanStack Router",
     description: "A comprehensive guide to building type-safe routing in React applications using TanStack Router.",
-    coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--sZv7vXBx--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/example1.png",
-    publishedAt: "2024-01-15",
-    tags: ["react", "typescript", "tanstack", "routing"],
-    author: {
+    cover_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--sZv7vXBx--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/example1.png",
+    social_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--sZv7vXBx--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/example1.png",
+    readable_publish_date: "Jan 15",
+    published_at: "2024-01-15T00:00:00Z",
+    published_timestamp: "2024-01-15T00:00:00Z",
+    created_at: "2024-01-15T00:00:00Z",
+    edited_at: null,
+    crossposted_at: null,
+    last_comment_at: "2024-01-15T00:00:00Z",
+    tag_list: ["react", "typescript", "tanstack", "routing"],
+    tags: "react, typescript, tanstack, routing",
+    slug: "getting-started-with-tanstack-router",
+    path: "/colinwilliams91/getting-started-with-tanstack-router",
+    url: "https://dev.to/colin-williams-dev/getting-started-with-tanstack-router",
+    canonical_url: "https://dev.to/colin-williams-dev/getting-started-with-tanstack-router",
+    positive_reactions_count: 0,
+    public_reactions_count: 0,
+    reading_time_minutes: 3,
+    user: {
       name: "Colin Williams",
-      profileImage: "https://avatars.githubusercontent.com/u/92059005?v=4",
+      username: "colin-williams-dev",
+      twitter_username: null,
+      github_username: "colinwilliams91",
+      website_url: null,
+      profile_image: "https://avatars.githubusercontent.com/u/92059005?v=4",
+      profile_image_90: "https://avatars.githubusercontent.com/u/92059005?v=4",
     },
-    content: `# Getting Started with TanStack Router
+    body_markdown: `# Getting Started with TanStack Router
 
 TanStack Router is a powerful, type-safe routing library for React applications. In this article, we'll explore how to set up and use TanStack Router in your projects.
 
@@ -54,17 +75,38 @@ function HomePage() {
 TanStack Router offers a modern approach to routing in React applications with excellent TypeScript support and developer experience.`,
   },
   {
+    type_of: "article",
     id: 2,
     title: "Mastering React Query for State Management",
     description: "Learn how to effectively manage server state in your React applications using TanStack Query (formerly React Query).",
-    coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--abc123xyz--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/example2.png",
-    publishedAt: "2024-02-10",
-    tags: ["react", "state-management", "tanstack", "query"],
-    author: {
+    cover_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--abc123xyz--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/example2.png",
+    social_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--abc123xyz--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/example2.png",
+    readable_publish_date: "Feb 10",
+    published_at: "2024-02-10T00:00:00Z",
+    published_timestamp: "2024-02-10T00:00:00Z",
+    created_at: "2024-02-10T00:00:00Z",
+    edited_at: null,
+    crossposted_at: null,
+    last_comment_at: "2024-02-10T00:00:00Z",
+    tag_list: ["react", "state-management", "tanstack", "query"],
+    tags: "react, state-management, tanstack, query",
+    slug: "mastering-react-query-for-state-management",
+    path: "/colinwilliams91/mastering-react-query-for-state-management",
+    url: "https://dev.to/colin-williams-dev/mastering-react-query-for-state-management",
+    canonical_url: "https://dev.to/colin-williams-dev/mastering-react-query-for-state-management",
+    positive_reactions_count: 0,
+    public_reactions_count: 0,
+    reading_time_minutes: 4,
+    user: {
       name: "Colin Williams",
-      profileImage: "https://avatars.githubusercontent.com/u/92059005?v=4",
+      username: "colin-williams-dev",
+      twitter_username: null,
+      github_username: "colinwilliams91",
+      website_url: null,
+      profile_image: "https://avatars.githubusercontent.com/u/92059005?v=4",
+      profile_image_90: "https://avatars.githubusercontent.com/u/92059005?v=4",
     },
-    content: `# Mastering React Query for State Management
+    body_markdown: `# Mastering React Query for State Management
 
 React Query (TanStack Query) has revolutionized how we handle server state in React applications. Let's dive into best practices and patterns.
 
@@ -140,17 +182,38 @@ function UserProfile({ userId }) {
 React Query simplifies server state management and improves user experience with intelligent caching and background updates.`,
   },
   {
+    type_of: "article",
     id: 3,
     title: "Building Modern UIs with DaisyUI and Tailwind CSS",
     description: "Explore how to create beautiful, responsive user interfaces using DaisyUI component library with Tailwind CSS.",
-    coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--def456uvw--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/example3.png",
-    publishedAt: "2024-03-05",
-    tags: ["css", "tailwind", "daisyui", "design"],
-    author: {
+    cover_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--def456uvw--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/example3.png",
+    social_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--def456uvw--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/example3.png",
+    readable_publish_date: "Mar 5",
+    published_at: "2024-03-05T00:00:00Z",
+    published_timestamp: "2024-03-05T00:00:00Z",
+    created_at: "2024-03-05T00:00:00Z",
+    edited_at: null,
+    crossposted_at: null,
+    last_comment_at: "2024-03-05T00:00:00Z",
+    tag_list: ["css", "tailwind", "daisyui", "design"],
+    tags: "css, tailwind, daisyui, design",
+    slug: "building-modern-uis-with-daisyui-and-tailwind-css",
+    path: "/colinwilliams91/building-modern-uis-with-daisyui-and-tailwind-css",
+    url: "https://dev.to/colin-williams-dev/building-modern-uis-with-daisyui-and-tailwind-css",
+    canonical_url: "https://dev.to/colin-williams-dev/building-modern-uis-with-daisyui-and-tailwind-css",
+    positive_reactions_count: 0,
+    public_reactions_count: 0,
+    reading_time_minutes: 4,
+    user: {
       name: "Colin Williams",
-      profileImage: "https://avatars.githubusercontent.com/u/92059005?v=4",
+      username: "colin-williams-dev",
+      twitter_username: null,
+      github_username: "colinwilliams91",
+      website_url: null,
+      profile_image: "https://avatars.githubusercontent.com/u/92059005?v=4",
+      profile_image_90: "https://avatars.githubusercontent.com/u/92059005?v=4",
     },
-    content: `# Building Modern UIs with DaisyUI and Tailwind CSS
+    body_markdown: `# Building Modern UIs with DaisyUI and Tailwind CSS
 
 DaisyUI provides a collection of beautifully designed components built on top of Tailwind CSS. Let's explore how to use it effectively.
 

@@ -27,19 +27,19 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
                 <div className="avatar">
                   <div className="w-10 h-10 rounded-full">
                     <img 
-                      src={blog.author.profileImage} 
-                      alt={blog.author.name}
+                      src={blog.user.profile_image_90} 
+                      alt={blog.user.name}
                     />
                   </div>
                 </div>
-                <span className="text-sm font-medium">{blog.author.name}</span>
+                <span className="text-sm font-medium">{blog.user.name}</span>
               </div>
 
               {/* Cover image thumbnail */}
-              {blog.coverImage && (
+              {blog.cover_image && (
                 <figure className="mb-4">
                   <img
-                    src={blog.coverImage}
+                    src={blog.cover_image}
                     alt={blog.title}
                     className="rounded-lg w-full h-48 object-cover"
                   />
@@ -54,7 +54,7 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
 
               {/* Tags - display up to 4 */}
               <div className="flex flex-wrap gap-2 mt-2">
-                {blog.tags.slice(0, 4).map((tag, index) => (
+                {blog.tag_list.slice(0, 4).map((tag, index) => (
                   <span key={index} className="badge badge-primary badge-sm">
                     {tag}
                   </span>
@@ -63,7 +63,7 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
 
               {/* Date */}
               <div className="text-xs opacity-60 mt-2">
-                {new Date(blog.publishedAt).toLocaleDateString('en-US', {
+                {new Date(blog.published_at).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
