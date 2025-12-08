@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { fetchProjects } from "~/handlers/fetch/projects";
+import { fetchBlogs } from "~/handlers/fetch/blogs";
 
 import { QUERY_KEYS } from "./query-keys";
 
@@ -14,6 +15,15 @@ const listProjectsPageQueryOptions = queryOptions({
 
 /**
  * @summary
+ * Query options for the Blogs List Page.
+ */
+const listBlogsPageQueryOptions = queryOptions({
+  queryKey: QUERY_KEYS.BLOGS,
+  queryFn: fetchBlogs,
+});
+
+/**
+ * @summary
  * Predefined query options (query key, query function).
  * @example
  * PROJECTS.LIST = {
@@ -24,5 +34,8 @@ const listProjectsPageQueryOptions = queryOptions({
 export const QUERY_OPTIONS = {
     PROJECTS: {
         LIST: listProjectsPageQueryOptions,
+    },
+    BLOGS: {
+        LIST: listBlogsPageQueryOptions,
     }
 } as const;

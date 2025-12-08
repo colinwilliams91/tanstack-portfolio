@@ -31,6 +31,13 @@ export function Header() {
         >
           Projects
         </Link>
+        <Link
+          to="/blogs"
+          className="link link-hover"
+          activeProps={{ className: "link-primary font-semibold" }}
+        >
+          Blogs
+        </Link>
         <ThemeToggle />
       </nav>
     </header>

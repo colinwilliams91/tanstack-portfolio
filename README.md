@@ -34,3 +34,4 @@ The dev server runs at `http://localhost:3000` by default.
 
 ## Development Tooling
 - [TanStack Router Devtools](https://tanstack.com/router/latest/docs/framework/react/devtools)
+- Dev.To API: https://developers.forem.com/api/v1
