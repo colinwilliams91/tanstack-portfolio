@@ -1,3 +1,4 @@
+import { API_URLS } from "~/constants/public-api-urls";
 import { type Article } from "~/types/blogs/index";
 
 // TODO: remove DEV environment check and diagnostic logging
@@ -8,7 +9,8 @@ export async function fetchBlogs(): Promise<Article[]> {
   }
   const startTime = performance.now();
 
-  const data = await import("~/data/blogs").then(module => module.blogs);
+  const response = await fetch(API_URLS.DEV_TO.LIST_ARTICLES);
+  const data: Article[] = await response.json();
 
   if (import.meta.env.DEV) {
     const endTime = performance.now();
