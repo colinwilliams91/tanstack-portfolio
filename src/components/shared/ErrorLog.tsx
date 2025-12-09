@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRouter } from "@tanstack/react-router";
 import type { ErrorComponentProps } from "@tanstack/react-router";
 
-export function ErrorComponent({ error, reset }: ErrorComponentProps) {
+export function ErrorLogComponent({ error, reset }: ErrorComponentProps) {
   const router = useRouter();
   const [showDetails, setShowDetails] = useState(
     import.meta.env.DEV

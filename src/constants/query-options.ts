@@ -1,6 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { fetchProjects } from "~/handlers/fetch/projects";
-import { fetchBlogs } from "~/handlers/fetch/blogs";
+import { fetchBlogById, fetchBlogs } from "~/handlers/fetch/blogs";
 
 import { QUERY_KEYS } from "./query-keys";
 
@@ -24,6 +24,15 @@ const listBlogsPageQueryOptions = queryOptions({
 
 /**
  * @summary
+ * Query options for a Blog Detail Page.
+ */
+const blogDetailPageQueryOptions = (blogId: number) => queryOptions({
+  queryKey: [...QUERY_KEYS.BLOG, blogId],
+  queryFn: () => fetchBlogById(blogId),
+});
+
+/**
+ * @summary
  * Predefined query options (query key, query function).
  * @example
  * PROJECTS.LIST = {
@@ -37,5 +46,6 @@ export const QUERY_OPTIONS = {
     },
     BLOGS: {
         LIST: listBlogsPageQueryOptions,
+        DETAIL: blogDetailPageQueryOptions,
     }
 } as const;

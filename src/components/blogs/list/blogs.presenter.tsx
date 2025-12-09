@@ -26,8 +26,8 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
               <div className="flex items-center gap-2 mb-2">
                 <div className="avatar">
                   <div className="w-10 h-10 rounded-full">
-                    <img 
-                      src={blog.user.profile_image_90} 
+                    <img
+                      src={blog.user.profile_image_90}
                       alt={blog.user.name}
                     />
                   </div>
@@ -54,7 +54,7 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
 
               {/* Tags - display up to 4 */}
               <div className="flex flex-wrap gap-2 mt-2">
-                {blog.tag_list.slice(0, 4).map((tag, index) => (
+                {blog.tag_list.map((tag, index) => (
                   <span key={index} className="badge badge-primary badge-sm">
                     {tag}
                   </span>
