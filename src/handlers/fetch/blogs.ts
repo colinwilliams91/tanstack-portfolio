@@ -27,7 +27,7 @@ export async function fetchBlogById(blogId: number): Promise<ArticleDetail | und
   const startTime = performance.now();
 
   const response = await fetch(API_URLS.DEV_TO.GET_ARTICLE + blogId);
-  const rawBlog = await response.json();
+  const data = await response.json();
 
   // HACK: Dev.to API has mismatched types between list and detail endpoints
   // List endpoint: tags is string, tag_list is string[]
@@ -36,11 +36,11 @@ export async function fetchBlogById(blogId: number): Promise<ArticleDetail | und
   // TODO: Remove this normalization if/when the API is fixed
   // Issue I opened on their repo: https://github.com/forem/forem/issues/22659
   const blog: ArticleDetail = {
-    ...rawBlog,
-    tags: Array.isArray(rawBlog.tags) ? rawBlog.tags.join(', ') : rawBlog.tags,
-    tag_list: typeof rawBlog.tag_list === 'string'
-      ? rawBlog.tag_list.split(',').map((t: string) => t.trim())
-      : rawBlog.tag_list,
+    ...data,
+    tags: Array.isArray(data.tags) ? data.tags.join(', ') : data.tags,
+    tag_list: typeof data.tag_list === 'string'
+      ? data.tag_list.split(',').map((x: string) => x.trim())
+      : data.tag_list,
   };
 
   if (import.meta.env.DEV) {
