@@ -29,7 +29,6 @@ const listBlogsPageQueryOptions = queryOptions({
 const blogDetailPageQueryOptions = (blogId: number) => queryOptions({
   queryKey: [...QUERY_KEYS.BLOG, blogId],
   queryFn: () => fetchBlogById(blogId),
-  // queryFn: fetchBlogById.bind(null, blogId),
 });
 
 /**
