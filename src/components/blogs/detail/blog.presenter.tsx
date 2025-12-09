@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { type BlogDetailPresenterProps } from "../abstract";
+import { ErrorHandleComponent } from "~/components/shared/ErrorHandle";
 
 export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProps) {
   if (isLoading) {
@@ -13,14 +14,10 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
   }
 
   if (!blog) {
-    return (
-      <div className="text-center py-8">
-        <h2 className="text-2xl font-bold mb-4">Blog not found</h2>
-        <Link to="/blogs" className="btn btn-primary">
-          Back to Blogs
-        </Link>
-      </div>
-    );
+    return <ErrorHandleComponent
+      redirectLink="/blogs"
+      errorText="Blog not found"
+      redirectText="Back to Blogs"/>;
   }
 
   return (
@@ -49,8 +46,8 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
         <Link to="/about" className="flex items-center gap-2 hover:opacity-80">
           <div className="avatar">
             <div className="w-12 h-12 rounded-full">
-              <img 
-                src={blog.user.profile_image_90} 
+              <img
+                src={blog.user.profile_image_90}
                 alt={blog.user.name}
               />
             </div>
@@ -69,7 +66,7 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2 mb-8">
-        {blog.tag_list.map((tag, index) => (
+        {blog.tag_list?.map((tag, index) => (
           <span key={index} className="badge badge-primary">
             {tag}
           </span>
