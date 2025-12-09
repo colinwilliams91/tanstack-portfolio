@@ -11,6 +11,7 @@ export interface SharedUser {
   username: string;
   twitter_username: string | null;
   github_username: string | null;
+  user_id: number;
   website_url: string | null;
   profile_image: string; // Profile image (640x640)
   profile_image_90: string; // Profile image (90x90)
@@ -52,6 +53,7 @@ export interface Article {
   slug: string;
   path: string;
   url: string;
+  comments_count: number;
   canonical_url: string;
   positive_reactions_count: number;
   public_reactions_count: number;
