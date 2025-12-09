@@ -66,7 +66,7 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2 mb-8">
-        {blog.tag_list?.map((tag, index) => (
+        {blog.tag_list.map((tag, index) => (
           <span key={index} className="badge badge-primary">
             {tag}
           </span>
