@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@import "./fonts.css";
+
 @plugin "daisyui" {
     themes: abyss --default --prefersdark, winter;
+}
+
+@theme {
+    --font-family-sans: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
