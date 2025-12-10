@@ -19,7 +19,7 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
             key={blog.id}
             to="/blogs/$blogId"
             params={{ blogId: String(blog.id) }}
-            className="card bg-base-200 hover:shadow-xl transition-shadow"
+            className="card bg-base-200 card-hover"
           >
             <div className="card-body">
               {/* Author info with profile picture */}
