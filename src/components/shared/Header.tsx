@@ -12,29 +12,29 @@ export function Header() {
       <nav className="flex items-center gap-4">
         <Link
           to="/"
-          className="link link-hover"
-          activeProps={{ className: "link-primary font-semibold" }}
+          className="nav-link"
+          activeProps={{ className: "text-primary font-semibold" }}
         >
           Home
         </Link>
         <Link
           to="/about"
-          className="link link-hover"
-          activeProps={{ className: "link-primary font-semibold" }}
+          className="nav-link"
+          activeProps={{ className: "text-primary font-semibold" }}
         >
           About
         </Link>
         <Link
           to="/projects"
-          className="link link-hover"
-          activeProps={{ className: "link-primary font-semibold" }}
+          className="nav-link"
+          activeProps={{ className: "text-primary font-semibold" }}
         >
           Projects
         </Link>
         <Link
           to="/blogs"
-          className="link link-hover"
-          activeProps={{ className: "link-primary font-semibold" }}
+          className="nav-link"
+          activeProps={{ className: "text-primary font-semibold" }}
         >
           Blogs
         </Link>

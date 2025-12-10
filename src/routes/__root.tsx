@@ -20,7 +20,13 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Portfolio" },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      },
+    ],
   }),
   component: RootComponent,
   errorComponent: ErrorLogComponent,
@@ -44,7 +50,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="min-h-screen bg-base-100">
+      <body className="min-h-screen bg-base-100 font-mono">
         <QueryClientProvider client={queryClient}>
           <Header />
           <main className="container mx-auto px-4 py-8">{children}</main>

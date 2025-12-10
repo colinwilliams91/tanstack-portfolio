@@ -34,17 +34,6 @@ export const setThemeCookie = createServerOnlyFn(
   }
 );
 
-export const getSwapClassFromSvgPath = (pathVal: string): string => {
-  switch (pathVal) {
-    case ICON_PATHS.MOON:
-      return "on";
-    case ICON_PATHS.SUN:
-      return "off";
-    default:
-      return "off";
-  }
-};
-
 /////////////////////
 //#endregion ////////
 /////////////////////

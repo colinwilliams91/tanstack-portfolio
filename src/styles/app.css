@@ -2,3 +2,16 @@
 @plugin "daisyui" {
     themes: abyss --default --prefersdark, winter;
 }
+
+@theme {
+  --font-family-mono: "JetBrains Mono", monospace;
+}
+
+@layer components {
+  .nav-link {
+    @apply relative transition-all duration-300 hover:scale-105
+           before:content-[''] before:absolute before:bottom-0 before:left-0
+           before:w-0 before:h-0.5 before:bg-primary before:transition-all
+           before:duration-300 hover:before:w-full;
+  }
+}
