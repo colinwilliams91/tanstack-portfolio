@@ -5,7 +5,7 @@ import viteReact from "@vitejs/plugin-react";
 import tailwindcss from '@tailwindcss/vite';
 import netlify from "@netlify/vite-plugin-tanstack-start";
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   server: {
     port: 3000,
   },
@@ -16,6 +16,8 @@ export default defineConfig({
     tanstackStart(),
     viteReact(),
     tailwindcss(),
-    netlify(),
+    // Only enable Netlify plugin during build for CI/CD
+    // This avoids local Netlify environment simulation during development
+    ...(command === 'build' ? [netlify()] : []),
   ],
-});
+}));
