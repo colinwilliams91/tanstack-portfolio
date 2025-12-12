@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { type BlogDetailPresenterProps } from "../abstract";
 import { ErrorHandleComponent } from "~/components/shared/ErrorHandle";
 
@@ -77,10 +76,8 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
       <p className="text-lg opacity-80 mb-8">{blog.description}</p>
 
       {/* Markdown content */}
-      <div className="prose max-w-none">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {blog.body_markdown}
-        </ReactMarkdown>
+      <div className="prose prose-lg max-w-none">
+        <ReactMarkdown children={blog.body_markdown} />
       </div>
     </div>
   );

@@ -14,13 +14,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "@tanstack/react-query": "^5.90.11",
     "@tanstack/react-router": "^1.139.6",
     "@tanstack/react-start": "^1.139.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-markdown": "^10.1.0",
-    "remark-gfm": "^4.0.1"
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@netlify/vite-plugin-tanstack-start": "^1.2.1",
