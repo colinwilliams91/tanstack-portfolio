@@ -29,11 +29,13 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
       {/* Cover image */}
       {blog.cover_image && (
         <figure className="mb-6">
-          <img
-            src={blog.cover_image}
-            alt={blog.title}
-            className="rounded-lg w-full max-h-96 object-cover"
-          />
+          <a href={blog.url} target="_blank" rel="noopener noreferrer">
+            <img
+              src={blog.cover_image}
+              alt={blog.title}
+              className="rounded-lg w-full max-h-96 object-cover hover:opacity-90 transition-opacity"
+            />
+          </a>
         </figure>
       )}
 
@@ -72,11 +74,8 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
         ))}
       </div>
 
-      {/* Description */}
-      <p className="text-lg opacity-80 mb-8">{blog.description}</p>
-
       {/* Markdown content */}
-      <div className="prose prose-lg max-w-none">
+      <div className="prose max-w-none">
         <ReactMarkdown children={blog.body_markdown} />
       </div>
     </div>
