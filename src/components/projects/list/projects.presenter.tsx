@@ -15,6 +15,8 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {data?.map((project) => (
           <div key={project.id} className="card bg-base-200 card-hover">
+            <span className="card-hover-top"></span>
+            <span className="card-hover-right"></span>
             <div className="card-body">
               <h2 className="card-title">{project.name}</h2>
               <p>{project.description}</p>

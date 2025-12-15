@@ -21,6 +21,8 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
             params={{ blogId: String(blog.id) }}
             className="card bg-base-200 card-hover"
           >
+            <span className="card-hover-top"></span>
+            <span className="card-hover-right"></span>
             <div className="card-body">
               {/* Author info with profile picture */}
               <div className="flex items-center gap-2 mb-2">
