@@ -11,6 +11,7 @@ import { Header } from "~/components/shared/Header";
 import { queryClient } from "~/router";
 import { ThemeProvider, useTheme } from "~/providers/ThemeContext";
 import { ErrorLogComponent } from "~/components/shared/ErrorLog";
+import { NotFound } from "~/components/shared/NotFound";
 import appCss from "~/styles/app.css?url";
 
 export const Route = createRootRoute({
@@ -30,6 +31,7 @@ export const Route = createRootRoute({
   }),
   component: RootComponent,
   errorComponent: ErrorLogComponent,
+  notFoundComponent: NotFound,
 });
 
 function RootComponent() {
