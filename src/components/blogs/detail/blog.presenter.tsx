@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { type BlogDetailPresenterProps } from "../abstract";
 import { ErrorHandleComponent } from "~/components/shared/ErrorHandle";
 
@@ -21,66 +20,69 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto py-8">
       {/* Back button */}
       <Link to="/blogs" className="btn btn-ghost mb-6">
         ← Back to Blogs
       </Link>
 
-      {/* Cover image */}
-      {blog.cover_image && (
-        <figure className="mb-6">
-          <img
-            src={blog.cover_image}
-            alt={blog.title}
-            className="rounded-lg w-full max-h-96 object-cover"
-          />
-        </figure>
-      )}
-
-      {/* Title */}
-      <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
-
-      {/* Author and date info */}
-      <div className="flex items-center gap-4 mb-6">
-        <Link to="/about" className="flex items-center gap-2 hover:opacity-80">
-          <div className="avatar">
-            <div className="w-12 h-12 rounded-full">
+      {/* Blog card container */}
+      <div className="card bg-base-200 shadow-xl">
+        {/* Cover image */}
+        {blog.cover_image && (
+          <figure>
+            <a href={blog.url} target="_blank" rel="noopener noreferrer">
               <img
-                src={blog.user.profile_image_90}
-                alt={blog.user.name}
+                src={blog.cover_image}
+                alt={blog.title}
+                className="w-full max-h-96 object-cover hover:opacity-90 transition-opacity"
               />
-            </div>
+            </a>
+          </figure>
+        )}
+
+        <div className="card-body">
+
+          {/* Title */}
+          <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
+
+          {/* Author and date info */}
+          <div className="flex items-center gap-4 mb-6">
+            <Link to="/about" className="flex items-center gap-2 hover:opacity-80">
+              <div className="avatar">
+                <div className="w-12 h-12 rounded-full">
+                  <img
+                    src={blog.user.profile_image_90}
+                    alt={blog.user.name}
+                  />
+                </div>
+              </div>
+              <span className="font-medium">{blog.user.name}</span>
+            </Link>
+            <span className="opacity-60">•</span>
+            <span className="opacity-60">
+              {new Date(blog.published_at).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </span>
           </div>
-          <span className="font-medium">{blog.user.name}</span>
-        </Link>
-        <span className="opacity-60">•</span>
-        <span className="opacity-60">
-          {new Date(blog.published_at).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
-        </span>
-      </div>
 
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2 mb-8">
-        {blog.tag_list.map((tag, index) => (
-          <span key={index} className="badge badge-primary">
-            {tag}
-          </span>
-        ))}
-      </div>
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {blog.tag_list.map((tag, index) => (
+              <span key={index} className="badge badge-primary">
+                {tag}
+              </span>
+            ))}
+          </div>
 
-      {/* Description */}
-      <p className="text-lg opacity-80 mb-8">{blog.description}</p>
-
-      {/* Markdown content */}
-      <div className="prose max-w-none">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {blog.body_markdown}
-        </ReactMarkdown>
+          {/* Markdown content */}
+          <div className="prose px-8 py-2 max-w-none">
+            <ReactMarkdown children={blog.body_markdown} />
+          </div>
+        </div>
       </div>
     </div>
   );
