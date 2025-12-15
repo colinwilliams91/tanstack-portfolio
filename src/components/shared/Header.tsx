@@ -68,6 +68,7 @@ export function Header() {
             <li>
               <Link
                 to="/"
+                className="nav-link"
                 activeProps={{ className: "text-primary font-semibold" }}
               >
                 Home
@@ -76,6 +77,7 @@ export function Header() {
             <li>
               <Link
                 to="/about"
+                className="nav-link"
                 activeProps={{ className: "text-primary font-semibold" }}
               >
                 About
@@ -84,6 +86,7 @@ export function Header() {
             <li>
               <Link
                 to="/projects"
+                className="nav-link"
                 activeProps={{ className: "text-primary font-semibold" }}
               >
                 Projects
@@ -92,6 +95,7 @@ export function Header() {
             <li>
               <Link
                 to="/blogs"
+                className="nav-link"
                 activeProps={{ className: "text-primary font-semibold" }}
               >
                 Blogs
