@@ -7,4 +7,7 @@ export const API_URLS = {
     LIST_ARTICLES: "https://dev.to/api/articles?username=colin-williams-dev&state=all",
     GET_ARTICLE: "https://dev.to/api/articles/"
   },
+  GITHUB: {
+    USER_REPOS: "https://api.github.com/users/colinwilliams91/repos"
+  },
 } as const;
