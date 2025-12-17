@@ -144,3 +144,6 @@ app.config.timestamp-*
 
 # Netlify
 .netlify
+
+# VSCode
+.vscode/
