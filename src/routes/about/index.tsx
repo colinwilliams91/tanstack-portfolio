@@ -24,8 +24,8 @@ function AboutPage() {
       <div className="prose max-w-none flex-1">
         <h1>About</h1>
         <p>
-          This portfolio demonstrates a clean, minimalistic approach to building
-          web applications using the TanStack ecosystem.
+          I'm Colin. Occasionally I enjoy karaoke with the creator of Vue.js, Evan You,
+          and when I'm not doing that I'm contributing to open source projects like <a href="https://github.com/dotnet/aspire/pull/8259" target="_blank" rel="noopener noreferrer">Microsoft Aspire v13</a>
         </p>
         <h2>Technologies</h2>
         <ul>

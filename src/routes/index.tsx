@@ -19,18 +19,15 @@ function HomePage() {
                 <img
                   src={headshot}
                   alt="Colin Williams"
-                  className="w-48 md:w-64"
+                  className="w-48 md:w-64 h-58 md:h-90"
                 />
               </div>
             </div>
           </div>
 
-          {/* Badges stacked vertically - taking bottom 66% of headshot height */}
-          <div className="flex flex-col justify-end h-48 md:h-64">
-            {/* Top spacer - 34% */}
-            <div className="flex-[34]"></div>
-            {/* Badges container - 66% */}
-            <div className="flex-[66] flex flex-col justify-center gap-3">
+          <div className="flex flex-col justify-end h-46 md:h-58">
+            {/* Badges container */}
+            <div className="flex flex-col justify-center gap-3">
               <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <img
                   src={awsBadge}
@@ -52,9 +49,8 @@ function HomePage() {
         {/* Welcome Text */}
         <div className="text-center lg:text-left max-w-md">
           <h1 className="text-5xl font-bold">Welcome</h1>
-          <p className="py-6">
-            A minimal portfolio built with TanStack Start, TanStack Router, and
-            TanStack Query.
+          <p className="py-6 text-3xl">
+            🌴🍃🐊✒️
           </p>
         </div>
       </div>
