@@ -6,7 +6,7 @@ export function Header() {
     <header className="navbar bg-base-200 px-2 sm:px-4 min-h-16">
       <div className="flex-1">
         <Link to="/" className="text-lg sm:text-xl font-bold">
-          Portfolio
+          Colin Williams
         </Link>
       </div>
       {/* Desktop navigation - hidden on mobile */}
