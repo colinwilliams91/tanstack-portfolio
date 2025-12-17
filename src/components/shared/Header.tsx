@@ -65,7 +65,7 @@ export function Header() {
             </svg>
           </div>
           <ul
-            className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100/50 border border-base-300/50 backdrop-blur-sm rounded-box z-1 mt-3 w-52 p-2 shadow-lg"
           >
             <li>
               <Link
