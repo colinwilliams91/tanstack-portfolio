@@ -1,4 +1,6 @@
-import { useState, useRef, useEffect, KeyboardEvent } from "react";
+import { useState, useRef, useEffect, type KeyboardEvent } from "react";
+import { KEYBOARD_EVENTS } from "~/constants/keyboard-events";
+import { DOM_EVENTS } from "~/constants/dom-events";
 import { ICON_PATHS } from "~/constants/svg-icons";
 
 export function SearchBar() {
@@ -26,27 +28,27 @@ export function SearchBar() {
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener(DOM_EVENTS.MOUSE_DOWN, handleClickOutside);
+    return () => document.removeEventListener(DOM_EVENTS.MOUSE_DOWN, handleClickOutside);
   }, []);
 
   // Handle keyboard navigation
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (mockResults.length === 0) return;
 
-    if (e.key === "ArrowDown") {
+    if (e.key === KEYBOARD_EVENTS.ARROW_DOWN) {
       e.preventDefault();
       setSelectedIndex((prev) =>
         prev < mockResults.length - 1 ? prev + 1 : prev
       );
-    } else if (e.key === "ArrowUp") {
+    } else if (e.key === KEYBOARD_EVENTS.ARROW_UP) {
       e.preventDefault();
       setSelectedIndex((prev) => (prev > 0 ? prev - 1 : -1));
-    } else if (e.key === "Enter" && selectedIndex >= 0) {
+    } else if (e.key === KEYBOARD_EVENTS.ENTER && selectedIndex >= 0) {
       e.preventDefault();
       // Handle selection - will be implemented later
       console.log("Selected:", mockResults[selectedIndex]);
-    } else if (e.key === "Escape") {
+    } else if (e.key === KEYBOARD_EVENTS.ESCAPE) {
       setIsFocused(false);
       setIsExpanded(false);
       setSearchQuery("");
