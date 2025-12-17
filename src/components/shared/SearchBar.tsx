@@ -95,7 +95,7 @@ export function SearchBar() {
         className={`
           input input-sm
           transition-all duration-300 ease-in-out
-          ${isExpanded ? "w-64 opacity-100 ml-2" : "w-0 opacity-0 ml-0"}
+          ${isExpanded ? "w-96 opacity-100 ml-2" : "w-0 opacity-0 ml-0"}
           ${isFocused ? "ring-2 ring-primary" : ""}
         `}
         style={{
@@ -107,9 +107,9 @@ export function SearchBar() {
       {/* Dropdown Results */}
       {showDropdown && (
         <div
-          className="absolute top-full mt-2 right-0 w-80 max-h-96 overflow-y-auto
-                     bg-base-100/80 backdrop-blur-md rounded-box shadow-lg z-50
-                     border border-base-300/50"
+          className="absolute top-full mt-2 w-100 max-h-96 overflow-y-auto
+            bg-base-100/30 backdrop-blur-md rounded-box shadow-lg z-50
+            border border-base-300/50"
         >
           {mockResults.length > 0 ? (
             <ul className="menu p-2">

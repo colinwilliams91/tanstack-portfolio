@@ -13,13 +13,13 @@ function HomePage() {
       <div className="hero-content flex-col lg:flex-row gap-8">
         <div className="flex gap-4 items-start">
           {/* Headshot Image */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <div className="avatar">
               <div className="mask mask-squircle animate-fade-in">
                 <img
                   src={headshot}
                   alt="Colin Williams"
-                  className="w-48 md:w-64 h-58 md:h-90"
+                  className="w-48 md:w-64 h-68 md:h-90"
                 />
               </div>
             </div>
