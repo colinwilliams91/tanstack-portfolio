@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ThemeToggle } from "./ThemeToggle";
+import { SearchBar } from "./SearchBar";
 
 export function Header() {
   return (
@@ -11,6 +12,7 @@ export function Header() {
       </div>
       {/* Desktop navigation - hidden on mobile */}
       <nav className="hidden md:flex items-center gap-4">
+        <SearchBar />
         <Link
           to="/"
           className="nav-link"
@@ -43,6 +45,7 @@ export function Header() {
       </nav>
       {/* Mobile navigation - visible only on mobile */}
       <div className="flex md:hidden items-center gap-2">
+        <SearchBar />
         <ThemeToggle />
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
