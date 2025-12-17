@@ -186,7 +186,7 @@ export function SearchBar() {
 
       {/* Mobile Search Modal */}
       {isModalOpen && (
-        <div className="md:hidden fixed inset-0 z-50 bg-base-100 flex flex-col">
+        <div className="md:hidden fixed inset-2 shadow-2xl z-50 bg-base-100/60 rounded-box backdrop-blur-sm flex flex-col">
           {/* Modal Header */}
           <div className="flex items-center gap-4 p-4 border-b border-base-300">
             <button
