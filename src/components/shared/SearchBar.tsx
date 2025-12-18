@@ -99,7 +99,7 @@ export function SearchBar() {
         {/* Search Icon */}
         <div className="flex items-center justify-center w-10 h-10">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns={ICON_PATHS.W3}
             viewBox="0 0 512 512"
             className="w-5 h-5 fill-current"
             aria-hidden="true"
@@ -176,7 +176,7 @@ export function SearchBar() {
         aria-label="Open search"
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns={ICON_PATHS.W3}
           viewBox="0 0 512 512"
           className="w-5 h-5 fill-current"
         >
@@ -195,7 +195,7 @@ export function SearchBar() {
               aria-label="Close search"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns={ICON_PATHS.W3}
                 className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"

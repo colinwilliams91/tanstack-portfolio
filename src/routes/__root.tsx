@@ -7,11 +7,11 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Header } from "~/components/shared/Header";
+import { Header } from "~c/shared/Header";
 import { queryClient } from "~/router";
 import { ThemeProvider, useTheme } from "~/providers/ThemeContext";
-import { ErrorLogComponent } from "~/components/shared/ErrorLog";
-import { NotFound } from "~/components/shared/NotFound";
+import { ErrorLogComponent } from "~c/shared/errors/ErrorLog";
+import { NotFound } from "~c/shared/errors/NotFound";
 import appCss from "~/styles/app.css?url";
 
 export const Route = createRootRoute({

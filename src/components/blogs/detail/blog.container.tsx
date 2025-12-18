@@ -2,7 +2,7 @@ import { useParams } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { BlogDetailPresenter } from "./blog.presenter";
 import { QUERY_OPTIONS } from "~/constants/query-options";
-import { ErrorHandleComponent } from "~/components/shared/ErrorHandle";
+import { ErrorHandleComponent } from "~c/shared/errors/ErrorHandle";
 
 export const BlogDetailContainerPage = () => {
   const { blogId } = useParams({ from: "/blogs/$blogId" });
