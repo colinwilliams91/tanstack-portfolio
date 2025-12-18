@@ -7,11 +7,11 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Header } from "~/components/shared/Header";
+import { Header } from "~c/shared/Header";
 import { queryClient } from "~/router";
 import { ThemeProvider, useTheme } from "~/providers/ThemeContext";
-import { ErrorLogComponent } from "~/components/shared/ErrorLog";
-import { NotFound } from "~/components/shared/NotFound";
+import { ErrorLogComponent } from "~c/shared/errors/ErrorLog";
+import { NotFound } from "~c/shared/errors/NotFound";
 import appCss from "~/styles/app.css?url";
 
 export const Route = createRootRoute({
@@ -59,6 +59,15 @@ function RootDocument({ children }: { children: ReactNode }) {
         </QueryClientProvider>
         <Scripts />
         <TanStackRouterDevtools position="bottom-right" />
+        <footer className="container mx-auto px-6 py-6 opacity-60 text-xs text-center mt-auto">
+          <div>
+            ｡˚☁️©️ colin williams • {new Date().getFullYear()} ˚｡˚
+          </div>
+          <div>
+            ˚➶ ｡˚ ☁️build: {__BUILD_VERSION__}
+            {__BUILD_COMMIT__ ? ` · ${__BUILD_COMMIT__}` : ''} ˋ°•*⁀➷
+          </div>
+        </footer>
       </body>
     </html>
   );

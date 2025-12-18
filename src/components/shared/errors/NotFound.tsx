@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ICON_PATHS } from "~/constants/svg-icons";
 
 export function NotFound() {
   return (
@@ -7,7 +8,7 @@ export function NotFound() {
         <div className="card-body">
           <div className="flex items-center gap-2">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns={ICON_PATHS.W3}
               className="h-6 w-6 text-warning"
               fill="none"
               viewBox="0 0 24 24"
