@@ -1,6 +1,7 @@
 import headshot from "~/assets/headshots/colin_williams.jpg";
 import awsBadge from "~/assets/badges/132x132_aws_badge.png";
 import unityBadge from "~/assets/badges/132x132_unity_badge.png";
+import { SocialBadges } from "./SocialBadges";
 
 export function HomePage() {
   return (
@@ -41,9 +42,9 @@ export function HomePage() {
           </div>
         </div>
 
-        {/* Welcome Text */}
+        {/* Social Badges */}
         <div className="text-center lg:text-left max-w-md">
-          <h1 className="text-5xl font-bold">Welcome</h1>
+          <SocialBadges />
           <p className="py-6 text-3xl">
             🌴🍃🐊✒️
           </p>
