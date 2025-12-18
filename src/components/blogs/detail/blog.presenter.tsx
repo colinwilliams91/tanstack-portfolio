@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import ReactMarkdown from "react-markdown";
 import { type BlogDetailPresenterProps } from "../abstract";
-import { ErrorHandleComponent } from "~/components/shared/ErrorHandle";
+import { ErrorHandleComponent } from "~c/shared/errors/ErrorHandle";
 
 export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProps) {
   if (isLoading) {
