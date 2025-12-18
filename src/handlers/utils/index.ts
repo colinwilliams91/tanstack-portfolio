@@ -37,3 +37,51 @@ export const setThemeCookie = createServerOnlyFn(
 /////////////////////
 //#endregion ////////
 /////////////////////
+
+/////////////////////
+//#region MATH //////
+/////////////////////
+
+export const formatDataSize = (sizeInKb: number): string => {
+  if (sizeInKb < 1024) {
+    return `${sizeInKb} KB`;
+  } else {
+    const sizeInMb = (sizeInKb / 1024).toFixed(2);
+    return `${sizeInMb} MB`;
+  }
+};
+
+export const formatDateRelative = (dateString: string): string => {
+  const date = new Date(dateString);
+  const now = new Date();
+  const diffInMs = now.getTime() - date.getTime();
+  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+  if (diffInDays < 1) {
+    return "Today";
+  } else if (diffInDays === 1) {
+    return "Yesterday";
+  } else {
+    return `${diffInDays} days ago`;
+  }
+};
+
+// TODO: Return a formatted date without the time component
+export const getMostRecentDate = (dates: (string | null)[]): string => {
+  if (dates.length === 0)
+    return "";
+
+  const validDates = dates
+    .filter((date): date is string => date !== null);
+
+  if (validDates.length === 0)
+    return "";
+
+  return validDates
+    .reduce((acc, cur) => new Date(acc) > new Date(cur)
+      ? acc.slice(0, 10)
+      : cur.slice(0, 10));
+};
+
+/////////////////////
+//#endregion ////////
+/////////////////////
