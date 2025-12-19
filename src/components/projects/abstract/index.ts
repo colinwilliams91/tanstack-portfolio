@@ -1,6 +1,6 @@
-import { Project } from "~/types/projects";
+import { GitHubRepositoriesResponse } from "~/types/projects";
 
 export interface ProjectsPresenterProps {
-  data?: Project[];
+  data?: GitHubRepositoriesResponse;
   isLoading: boolean;
 }

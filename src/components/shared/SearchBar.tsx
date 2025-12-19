@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect, type KeyboardEvent } from "react";
-import { KEYBOARD_EVENTS } from "~/constants/keyboard-events";
-import { DOM_EVENTS } from "~/constants/dom-events";
-import { ICON_PATHS } from "~/constants/svg-icons";
+import { KEYBOARD_EVENTS } from "~/constants/events/keyboard-events";
+import { DOM_EVENTS } from "~/constants/events/dom-events";
+import { ICON_PATHS } from "~/constants/icons/svg-icons";
+import { COPY } from "~/constants/copy";
 
 export function SearchBar() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -55,8 +56,7 @@ export function SearchBar() {
       setSelectedIndex((prev) => (prev > 0 ? prev - 1 : -1));
     } else if (e.key === KEYBOARD_EVENTS.ENTER && selectedIndex >= 0) {
       e.preventDefault();
-      // Handle selection - will be implemented later
-      console.log("Selected:", mockResults[selectedIndex]);
+      // TODO: Handle selection - will be implemented later
     } else if (e.key === KEYBOARD_EVENTS.ESCAPE) {
       setIsFocused(false);
       setIsExpanded(false);
@@ -119,7 +119,7 @@ export function SearchBar() {
           }}
           onClick={handleInputClick}
           onKeyDown={handleKeyDown}
-          placeholder={isFocused ? "Start typing to search through my projects and blogs..." : ""}
+          placeholder={isFocused ? COPY.SEARCH_BAR.PLACEHOLDER : ""}
           className={`
             input input-sm
             transition-all duration-300 ease-in-out
@@ -135,9 +135,8 @@ export function SearchBar() {
         {/* Dropdown Results */}
         {showDropdown && (
           <div
-            className="absolute top-full mt-2 right-0 left-10 w-100 max-h-96 overflow-y-auto
-              bg-base-100/30 backdrop-blur-md rounded-box shadow-lg z-50
-              border border-base-300/50"
+            className="absolute top-full mt-2 right-0 left-10 w-100
+              max-h-96 overflow-y-auto glass rounded-box z-50"
           >
             {mockResults.length > 0 ? (
               <ul className="menu p-2">
@@ -162,7 +161,7 @@ export function SearchBar() {
               </ul>
             ) : (
               <div className="p-4 text-center text-sm opacity-60">
-                No results found. Keep typing to search through projects and blogs...
+                {COPY.SEARCH_BAR.NO_RESULTS}
               </div>
             )}
           </div>
@@ -218,7 +217,7 @@ export function SearchBar() {
                 setSelectedIndex(-1);
               }}
               onKeyDown={handleKeyDown}
-              placeholder="Start typing to search through my projects and blogs..."
+              placeholder={COPY.SEARCH_BAR.PLACEHOLDER}
               className="input input-bordered w-full"
               aria-label="Search projects and blogs"
             />
@@ -237,7 +236,6 @@ export function SearchBar() {
                           hover:bg-base-200
                         `}
                         onClick={() => {
-                          console.log("Selected:", result);
                           handleCloseModal();
                         }}
                       >
@@ -253,12 +251,12 @@ export function SearchBar() {
                 </ul>
               ) : (
                 <div className="text-center text-sm opacity-60 mt-8">
-                  No results found. Keep typing to search through projects and blogs...
+                  {COPY.SEARCH_BAR.NO_RESULTS}
                 </div>
               )
             ) : (
               <div className="text-center text-sm opacity-60 mt-8">
-                Start typing to search through my projects and blogs...
+                {COPY.SEARCH_BAR.PLACEHOLDER}
               </div>
             )}
           </div>
