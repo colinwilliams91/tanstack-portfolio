@@ -29,3 +29,7 @@ export const SOCIAL_BADGES: SocialBadge[] = [
     viewBox: "0 0 512 512",
   },
 ];
+
+export const EMOJI_BADGES: string[] = [
+    "🌴", "🍃", "🐊", "✒️"
+] as const;

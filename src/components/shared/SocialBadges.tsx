@@ -4,13 +4,17 @@ import { ICON_PATHS } from "~/constants/icons/svg-icons";
 export function SocialBadges() {
   return (
     <div className="flex gap-[0.1rem] justify-center lg:justify-start">
-      {SOCIAL_BADGES.map((badge) => (
-        <div key={badge.tooltip} className="tooltip" data-tip={badge.tooltip}>
+      {SOCIAL_BADGES.map((badge, index) => (
+        <div
+          key={badge.tooltip}
+          className="tooltip"
+          data-tip={badge.tooltip}>
           <a
             href={badge.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-circle btn-ghost"
+            className="btn btn-circle btn-ghost opacity-0 animate-fade-in"
+            style={{ animationDelay: `0.${index + 6}s`, animationFillMode: 'forwards' }}
             aria-label={badge.tooltip}
           >
             <svg

@@ -2,6 +2,7 @@ import headshot from "~/assets/headshots/colin_williams.jpg";
 import awsBadge from "~/assets/badges/132x132_aws_badge.png";
 import unityBadge from "~/assets/badges/132x132_unity_badge.png";
 import { SocialBadges } from "./SocialBadges";
+import { EmojiBadges } from "./EmojiBadges";
 
 export function HomePage() {
   return (
@@ -24,14 +25,16 @@ export function HomePage() {
           <div className="flex flex-col justify-end h-46 md:h-58">
             {/* Badges container */}
             <div className="flex flex-col justify-center gap-3">
-              <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="opacity-0 animate-fade-in"
+                style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
                 <img
                   src={awsBadge}
                   alt="AWS Badge"
                   className="w-20 md:w-24"
                 />
               </div>
-              <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="opacity-0 animate-fade-in"
+                style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
                 <img
                   src={unityBadge}
                   alt="Unity Badge"
@@ -45,10 +48,7 @@ export function HomePage() {
         {/* Social Badges */}
         <div className="text-center lg:text-left max-w-md">
           <SocialBadges />
-          {/* TODO: componentize the emojis, map and style like SocialBadges (or at minimum then can add hovers) */}
-          <p className="py-6 text-3xl">
-            🌴🍃🐊✒️
-          </p>
+          <EmojiBadges />
         </div>
       </div>
     </div>
