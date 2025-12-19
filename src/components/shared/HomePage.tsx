@@ -45,6 +45,7 @@ export function HomePage() {
         {/* Social Badges */}
         <div className="text-center lg:text-left max-w-md">
           <SocialBadges />
+          {/* TODO: componentize the emojis, map and style like SocialBadges (or at minimum then can add hovers) */}
           <p className="py-6 text-3xl">
             🌴🍃🐊✒️
           </p>

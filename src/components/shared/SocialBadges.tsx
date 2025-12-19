@@ -1,5 +1,6 @@
 import { ICON_PATHS } from "~/constants/svg-icons";
 
+// TODO: move to types
 interface SocialBadge {
   href: string;
   tooltip: string;
@@ -7,6 +8,7 @@ interface SocialBadge {
   viewBox: string;
 }
 
+// TODO: move to constants
 const SOCIAL_BADGES: SocialBadge[] = [
   {
     href: "https://github.com/colinwilliams91",
@@ -28,7 +30,7 @@ const SOCIAL_BADGES: SocialBadge[] = [
   },
   {
     href: "mailto:colin.williams.dev@gmail.com",
-    tooltip: "Email me",
+    tooltip: "Email",
     icon: ICON_PATHS.EMAIL,
     viewBox: "0 0 512 512",
   },
@@ -36,7 +38,7 @@ const SOCIAL_BADGES: SocialBadge[] = [
 
 export function SocialBadges() {
   return (
-    <div className="flex gap-4 justify-center lg:justify-start">
+    <div className="flex gap-[0.1rem] justify-center lg:justify-start">
       {SOCIAL_BADGES.map((badge) => (
         <div key={badge.tooltip} className="tooltip" data-tip={badge.tooltip}>
           <a
