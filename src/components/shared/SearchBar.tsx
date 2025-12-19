@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, type KeyboardEvent } from "react";
-import { KEYBOARD_EVENTS } from "~/constants/keyboard-events";
-import { DOM_EVENTS } from "~/constants/dom-events";
-import { ICON_PATHS } from "~/constants/svg-icons";
+import { KEYBOARD_EVENTS } from "~/constants/events/keyboard-events";
+import { DOM_EVENTS } from "~/constants/events/dom-events";
+import { ICON_PATHS } from "~/constants/icons/svg-icons";
 
 export function SearchBar() {
   const [isExpanded, setIsExpanded] = useState(false);

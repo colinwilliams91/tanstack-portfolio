@@ -8,6 +8,12 @@ export const API_URLS = {
     GET_ARTICLE: "https://dev.to/api/articles/"
   },
   GITHUB: {
-    USER_REPOS: "https://api.github.com/users/colinwilliams91/repos"
+    USER_REPOS: "https://api.github.com/users/colinwilliams91/repos?sort=pushed&per_page=50",
+    PROFILE: "https://github.com/colinwilliams91"
   },
+  LINKED_IN: {
+    PROFILE: "https://www.linkedin.com/in/colin-williams-dev/"
+  },
+  EMAIL: "mailto:colin.williams.dev@gmail.com",
+  RESUME: "https://docs.google.com/document/d/1RnFJQswy0fLqMHV6SfAWb_db2VUh3s7dh2bbxqi8Lm0/edit?usp=sharing"
 } as const;

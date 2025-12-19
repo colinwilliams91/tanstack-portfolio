@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ICON_PATHS } from "~/constants/svg-icons";
+import { ICON_PATHS } from "~/constants/icons/svg-icons";
 
 
 export function Menu() {

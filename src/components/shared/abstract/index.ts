@@ -1,4 +1,4 @@
-import { IconPathValue } from "~/constants/svg-icons";
+import { IconPathValue } from "~/constants/icons/svg-icons";
 
 export interface SvgIconProps {
   pathVal: IconPathValue;
@@ -8,4 +8,11 @@ export interface ErrorHandleComponentProps {
   redirectLink: string;
   errorText: string;
   redirectText: string;
+}
+
+export interface SocialBadge {
+  href: string;
+  tooltip: string;
+  icon: string;
+  viewBox: string;
 }

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { queryClient } from "~/router";
 import { BlogsContainerPage } from "~/components/blogs/list/blogs.container";
 
-import { QUERY_OPTIONS } from "~/constants/query-options";
+import { QUERY_OPTIONS } from "~/constants/queries/query-options";
 
 export const Route = createFileRoute("/blogs/")({
   loader: () =>

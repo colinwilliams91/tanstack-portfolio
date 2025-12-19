@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "@tanstack/react-router";
 import type { ErrorComponentProps } from "@tanstack/react-router";
-import { ICON_PATHS } from "~/constants/svg-icons";
+import { ICON_PATHS } from "~/constants/icons/svg-icons";
 
 export function ErrorLogComponent({ error, reset }: ErrorComponentProps) {
   const router = useRouter();

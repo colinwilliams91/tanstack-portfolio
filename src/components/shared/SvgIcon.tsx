@@ -1,4 +1,4 @@
-import { ICON_PATHS } from "~/constants/svg-icons";
+import { ICON_PATHS } from "~/constants/icons/svg-icons";
 
 export const SvgIcon = () => {
     return (

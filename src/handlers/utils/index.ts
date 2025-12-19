@@ -2,7 +2,7 @@ import { setCookie } from "@tanstack/react-start/server";
 import { createServerOnlyFn } from "@tanstack/react-start";
 import { Theme } from "~/types/themes";
 
-import { ICON_PATHS } from "~/constants/svg-icons";
+import { ICON_PATHS } from "~/constants/icons/svg-icons";
 import { THEMES } from "~/constants/themes";
 import { COOKIES } from "~/constants/cookies";
 

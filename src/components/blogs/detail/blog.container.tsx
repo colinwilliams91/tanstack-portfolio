@@ -1,7 +1,7 @@
 import { useParams } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { BlogDetailPresenter } from "./blog.presenter";
-import { QUERY_OPTIONS } from "~/constants/query-options";
+import { QUERY_OPTIONS } from "~/constants/queries/query-options";
 import { ErrorHandleComponent } from "~c/shared/errors/ErrorHandle";
 
 export const BlogDetailContainerPage = () => {
