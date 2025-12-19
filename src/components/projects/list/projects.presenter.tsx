@@ -15,7 +15,7 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
       <h1 className="text-3xl font-bold mb-6">Projects</h1>
       <div className="grid gap-4.5 md:grid-cols-2 lg:grid-cols-3">
         {data?.slice().sort((a, b) => b.stargazers_count - a.stargazers_count).map((project) => (
-          <a href={project.url} key={project.id} className="hover-3d">
+          <a href={project.url} rel="noopener noreferrer" target="_blank" key={project.id} className="hover-3d">
             <div className="card bg-base-200 shadow-sm hover:shadow-md rounded-box">
               <div className="card-body text-sm">
                 <h2 className="card-title">{project.name}</h2>
