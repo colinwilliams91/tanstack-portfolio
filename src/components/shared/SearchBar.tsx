@@ -136,8 +136,7 @@ export function SearchBar() {
         {showDropdown && (
           <div
             className="absolute top-full mt-2 right-0 left-10 w-100 max-h-96 overflow-y-auto
-              bg-base-100/30 backdrop-blur-md rounded-box shadow-lg z-50
-              border border-base-300/50"
+              glass rounded-box z-50"
           >
             {mockResults.length > 0 ? (
               <ul className="menu p-2">
