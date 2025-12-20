@@ -16,12 +16,12 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
       <div className="grid gap-4.5 md:grid-cols-2 lg:grid-cols-3">
         {data?.slice().sort((a, b) => b.stargazers_count - a.stargazers_count).map((project) => (
           <a href={project.url} rel="noopener noreferrer" target="_blank" key={project.id} className="hover-3d">
-            <div className="card bg-base-200 shadow-sm hover:shadow-md rounded-box">
+            <div className="card">
               <div className="card-body text-sm">
                 <h2 className="card-title">{project.name}</h2>
                 <img className="mask mask-circle w-16 h-16" src={project.owner.avatar_url} alt={project.name} />
-                <div className="text-sm p-3 bg-base-100/30
-                  opacity-80 italic shadow-sm rounded-box backdrop-blur-lg"
+                <div className={`text-sm p-3 italic rounded-xl bg-base-100/60
+                  opacity-80 shadow-md backdrop-blur-lg border border-accent-content/10`}
                 >{project.description}
                 </div>
                 <div>💻 {project.language?.length ? project.language : "N/A"}</div>

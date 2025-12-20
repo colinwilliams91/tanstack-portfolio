@@ -21,7 +21,7 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
             params={{ blogId: String(blog.id) }}
             className="hover-3d"
           >
-            <div className="card bg-base-200 shadow-sm hover:shadow-md rounded-box">
+            <div className="card">
               <div className="card-body">
                 {/* Author info with profile picture */}
                 <div className="flex items-center gap-2 mb-2">
@@ -42,7 +42,7 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
                     <img
                       src={blog.cover_image}
                       alt={blog.title}
-                      className="rounded-lg w-full h-48 object-cover"
+                      className="rounded-2xl w-full h-48 object-cover"
                     />
                   </figure>
                 )}

@@ -6,7 +6,7 @@
 
 @theme {
   --font-family-mono: "JetBrains Mono", monospace;
-  
+
   --animate-fade-in: fade-in 0.8s ease-out;
 }
 
@@ -28,8 +28,57 @@
            before:w-0 before:h-0.5 before:bg-primary before:transition-all
            before:duration-300 hover:before:w-full;
   }
-  
+
   .animate-fade-in {
     animation: var(--animate-fade-in);
   }
+}
+
+body {
+  @apply bg-base-100;
+  background-image:
+    radial-gradient(at 47% 33%, color-mix(in oklch, var(--color-base-100) 30%, transparent) 0%, transparent 59%),
+    radial-gradient(at 82% 65%, color-mix(in oklch, var(--color-accent) 50%, transparent) 0%, transparent 55%);
+}
+
+
+/*
+  DaisyUI Customization
+
+  Base colors:
+
+  --color-base-100 - Main background color
+  --color-base-200 - Slightly darker/lighter for elevation
+  --color-base-300 - Even more contrast for elevation
+  --color-base-content - Foreground text color on base
+
+  Brand colors:
+
+  --color-primary - Primary brand color
+  --color-primary-content - Text color on primary
+  --color-secondary - Secondary brand color
+  --color-secondary-content - Text color on secondary
+  --color-accent - Accent brand color
+  --color-accent-content - Text color on accent
+
+  Neutral:
+
+  --color-neutral - Neutral dark color
+  --color-neutral-content - Text color on neutral
+
+  Semantic/State colors:
+
+  --color-info - Informative messages
+  --color-info-content - Text color on info
+  --color-success - Success/safe messages
+  --color-success-content - Text color on success
+  --color-warning - Warning/caution messages
+  --color-warning-content - Text color on warning
+  --color-error - Error/danger messages
+  --color-error-content - Text color on error
+
+*/
+
+.card {
+  @apply glass bg-base-200 rounded-2xl;
 }
