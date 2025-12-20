@@ -195,7 +195,7 @@ export interface GitHubRepository {
   allow_forking?: boolean;
   web_commit_signoff_required?: boolean;
   security_and_analysis?: GitHubSecurityAndAnalysis | null;
-  custom_properties?: Record<string, unknown>;
+  custom_properties?: Record<string, {}>;
 }
 
 /**

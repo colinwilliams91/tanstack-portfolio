@@ -11,6 +11,8 @@ import { QUERY_KEYS } from "./query-keys";
 const listProjectsPageQueryOptions = queryOptions({
   queryKey: QUERY_KEYS.PROJECTS,
   queryFn: fetchProjects,
+  staleTime: 1000 * 60 * 5, // 5 minutes (default 0 (never fresh))
+  gcTime: 1000 * 60 * 60, // 1 hour (default 5 minutes)
 });
 
 /**
