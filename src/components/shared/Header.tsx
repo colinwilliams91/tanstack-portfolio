@@ -5,7 +5,7 @@ import { Menu } from "./Menu";
 
 export function Header() {
   return (
-    <header className="navbar bg-base-200 px-2 sm:px-4 min-h-16">
+    <header className="navbar glass bg-base-200 opacity-85 px-2 sm:px-4 min-h-16">
       <div className="flex-1">
         <Link to="/" className="text-lg sm:text-xl font-bold">
           Colin Williams
