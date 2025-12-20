@@ -17,18 +17,22 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
         {data?.slice().sort((a, b) => b.stargazers_count - a.stargazers_count).map((project) => (
           <a href={project.url} rel="noopener noreferrer" target="_blank" key={project.id} className="hover-3d">
             <div className="card">
-              <div className="card-body text-sm">
+              <div className="card-body text-sm flex flex-col gap-2">
                 <h2 className="card-title">{project.name}</h2>
                 <img className="mask mask-circle w-16 h-16" src={project.owner.avatar_url} alt={project.name} />
-                <div className={`text-sm p-3 italic rounded-xl bg-base-100/60
-                  opacity-80 shadow-md backdrop-blur-lg border border-accent-content/10`}
-                >{project.description}
+                <div className="text-sm p-3 italic rounded-xl bg-base-100/60
+                  opacity-80 shadow-md backdrop-blur-lg border border-accent-content/10
+                  min-h-[4.5rem] line-clamp-3"
+                >
+                  {project.description || "No description available"}
                 </div>
-                <div>💻 {project.language?.length ? project.language : "N/A"}</div>
-                <div>✨ {project.stargazers_count}</div>
-                <div>🍴 {project.forks_count}</div>
-                <div>🗓️ {getMostRecentDate([project.updated_at, project.pushed_at])}</div>
-                <div>⚖️ {formatDataSize(project.size)}</div>
+                <div className="flex flex-col gap-1 mt-auto">
+                  <div>💻 {project.language?.length ? project.language : "N/A"}</div>
+                  <div>✨ {project.stargazers_count}</div>
+                  <div>🍴 {project.forks_count}</div>
+                  <div>🗓️ {getMostRecentDate([project.updated_at, project.pushed_at])}</div>
+                  <div>⚖️ {formatDataSize(project.size)}</div>
+                </div>
               </div>
             </div>
             <div></div>
