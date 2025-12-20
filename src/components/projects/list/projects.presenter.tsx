@@ -22,9 +22,13 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
                 <img className="mask mask-circle w-16 h-16" src={project.owner.avatar_url} alt={project.name} />
                 <div className="text-sm p-3 italic rounded-xl bg-base-100/60
                   opacity-80 shadow-md backdrop-blur-lg border border-accent-content/10
-                  min-h-[4.5rem] line-clamp-3"
+                  min-h-21"
                 >
-                  {project.description || "No description available"}
+                  {project.description
+                    ? project.description.length > 100
+                      ? `${project.description.slice(0, 100)}...`
+                      : project.description
+                    : "No description available"}
                 </div>
                 <div className="flex flex-col gap-1 mt-auto">
                   <div>💻 {project.language?.length ? project.language : "N/A"}</div>
