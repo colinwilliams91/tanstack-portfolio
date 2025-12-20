@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import friends from "~/assets/headshots/colin_and_evan_you.jpeg";
+import friends from "~/assets/headshots/colin_and_evan_you.webp";
 
 export const Route = createFileRoute("/about/")({
   component: AboutPage,

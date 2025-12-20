@@ -1,4 +1,4 @@
-import headshot from "~/assets/headshots/colin_williams.jpg";
+import headshot from "~/assets/headshots/colin_williams.webp";
 import awsBadge from "~/assets/badges/132x132_aws_badge.png";
 import unityBadge from "~/assets/badges/132x132_unity_badge.png";
 import { SocialBadges } from "./SocialBadges";
