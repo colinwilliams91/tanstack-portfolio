@@ -61,19 +61,19 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
               <span className="font-medium">{blog.user.name}</span>
             </Link>
             <span className="opacity-60">•</span>
-            <span className="opacity-60" aria-label={LABELS.BLOG.PUBLISHED_DATE}>
+            <time className="opacity-60" dateTime={blog.published_at}>
               {new Date(blog.published_at).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'
               })}
-            </span>
+            </time>
           </div>
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-8">
             {blog.tag_list.map((tag, index) => (
-              <span key={index} className="badge badge-primary" aria-label={LABELS.BLOG.TAG}>
+              <span key={index} className="badge badge-primary">
                 {tag}
               </span>
             ))}

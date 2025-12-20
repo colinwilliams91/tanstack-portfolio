@@ -25,11 +25,11 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
                   opacity-80 italic shadow-sm rounded-box backdrop-blur-lg"
                 >{project.description}
                 </div>
-                <div aria-label={LABELS.PROJECT.LANGUAGE}>💻 {project.language?.length ? project.language : "N/A"}</div>
-                <div aria-label={LABELS.PROJECT.STARS}>✨ {project.stargazers_count}</div>
-                <div aria-label={LABELS.PROJECT.FORKS}>🍴 {project.forks_count}</div>
-                <div aria-label={LABELS.PROJECT.LAST_UPDATED}>🗓️ {getMostRecentDate([project.updated_at, project.pushed_at])}</div>
-                <div aria-label={LABELS.PROJECT.SIZE}>⚖️ {formatDataSize(project.size)}</div>
+                <div><span className="sr-only">{LABELS.PROJECT.LANGUAGE}: </span>💻 {project.language?.length ? project.language : "N/A"}</div>
+                <div><span className="sr-only">{LABELS.PROJECT.STARS}: </span>✨ {project.stargazers_count}</div>
+                <div><span className="sr-only">{LABELS.PROJECT.FORKS}: </span>🍴 {project.forks_count}</div>
+                <div><span className="sr-only">{LABELS.PROJECT.LAST_UPDATED}: </span>🗓️ {getMostRecentDate([project.updated_at, project.pushed_at])}</div>
+                <div><span className="sr-only">{LABELS.PROJECT.SIZE}: </span>⚖️ {formatDataSize(project.size)}</div>
               </div>
               <div></div>
               <div></div>

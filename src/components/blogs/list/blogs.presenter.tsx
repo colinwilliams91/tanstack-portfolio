@@ -57,20 +57,20 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
               {/* Tags - display up to 4 */}
               <div className="flex flex-wrap gap-2 mt-2">
                 {blog.tag_list.map((tag, index) => (
-                  <span key={index} className="badge badge-primary badge-sm" aria-label={LABELS.BLOG.TAG}>
+                  <span key={index} className="badge badge-primary badge-sm">
                     {tag}
                   </span>
                 ))}
               </div>
 
               {/* Date */}
-              <div className="text-xs opacity-60 mt-2" aria-label={LABELS.BLOG.PUBLISHED_DATE}>
+              <time className="text-xs opacity-60 mt-2" dateTime={blog.published_at}>
                 {new Date(blog.published_at).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
                 })}
-              </div>
+              </time>
             </div>
           </Link>
         ))}
