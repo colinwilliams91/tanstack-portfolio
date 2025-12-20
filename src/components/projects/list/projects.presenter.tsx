@@ -30,15 +30,15 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
                 <div>🗓️ {getMostRecentDate([project.updated_at, project.pushed_at])}</div>
                 <div>⚖️ {formatDataSize(project.size)}</div>
               </div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
             </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
           </a>
         ))}
       </div>
