@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, type KeyboardEvent } from "react";
 import { KEYBOARD_EVENTS } from "~/constants/events/keyboard-events";
 import { DOM_EVENTS } from "~/constants/events/dom-events";
 import { ICON_PATHS } from "~/constants/icons/svg-icons";
-import { COPY } from "~/constants/copy";
+import { COPY, LABELS } from "~/constants/copy";
 
 export function SearchBar() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -129,7 +129,7 @@ export function SearchBar() {
           style={{
             padding: isExpanded ? undefined : "0",
           }}
-          aria-label="Search projects and blogs"
+          aria-label={LABELS.SEARCH.SEARCH_INPUT}
         />
 
         {/* Dropdown Results */}
@@ -172,7 +172,7 @@ export function SearchBar() {
       <button
         className="md:hidden btn btn-ghost btn-circle"
         onClick={handleMobileIconClick}
-        aria-label="Open search"
+        aria-label={LABELS.SEARCH.OPEN_SEARCH}
       >
         <svg
           xmlns={ICON_PATHS.W3}
@@ -191,7 +191,7 @@ export function SearchBar() {
             <button
               className="btn btn-ghost btn-circle"
               onClick={handleCloseModal}
-              aria-label="Close search"
+              aria-label={LABELS.SEARCH.CLOSE_SEARCH}
             >
               <svg
                 xmlns={ICON_PATHS.W3}
@@ -219,7 +219,7 @@ export function SearchBar() {
               onKeyDown={handleKeyDown}
               placeholder={COPY.SEARCH_BAR.PLACEHOLDER}
               className="input input-bordered w-full"
-              aria-label="Search projects and blogs"
+              aria-label={LABELS.SEARCH.SEARCH_INPUT}
             />
           </div>
 

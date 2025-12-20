@@ -3,6 +3,7 @@ import { SvgIcon } from "./SvgIcon";
 import { useMemo } from "react";
 
 import { THEMES } from "~/constants/themes";
+import { LABELS } from "~/constants/copy";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
@@ -14,7 +15,7 @@ export function ThemeToggle() {
         type="checkbox"
         checked={isDark}
         onChange={toggleTheme}
-        aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+        aria-label={isDark ? LABELS.THEME_TOGGLE.SWITCH_TO_LIGHT : LABELS.THEME_TOGGLE.SWITCH_TO_DARK}
         className="theme-controller"
       />
         <SvgIcon />

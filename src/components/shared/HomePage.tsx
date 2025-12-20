@@ -2,6 +2,7 @@ import headshot from "~/assets/headshots/colin_williams.jpg";
 import awsBadge from "~/assets/badges/132x132_aws_badge.png";
 import unityBadge from "~/assets/badges/132x132_unity_badge.png";
 import { SocialBadges } from "./SocialBadges";
+import { LABELS } from "~/constants/copy";
 
 export function HomePage() {
   return (
@@ -14,7 +15,7 @@ export function HomePage() {
               <div className="mask mask-squircle animate-fade-in">
                 <img
                   src={headshot}
-                  alt="Colin Williams"
+                  alt={LABELS.IMAGES.HEADSHOT}
                   className="w-48 md:w-64 h-68 md:h-90"
                 />
               </div>
@@ -27,14 +28,14 @@ export function HomePage() {
               <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <img
                   src={awsBadge}
-                  alt="AWS Badge"
+                  alt={LABELS.IMAGES.AWS_BADGE}
                   className="w-20 md:w-24"
                 />
               </div>
               <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <img
                   src={unityBadge}
-                  alt="Unity Badge"
+                  alt={LABELS.IMAGES.UNITY_BADGE}
                   className="w-20 md:w-24"
                 />
               </div>

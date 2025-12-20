@@ -2,17 +2,18 @@ import { Link } from "@tanstack/react-router";
 import { ThemeToggle } from "./ThemeToggle";
 import { SearchBar } from "./SearchBar";
 import { Menu } from "./Menu";
+import { LABELS } from "~/constants/copy";
 
 export function Header() {
   return (
     <header className="navbar bg-base-200 px-2 sm:px-4 min-h-16">
       <div className="flex-1">
-        <Link to="/" className="text-lg sm:text-xl font-bold">
+        <Link to="/" className="text-lg sm:text-xl font-bold" aria-label={LABELS.NAVIGATION.HOME}>
           Colin Williams
         </Link>
       </div>
       {/* Desktop navigation - hidden on mobile */}
-      <nav className="hidden md:flex items-center gap-4">
+      <nav className="hidden md:flex items-center gap-4" aria-label={LABELS.NAVIGATION.MAIN_NAV}>
         <SearchBar />
         <Link
           to="/"

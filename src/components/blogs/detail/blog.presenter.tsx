@@ -2,11 +2,12 @@ import { Link } from "@tanstack/react-router";
 import ReactMarkdown from "react-markdown";
 import { type BlogDetailPresenterProps } from "../abstract";
 import { ErrorHandleComponent } from "~c/shared/errors/ErrorHandle";
+import { LABELS } from "~/constants/copy";
 
 export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProps) {
   if (isLoading) {
     return (
-      <div className="flex justify-center py-8">
+      <div className="flex justify-center py-8" role="status" aria-label={LABELS.LOADING.SPINNER}>
         <span className="loading loading-spinner loading-lg"></span>
       </div>
     );
@@ -34,7 +35,7 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
             <a href={blog.url} target="_blank" rel="noopener noreferrer">
               <img
                 src={blog.cover_image}
-                alt={blog.title}
+                alt={`${LABELS.IMAGES.COVER_IMAGE}: ${blog.title}`}
                 className="w-full max-h-96 object-cover hover:opacity-90 transition-opacity"
               />
             </a>
@@ -53,14 +54,14 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
                 <div className="w-12 h-12 rounded-full">
                   <img
                     src={blog.user.profile_image_90}
-                    alt={blog.user.name}
+                    alt={`${LABELS.IMAGES.AUTHOR_PHOTO}: ${blog.user.name}`}
                   />
                 </div>
               </div>
               <span className="font-medium">{blog.user.name}</span>
             </Link>
             <span className="opacity-60">•</span>
-            <span className="opacity-60">
+            <span className="opacity-60" aria-label={LABELS.BLOG.PUBLISHED_DATE}>
               {new Date(blog.published_at).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
@@ -72,7 +73,7 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-8">
             {blog.tag_list.map((tag, index) => (
-              <span key={index} className="badge badge-primary">
+              <span key={index} className="badge badge-primary" aria-label={LABELS.BLOG.TAG}>
                 {tag}
               </span>
             ))}

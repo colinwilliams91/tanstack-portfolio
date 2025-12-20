@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import friends from "~/assets/headshots/colin_and_evan_you.jpeg";
+import { LABELS } from "~/constants/copy";
 
 export const Route = createFileRoute("/about/")({
   component: AboutPage,
@@ -14,7 +15,7 @@ function AboutPage() {
           <div className="mask mask-squircle animate-fade-in">
             <img
               src={friends}
-              alt="Colin Williams and Evan You"
+              alt={LABELS.IMAGES.ABOUT_PHOTO}
             />
           </div>
         </div>

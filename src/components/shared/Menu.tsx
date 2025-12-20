@@ -1,11 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { ICON_PATHS } from "~/constants/icons/svg-icons";
+import { LABELS } from "~/constants/copy";
 
 
 export function Menu() {
     return (
         <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle" aria-label={LABELS.NAVIGATION.MOBILE_MENU}>
             <svg
               xmlns={ICON_PATHS.W3}
               className="h-6 w-6"
@@ -22,6 +23,7 @@ export function Menu() {
             </svg>
           </div>
           <ul
+            tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100/50 border border-base-300/50 backdrop-blur-sm rounded-box z-1 mt-3 w-52 p-2 shadow-sm"
           >
             <li>

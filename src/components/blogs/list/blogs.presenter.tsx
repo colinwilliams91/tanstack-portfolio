@@ -1,10 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { type BlogsPresenterProps } from "../abstract";
+import { LABELS } from "~/constants/copy";
 
 export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
   if (isLoading) {
     return (
-      <div className="flex justify-center py-8">
+      <div className="flex justify-center py-8" role="status" aria-label={LABELS.LOADING.SPINNER}>
         <span className="loading loading-spinner loading-lg"></span>
       </div>
     );
@@ -20,6 +21,7 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
             to="/blogs/$blogId"
             params={{ blogId: String(blog.id) }}
             className="card bg-base-200 hover:shadow-xl transition-shadow"
+            aria-label={`${LABELS.BLOG.VIEW_BLOG}: ${blog.title}`}
           >
             <div className="card-body">
               {/* Author info with profile picture */}
@@ -28,7 +30,7 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
                   <div className="w-10 h-10 rounded-full">
                     <img
                       src={blog.user.profile_image_90}
-                      alt={blog.user.name}
+                      alt={`${LABELS.IMAGES.AUTHOR_PHOTO}: ${blog.user.name}`}
                     />
                   </div>
                 </div>
@@ -40,7 +42,7 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
                 <figure className="mb-4">
                   <img
                     src={blog.cover_image}
-                    alt={blog.title}
+                    alt={`${LABELS.IMAGES.COVER_IMAGE}: ${blog.title}`}
                     className="rounded-lg w-full h-48 object-cover"
                   />
                 </figure>
@@ -55,14 +57,14 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
               {/* Tags - display up to 4 */}
               <div className="flex flex-wrap gap-2 mt-2">
                 {blog.tag_list.map((tag, index) => (
-                  <span key={index} className="badge badge-primary badge-sm">
+                  <span key={index} className="badge badge-primary badge-sm" aria-label={LABELS.BLOG.TAG}>
                     {tag}
                   </span>
                 ))}
               </div>
 
               {/* Date */}
-              <div className="text-xs opacity-60 mt-2">
+              <div className="text-xs opacity-60 mt-2" aria-label={LABELS.BLOG.PUBLISHED_DATE}>
                 {new Date(blog.published_at).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
