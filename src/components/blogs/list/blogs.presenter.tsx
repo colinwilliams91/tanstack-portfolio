@@ -1,7 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { type BlogsPresenterProps } from "../abstract";
+import { useTheme } from "~/providers/ThemeContext";
+import { THEMES } from "~/constants/themes";
+import { useMemo } from "react";
 
 export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
+  const themeContext = useTheme();
+  const isDark = useMemo(() => themeContext.theme === THEMES.ABYSS, [themeContext.theme]);
+
   if (isLoading) {
     return (
       <div className="flex justify-center py-8">
@@ -24,16 +30,23 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
             <div className="card">
               <div className="card-body">
                 {/* Author info with profile picture */}
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="avatar">
-                    <div className="w-10 h-10 rounded-full">
-                      <img
-                        src={blog.user.profile_image_90}
-                        alt={blog.user.name}
-                      />
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <div className="flex items-center gap-2">
+                    <div className="avatar">
+                      <div className="w-10 h-10 rounded-full">
+                        <img
+                          src={blog.user.profile_image_90}
+                          alt={blog.user.name}
+                        />
+                      </div>
                     </div>
+                    <span className="text-sm font-medium">{blog.user.name}</span>
                   </div>
-                  <span className="text-sm font-medium">{blog.user.name}</span>
+                  <div className="flex items-center gap-1 shrink-0">
+                    <span className="label-text opacity-70 text-xs">✨</span>
+                    <div className={`badge bg-success/15 border border-accent-content/15 w-7 h-7 rounded-full
+                      flex items-center justify-center text-xs shadow-md`}>{blog.public_reactions_count}</div>
+                  </div>
                 </div>
 
                 {/* Cover image thumbnail */}
@@ -56,19 +69,23 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
                 {/* Tags - display up to 4 */}
                 <div className="flex flex-wrap gap-2 mt-2">
                   {blog.tag_list.map((tag, index) => (
-                    <span key={index} className="badge badge-primary badge-sm">
+                    <span key={index} className="badge badge-sm bg-success/15 border
+                      border-accent-content/15 backdrop-blur-2xl shadow-md">
                       {tag}
                     </span>
                   ))}
                 </div>
 
                 {/* Date */}
-                <div className="text-xs opacity-60 mt-2">
-                  {new Date(blog.published_at).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
+                <div className="flex items-center justify-between text-xs opacity-60 mt-2">
+                  <div>
+                    {new Date(blog.published_at).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </div>
+                  <div>{blog.reading_time_minutes} min read</div>
                 </div>
               </div>
             </div>
