@@ -1,7 +1,10 @@
-import { formatDataSize, getMostRecentDate } from "~/handlers/utils";
+import { formatDataSize, getMostRecentDate, truncateDescription } from "~/handlers/utils";
 import { type ProjectsPresenterProps } from "../abstract";
+import { useTheme } from "~/providers/ThemeContext";
 
 export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
+  const { theme } = useTheme();
+
   if (isLoading) {
     return (
       <div className="flex justify-center py-8">
@@ -20,22 +23,18 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
               <div className="card-body text-sm flex flex-col gap-2">
                 <h2 className="card-title">{project.name}</h2>
                 <img className="mask mask-circle w-16 h-16" src={project.owner.avatar_url} alt={project.name} />
-                <div className="text-sm p-3 italic rounded-xl bg-base-100/60
-                  opacity-80 shadow-md backdrop-blur-lg border border-accent-content/10
-                  min-h-21"
+                <div className={`text-sm p-3 italic rounded-xl ${theme === "abyss" ? "bg-base-100/40" : "bg-winter/30"}
+                  shadow-md backdrop-blur-lg border border-accent-content/10
+                  min-h-21`}
                 >
-                  {project.description
-                    ? project.description.length > 100
-                      ? `${project.description.slice(0, 100)}...`
-                      : project.description
-                    : "No description available"}
+                  {truncateDescription(project.description, 100)}
                 </div>
-                <div className="flex flex-col gap-1 mt-auto">
-                  <div>💻 {project.language?.length ? project.language : "N/A"}</div>
-                  <div>✨ {project.stargazers_count}</div>
-                  <div>🍴 {project.forks_count}</div>
-                  <div>🗓️ {getMostRecentDate([project.updated_at, project.pushed_at])}</div>
-                  <div>⚖️ {formatDataSize(project.size)}</div>
+                <div className="flex flex-wrap gap-2 mt-auto text-xs">
+                  <div className="badge badge-outline gap-1 glass">✨ {project.stargazers_count}</div>
+                  <div className="badge badge-outline gap-1 glass">💻 {project.language?.length ? project.language : "N/A"}</div>
+                  <div className="badge badge-outline gap-1 glass">🍴 {project.forks_count}</div>
+                  <div className="badge badge-outline gap-1 glass">🗓️ {getMostRecentDate([project.updated_at, project.pushed_at])}</div>
+                  <div className="badge badge-outline gap-1 glass">⚖️ {formatDataSize(project.size)}</div>
                 </div>
               </div>
             </div>

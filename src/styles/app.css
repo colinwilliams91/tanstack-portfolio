@@ -34,13 +34,37 @@
   }
 }
 
-body {
+.card {
+  @apply glass bg-base-200/5 rounded-2xl;
+}
+
+/* body {
   @apply bg-base-100;
   background-image:
     radial-gradient(at 47% 33%, color-mix(in oklch, var(--color-base-100) 30%, transparent) 0%, transparent 59%),
     radial-gradient(at 82% 65%, color-mix(in oklch, var(--color-accent) 50%, transparent) 0%, transparent 55%);
+} */
+
+/* Grid + Fixed Gradient */
+body {
+  @apply bg-base-100;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, color-mix(in oklch, var(--color-base-300) 3%, transparent) 2px, color-mix(in oklch, var(--color-base-300) 3%, transparent) 8px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, color-mix(in oklch, var(--color-base-300) 3%, transparent) 2px, color-mix(in oklch, var(--color-base-300) 3%, transparent) 8px),
+    radial-gradient(at 47% 33%, color-mix(in oklch, var(--color-secondary) 60%, transparent) 0%, transparent 59%),
+    radial-gradient(at 82% 65%, color-mix(in oklch, var(--color-accent) 50%, transparent) 0%, transparent 40%);
+  background-attachment: fixed;
 }
 
+/* body {
+  @apply bg-base-100;
+  background-image:
+    radial-gradient(circle at 20% 20%, color-mix(in oklch, var(--color-base-100) 25%, transparent) 0%, transparent 40%),
+    radial-gradient(circle at 80% 30%, color-mix(in oklch, var(--color-accent) 20%, transparent) 0%, transparent 35%),
+    radial-gradient(circle at 40% 70%, color-mix(in oklch, var(--color-secondary) 15%, transparent) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, color-mix(in oklch, var(--color-base-content) 18%, transparent) 0%, transparent 38%);
+  background-attachment: fixed;
+} */
 
 /*
   DaisyUI Customization
@@ -78,7 +102,3 @@ body {
   --color-error-content - Text color on error
 
 */
-
-.card {
-  @apply glass bg-base-200 rounded-2xl;
-}
