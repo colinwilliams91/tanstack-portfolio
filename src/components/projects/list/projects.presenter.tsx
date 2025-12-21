@@ -1,4 +1,4 @@
-import { formatDataSize, getMostRecentDate } from "~/handlers/utils";
+import { formatDataSize, getMostRecentDate, truncateDescription } from "~/handlers/utils";
 import { type ProjectsPresenterProps } from "../abstract";
 
 export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
@@ -24,11 +24,7 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
                   opacity-80 shadow-md backdrop-blur-lg border border-accent-content/10
                   min-h-21"
                 >
-                  {project.description
-                    ? project.description.length > 100
-                      ? `${project.description.slice(0, 100)}...`
-                      : project.description
-                    : "No description available"}
+                  {truncateDescription(project.description, 100)}
                 </div>
                 <div className="flex flex-col gap-1 mt-auto">
                   <div>💻 {project.language?.length ? project.language : "N/A"}</div>

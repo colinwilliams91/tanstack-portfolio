@@ -65,7 +65,6 @@ export const formatDateRelative = (dateString: string): string => {
   }
 };
 
-// TODO: Return a formatted date without the time component
 export const getMostRecentDate = (dates: (string | null)[]): string => {
   if (dates.length === 0)
     return "";
@@ -81,6 +80,21 @@ export const getMostRecentDate = (dates: (string | null)[]): string => {
       ? acc.slice(0, 10)
       : cur.slice(0, 10));
 };
+
+/////////////////////
+//#endregion ////////
+/////////////////////
+
+/////////////////////
+//#region PROJECTS //
+/////////////////////
+
+export const truncateDescription = (description: string | null, maxLength: number = 100): string =>
+  !description?.length
+    ? "No description available"
+    : description.length > maxLength
+      ? `${description.slice(0, maxLength)}...`
+      : description;
 
 /////////////////////
 //#endregion ////////
