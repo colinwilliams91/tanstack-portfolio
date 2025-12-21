@@ -15,7 +15,10 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6">Projects</h1>
+      <div className="flex items-center justify-between gap-4 mb-6">
+        <h1 className="text-3xl font-bold">Projects</h1>
+        <span className="text-xs opacity-30">Source repositories and libraries hosted on GitHub, Azure, NPM and NuGet. Games on Itch.io</span>
+      </div>
       <div className="grid gap-4.5 md:grid-cols-2 lg:grid-cols-3">
         {data?.slice().sort((a, b) => b.stargazers_count - a.stargazers_count).map((project) => (
           <a href={project.url} rel="noopener noreferrer" target="_blank" key={project.id} className="hover-3d">
