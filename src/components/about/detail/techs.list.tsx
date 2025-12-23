@@ -1,11 +1,15 @@
 import { TechTile } from "./techs.tile";
+import { TEXT_ROTATE_DURATIONS } from "~/constants/themes";
 
-export const TechsList = ({ techs, duration, style }: { techs: readonly string[], duration: number, style: string }) => {
+export const TechsList = ({ techs, duration, styleClass }: { techs: readonly string[], duration: number, styleClass: string }) => {
+
+    const rotationDuration = TEXT_ROTATE_DURATIONS[duration] || TEXT_ROTATE_DURATIONS[0];
+    const className = `text-rotate ${rotationDuration}`;
     return (
-        <span className={`text-rotate duration-${duration}`}>
+        <span className={className}>
             <span>
                 {
-                    techs.map((tech, index) => <TechTile key={index} styleClass={style} techDisplay={tech} />)
+                    techs.map((tech, index) => <TechTile key={index} styleClass={styleClass} techDisplay={tech} />)
                 }
             </span>
         </span>
