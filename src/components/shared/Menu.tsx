@@ -22,13 +22,13 @@ export function Menu() {
             </svg>
           </div>
           <ul
-            className="menu menu-sm dropdown-content bg-base-100/50 border border-base-300/50 backdrop-blur-sm rounded-box z-1 mt-3 w-52 p-2 shadow-sm"
+            className="menu menu-sm dropdown-content glass bg-base-200 rounded-xl z-1 mt-4.5 w-52 p-2 shadow-2xl"
           >
             <li>
               <Link
                 to="/"
-                className="nav-link"
-                activeProps={{ className: "text-primary font-semibold" }}
+                className="nav-link text-base-content border border-x-0 border-t-0 text-shadow-xs m-0.5"
+                activeProps={{ className: "text-primary font-semibold scale-99" }}
               >
                 Home
               </Link>
@@ -36,8 +36,8 @@ export function Menu() {
             <li>
               <Link
                 to="/about"
-                className="nav-link"
-                activeProps={{ className: "text-primary font-semibold" }}
+                className="nav-link text-base-content border border-x-0 border-t-0 text-shadow-xs m-0.5"
+                activeProps={{ className: "text-primary font-semibold scale-99" }}
               >
                 About
               </Link>
@@ -45,8 +45,8 @@ export function Menu() {
             <li>
               <Link
                 to="/projects"
-                className="nav-link"
-                activeProps={{ className: "text-primary font-semibold" }}
+                className="nav-link text-base-content border border-x-0 border-t-0 text-shadow-xs m-0.5"
+                activeProps={{ className: "text-primary font-semibold scale-99" }}
               >
                 Projects
               </Link>
@@ -54,8 +54,8 @@ export function Menu() {
             <li>
               <Link
                 to="/blogs"
-                className="nav-link"
-                activeProps={{ className: "text-primary font-semibold" }}
+                className="nav-link text-base-content border border-x-0 border-t-0 text-shadow-xs m-0.5"
+                activeProps={{ className: "text-primary font-semibold scale-99" }}
               >
                 Blogs
               </Link>
