@@ -3,6 +3,7 @@ import awsBadge from "~/assets/badges/132x132_aws_badge.png";
 import unityBadge from "~/assets/badges/132x132_unity_badge.png";
 import { SocialBadges } from "./SocialBadges"; // oklch(0.9 0.08 70.42)
 import { EmojiBadges } from "./EmojiBadges";
+import { CERT_BADGES } from "~/constants/icons/badges";
 
 export function HomePage() {
   return (
@@ -12,7 +13,7 @@ export function HomePage() {
           {/* Headshot Image */}
           <div className="shrink-0">
             <div className="avatar">
-              <div className="ring-accent ring-offset-current/85 shadow-2xl drop-shadow-2xl ring-offset-2 rounded-tl-full rounded-b-full animate-fade-in">
+              <div className="ring-accent ring-offset-current/75 shadow-2xl drop-shadow-2xl ring-offset-2 rounded-tl-full rounded-b-full animate-fade-in">
                 <img
                   src={headshot}
                   alt="Colin Williams"
@@ -27,19 +28,23 @@ export function HomePage() {
             <div className="flex flex-col justify-center gap-3">
               <div className="opacity-0 animate-fade-in"
                 style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-                <img
-                  src={awsBadge}
-                  alt="AWS Badge"
-                  className="w-20 md:w-24"
-                />
+                <a href={CERT_BADGES.AWS} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={awsBadge}
+                    alt="AWS Badge"
+                    className="w-20 md:w-24"
+                  />
+                </a>
               </div>
               <div className="opacity-0 animate-fade-in"
                 style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-                <img
-                  src={unityBadge}
-                  alt="Unity Badge"
-                  className="w-20 md:w-24"
-                />
+                <a href={CERT_BADGES.UNITY} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={unityBadge}
+                    alt="Unity Badge"
+                    className="w-20 md:w-24"
+                  />
+                </a>
               </div>
             </div>
           </div>
