@@ -7,7 +7,7 @@ export function Header() {
   return (
     <header className="navbar glass bg-base-200 opacity-90 px-2 sm:px-4 min-h-16 sticky top-0 z-50">
       <div className="flex-1">
-        <Link to="/" className="text-lg sm:text-xl font-bold">
+        <Link to="/" className="text-lg sm:text-xl font-bold text-shadow-2xl">
           Colin Williams
         </Link>
       </div>

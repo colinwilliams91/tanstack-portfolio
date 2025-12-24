@@ -8,11 +8,11 @@ export const Route = createFileRoute("/about/")({
 
 function AboutPage() {
   return (
-    <div className="flex flex-col md:flex-row gap-8 items-start">
+    <div className="flex flex-col md:flex-row gap-10 items-start">
       {/* Headshot Image with transition */}
-      <div className="w-full md:w-1/3 flex justify-center md:justify-start md:mt-12">
+      <div className="w-full md:w-1/3 flex justify-center md:justify-start md:mt-14">
         <div className="avatar">
-          <div className="ring-accent ring-offset-base-100 animate-fade-in rounded-full ring-1 ring-offset-2">
+          <div className="ring-accent ring-offset-current/75 shadow-2xl drop-shadow-2xl ring-offset-6 rounded-tl-full rounded-b-full animate-fade-in">
             <img
               src={friends}
               alt="Colin Williams and Evan You"
@@ -22,7 +22,7 @@ function AboutPage() {
       </div>
 
       {/* Content */}
-      <div className="prose max-w-none flex-1">
+      <div className="prose max-w-none flex-1 text-current">
         <h1>About</h1>
         <p>
           I'm Colin. Occasionally I enjoy karaoke with the creator of Vue.js, Evan You,
