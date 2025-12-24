@@ -1,63 +1,95 @@
+///////////////////////////////////////////
+// DaisyUI Text Rotate can only iterate ///
+// over collections of 6 per <span> ///////
+///////////////////////////////////////////
 
-export const client:string[] = [
-    "React",
-    "TanStack",
-    "Svelte",
-    "Vue.js",
-    "jQuery",
-    "Angular",
-    "Next",
-    "HTMX",
-    "Tailwind",
+export const client:string[][] = [
+    [
+        "React",
+        "Svelte",
+        "Vue.js",
+        "jQuery",
+        "Angular",
+    ],
+    [
+        "TanStack",
+        "Next.js",
+        "HTMX",
+        "Tailwind",
+        "Axios",
+    ],
 ] as const;
 
-export const server:string[] = [
-    "Node.js",
-    ".NET",
-    "LINQ",
-    "MediatR",
-    "Fluent Validation",
-    "WebSockets",
-    "Express",
-    "REST API",
+export const server:string[][] = [
+    [
+        "Node.js",
+        "Express",
+        "REST API",
+        "WebSockets",
+    ],
+    [
+        ".NET",
+        "LINQ",
+        "Fluent Validation",
+        "MediatR",
+    ],
 ] as const;
 
-export const database:string[] = [
-    "SQL Server",
-    "T-SQL",
-    "Execution Plans",
-    "Entity Framework",
-    "Indexing",
-    "SSMS",
-    "MongoDB",
+export const database:string[][] = [
+    [
+        "SQL Server",
+        "T-SQL",
+        "Execution Plans",
+        "Entity Framework",
+        "Indexing",
+        "SSMS",
+    ],
+    [
+        "MongoDB",
+        "Aggregate Pipelines",
+        "Query Plans",
+    ],
 ] as const;
 
-export const language:string[] = [
-    "TypeScript",
-    "JavaScript",
-    "C#",
-    "Powershell",
-    "Bash",
-    "SQL",
-    "Git",
+export const language:string[][] = [
+    [
+        "C#",
+        "SQL",
+        "Git",
+    ],
+    [
+        "TypeScript",
+        "JavaScript",
+        "Powershell",
+        "Bash",
+    ],
 ] as const;
 
-export const methodology:string[] = [
-    "OOP",
-    "SOLID",
-    "DDD",
-    "TDD",
-    "CQRS",
-    "Unit of Work",
-    "Agile",
+export const methodology:string[][] = [
+    [
+        "OOP",
+        "SOLID",
+        "DDD",
+        "CQRS",
+        "Unit of Work",
+    ],
+    [
+        "CI/CD",
+        "TDD",
+        "Agile",
+    ],
 ] as const;
 
-export const devops:string[] = [
-    "Azure",
-    "AWS",
-    "Service Bus",
-    "Docker",
-    "GitHub Actions",
-    "Kubernetes",
-    "YAML",
+export const devops:string[][] = [
+    [
+        "Azure",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+    ],
+    [
+        "GitHub Actions",
+        "YAML",
+        "Service Bus",
+    ],
 ] as const;
