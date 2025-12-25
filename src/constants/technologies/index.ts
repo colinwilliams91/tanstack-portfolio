@@ -54,12 +54,12 @@ export const database:string[][] = [
 export const language:string[][] = [
     [
         "C#",
-        "SQL",
-        "Git",
-    ],
-    [
         "TypeScript",
         "JavaScript",
+        "SQL",
+    ],
+    [
+        "Git",
         "Powershell",
         "Bash",
     ],

@@ -29,6 +29,10 @@
            before:duration-300 hover:before:w-full;
   }
 
+  .tech-category {
+    @apply glass rounded-field px-2 font-medium w-32.5 text-accent-content;
+  }
+
   .animate-fade-in {
     animation: var(--animate-fade-in);
   }

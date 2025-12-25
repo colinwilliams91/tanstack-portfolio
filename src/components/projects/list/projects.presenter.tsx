@@ -1,6 +1,7 @@
 import { formatDataSize, getMostRecentDate, truncateDescription } from "~/handlers/utils";
 import { type ProjectsPresenterProps } from "../abstract";
 import { useTheme } from "~/providers/ThemeContext";
+import { COPY } from "~/constants/copy";
 
 export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
   const { theme } = useTheme();
@@ -17,7 +18,7 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
     <div>
       <div className="flex items-center justify-between gap-4 mb-6">
         <h1 className="text-3xl font-bold">Projects</h1>
-        <span className="text-xs opacity-30">Source repositories and libraries hosted on GitHub, Azure, NPM and NuGet. Games on Itch.io</span>
+        <span className="text-xs opacity-40">{COPY.PROJECTS_PRESENTER.DESCRIPTION}</span>
       </div>
       <div className="grid gap-4.5 md:grid-cols-2 lg:grid-cols-3">
         {data?.slice().sort((a, b) => b.stargazers_count - a.stargazers_count).map((project) => (

@@ -5,6 +5,7 @@ import { Theme } from "~/types/themes";
 import { ICON_PATHS } from "~/constants/icons/svg-icons";
 import { THEMES } from "~/constants/themes";
 import { COOKIES } from "~/constants/cookies";
+import { CAREER_EVENTS } from "~/constants/events/career-events";
 
 /////////////////////
 //#region STYLES ////
@@ -79,6 +80,19 @@ export const getMostRecentDate = (dates: (string | null)[]): string => {
     .reduce((acc, cur) => new Date(acc) > new Date(cur)
       ? acc.slice(0, 10)
       : cur.slice(0, 10));
+};
+
+export const getYoeFromDate = (startDate: Date = CAREER_EVENTS.START, roundUp: boolean = false): { years: number, months: number } => {
+  const now = new Date();
+  const years = now.getFullYear() - startDate.getFullYear();
+  const months = now.getMonth() - startDate.getMonth();
+  return roundUp ? {
+    years: months > 0 ? years + 1 : years,
+    months: 0
+  } : {
+    years: years,
+    months: months
+  }
 };
 
 /////////////////////

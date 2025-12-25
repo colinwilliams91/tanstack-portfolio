@@ -52,7 +52,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="min-h-screen bg-base-100 font-mono">
+      <body className="min-h-screen bg-base-100 font-mono selection:bg-base-300/75 selection:text-accent-content">
         <QueryClientProvider client={queryClient}>
           <Header />
           <main className="container mx-auto px-4 py-8">{children}</main>
