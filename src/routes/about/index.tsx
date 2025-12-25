@@ -25,11 +25,21 @@ function AboutPage() {
         </div>
       </div>
 
-      {/* Content */}
+      {/* Content UNDO STEP FOR ANIMATE FIRST LETTER!!!!!*/}
       <div className="prose max-w-none flex-1 text-current">
-        <h1>About</h1>
-        <p className="first-letter:translate-x-0.5 first-letter:text-7xl first-letter:font-bold first-letter:mr-1 first-letter:float-left">
-          {firstLetter}I'm Colin. Occasionally I enjoy karaoke with the creator of Vue.js, Evan You,
+        <div className="flex items-center gap-3">
+          <h1 className="mb-0">About</h1>
+          <span className="relative inline-block text-5xl w-12 h-12">
+            <span className={`absolute inset-0 transition-all duration-300 ${theme === THEMES.WINTER ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-30 -rotate-45'}`}>
+              🖋️
+            </span>
+            <span className={`absolute inset-0 transition-all duration-300 ${theme === THEMES.WINTER ? 'opacity-0 scale-30 rotate-45' : 'opacity-100 scale-100 rotate-0'}`}>
+              🍃
+            </span>
+          </span>
+        </div>
+        <p>
+          I'm Colin. Occasionally I enjoy karaoke with the creator of Vue.js, Evan You,
           and when I'm not doing that I'm contributing to open source projects like <a href="https://github.com/dotnet/aspire/pull/8259" target="_blank" rel="noopener noreferrer">Microsoft Aspire v13</a>
         </p>
         <h2>Technical Expertise</h2>
