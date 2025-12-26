@@ -39,13 +39,23 @@ export function SearchBar() {
   // Auto-focus mobile input when modal opens
   useEffect(() => {
     if (isModalOpen && dialogRef.current) {
-      dialogRef.current.showModal();
-      // Focus input after modal is shown using requestAnimationFrame
-      requestAnimationFrame(() => {
-        mobileInputRef.current?.focus();
-      });
+      try {
+        dialogRef.current.showModal();
+        // Focus input after modal is shown using requestAnimationFrame
+        requestAnimationFrame(() => {
+          mobileInputRef.current?.focus();
+        });
+      } catch (error) {
+        // Dialog might already be open, ignore error
+        console.warn("Dialog showModal error:", error);
+      }
     } else if (!isModalOpen && dialogRef.current) {
-      dialogRef.current.close();
+      try {
+        dialogRef.current.close();
+      } catch (error) {
+        // Dialog might already be closed, ignore error
+        console.warn("Dialog close error:", error);
+      }
     }
   }, [isModalOpen]);
 
@@ -269,7 +279,7 @@ export function SearchBar() {
           </div>
         </div>
         <form method="dialog" className="modal-backdrop">
-          <button onClick={handleCloseModal} aria-label="Close modal"></button>
+          <button type="button" onClick={handleCloseModal} aria-label="Close modal"></button>
         </form>
       </dialog>
     </>
