@@ -3,6 +3,8 @@ import { getYoeFromDate } from "~/handlers/utils";
 export const COPY = {
   SEARCH_BAR: {
     PLACEHOLDER: "Start typing to search through my projects and blogs...",
+    TRUNCATED_L: "✨🦩🦦...", // TODO: make some util func to pull 3x random emojis from an array for these two string literals
+    TRUNCATED_D: "🍃🐊🌱...",
     NO_RESULTS: "No results found. Keep typing to search through projects and blogs...",
     START_TYPING: "Start typing to search through my projects and blogs...",
   },

@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { ThemeToggle } from "./ThemeToggle";
 import { SearchBar } from "./SearchBar";
 import { Menu } from "./Menu";
-import { getYoeFromDate } from "~/handlers/utils";
 import { COPY } from "~/constants/copy";
 
 export function Header() {

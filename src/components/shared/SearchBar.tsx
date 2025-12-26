@@ -3,8 +3,11 @@ import { KEYBOARD_EVENTS } from "~/constants/events/keyboard-events";
 import { DOM_EVENTS } from "~/constants/events/dom-events";
 import { COPY } from "~/constants/copy";
 import { Icon } from "./Icon";
+import { useTheme } from "~/providers/ThemeContext";
+import { THEMES } from "~/constants/themes";
 
 export function SearchBar() {
+  // TODO: this is too much react state... make a state machine or some leaner solution...
   const [isExpanded, setIsExpanded] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -13,6 +16,8 @@ export function SearchBar() {
   const inputRef = useRef<HTMLInputElement>(null);
   const mobileInputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const theme = useTheme().theme;
 
   // Mock results - will be replaced with actual data later
   const mockResults: Array<{ id: string; title: string; type: "blog" | "project" }> = [];
@@ -191,7 +196,7 @@ export function SearchBar() {
                 setSelectedIndex(-1);
               }}
               onKeyDown={handleKeyDown}
-              placeholder={COPY.SEARCH_BAR.PLACEHOLDER}
+              placeholder={theme === THEMES.WINTER ? COPY.SEARCH_BAR.TRUNCATED_L : COPY.SEARCH_BAR.TRUNCATED_D}
               className="input input-bordered w-full"
               aria-label="Search projects and blogs"
             />
