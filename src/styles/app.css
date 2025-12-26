@@ -40,7 +40,8 @@
   }
 
   .tech-tile {
-    @apply text-shadow-md text-xs w-48 sm:w-48 md:w-48 lg:w-48 px-3 shadow-2xs!;
+    @apply text-shadow-md text-xs shadow-2xs!
+           w-48 sm:w-48 md:w-48 lg:w-48 px-3;
   }
 
   .text-rotate:nth-of-type(even) .tech-tile {
