@@ -40,10 +40,10 @@ export function SearchBar() {
   useEffect(() => {
     if (isModalOpen && dialogRef.current) {
       dialogRef.current.showModal();
-      // Focus input after modal is shown
-      setTimeout(() => {
+      // Focus input after modal is shown using requestAnimationFrame
+      requestAnimationFrame(() => {
         mobileInputRef.current?.focus();
-      }, 0);
+      });
     } else if (!isModalOpen && dialogRef.current) {
       dialogRef.current.close();
     }
@@ -269,7 +269,7 @@ export function SearchBar() {
           </div>
         </div>
         <form method="dialog" className="modal-backdrop">
-          <button onClick={handleCloseModal}>close</button>
+          <button onClick={handleCloseModal} aria-label="Close modal"></button>
         </form>
       </dialog>
     </>
