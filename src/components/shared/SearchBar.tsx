@@ -13,6 +13,7 @@ export function SearchBar() {
   const inputRef = useRef<HTMLInputElement>(null);
   const mobileInputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   // Mock results - will be replaced with actual data later
   const mockResults: Array<{ id: string; title: string; type: "blog" | "project" }> = [];
@@ -37,8 +38,14 @@ export function SearchBar() {
 
   // Auto-focus mobile input when modal opens
   useEffect(() => {
-    if (isModalOpen && mobileInputRef.current) {
-      mobileInputRef.current.focus();
+    if (isModalOpen && dialogRef.current) {
+      dialogRef.current.showModal();
+      // Focus input after modal is shown
+      setTimeout(() => {
+        mobileInputRef.current?.focus();
+      }, 0);
+    } else if (!isModalOpen && dialogRef.current) {
+      dialogRef.current.close();
     }
   }, [isModalOpen]);
 
@@ -184,12 +191,12 @@ export function SearchBar() {
       </button>
 
       {/* Mobile Search Modal */}
-      {isModalOpen && (
-        <div className="md:hidden fixed inset-2 shadow-2xl z-50 bg-base-100/60 rounded-box backdrop-blur-sm flex flex-col">
+      <dialog ref={dialogRef} className="modal md:hidden">
+        <div className="modal-box w-11/12 max-w-5xl flex flex-col max-h-[90vh]">
           {/* Modal Header */}
-          <div className="flex items-center gap-4 p-4 border-b border-base-300">
+          <div className="flex items-center gap-4 pb-4 border-b border-base-300">
             <button
-              className="btn btn-ghost btn-circle"
+              className="btn btn-ghost btn-circle btn-sm"
               onClick={handleCloseModal}
               aria-label="Close search"
             >
@@ -224,7 +231,7 @@ export function SearchBar() {
           </div>
 
           {/* Modal Content - Results */}
-          <div className="flex-1 overflow-y-auto p-4">
+          <div className="flex-1 overflow-y-auto pt-4">
             {showMobileResults ? (
               mockResults.length > 0 ? (
                 <ul className="menu w-full">
@@ -261,7 +268,10 @@ export function SearchBar() {
             )}
           </div>
         </div>
-      )}
+        <form method="dialog" className="modal-backdrop">
+          <button onClick={handleCloseModal}>close</button>
+        </form>
+      </dialog>
     </>
   );
 }
