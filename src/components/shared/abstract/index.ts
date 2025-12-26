@@ -13,6 +13,5 @@ export interface ErrorHandleComponentProps {
 export interface SocialBadge {
   href: string;
   tooltip: string;
-  icon: string;
-  viewBox: string;
+  iconName: string;
 }
