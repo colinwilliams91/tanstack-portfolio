@@ -1,7 +1,7 @@
 import headshot from "~/assets/headshots/colin_williams.webp";
 import awsBadge from "~/assets/badges/132x132_aws_badge.png";
 import unityBadge from "~/assets/badges/132x132_unity_badge.png";
-import { SocialBadges } from "./SocialBadges"; // oklch(0.9 0.08 70.42)
+import { SocialBadges } from "./SocialBadges";
 import { EmojiBadges } from "./EmojiBadges";
 import { CERT_BADGES } from "~/constants/icons/badges";
 
