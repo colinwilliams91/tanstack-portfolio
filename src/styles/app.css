@@ -34,12 +34,12 @@
   }
 
   .tech-base {
-    @apply glass text-accent-content uppercase tracking-wider
+    @apply glass text-accent-content uppercase tracking-wider font-bold
            inline-flex justify-center items-center rounded-b-box;
   }
 
   .tech-category {
-    @apply rounded-tl-box px-2 text-sm w-37;
+    @apply rounded-tl-box px-2 text-sm w-37 font-family-mono;
   }
 
   .tech-tile {
