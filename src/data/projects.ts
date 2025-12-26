@@ -1,4 +1,11 @@
-import { type Project } from "~/types/projects/index";
+import { type GitHubRepository } from "~/types/projects/index";
+
+// Legacy type for backward compatibility with old dummy data
+type Project = {
+  id: number;
+  name: string;
+  description: string;
+};
 
 export const projects: Project[] = [
   {
