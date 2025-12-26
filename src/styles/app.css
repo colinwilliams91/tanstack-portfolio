@@ -11,6 +11,9 @@
   --animate-fade-in: fade-in 0.8s ease-out;
 }
 
+@custom-variant theme-abyss (&:where([data-theme="abyss"] *));
+@custom-variant theme-winter (&:where([data-theme="winter"] *));
+
 @keyframes fade-in {
   from {
     opacity: 0;
