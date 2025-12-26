@@ -46,15 +46,15 @@ export function useSearchCache() {
         .filter((blog: Article) => {
           return (
             blog.title.toLowerCase().includes(lowerQuery) ||
-            blog.description.toLowerCase().includes(lowerQuery) ||
-            blog.tags.toLowerCase().includes(lowerQuery) ||
-            blog.tag_list.some(tag => tag.toLowerCase().includes(lowerQuery))
+            (blog.description && blog.description.toLowerCase().includes(lowerQuery)) ||
+            (blog.tags && blog.tags.toLowerCase().includes(lowerQuery)) ||
+            (blog.tag_list && blog.tag_list.some(tag => tag.toLowerCase().includes(lowerQuery)))
           );
         })
         .map((blog: Article) => ({
           id: `blog-${blog.id}`,
           title: blog.title,
-          description: blog.description,
+          description: blog.description || "",
           type: "blog" as const,
           url: `/blogs/${blog.id}`,
         }));
