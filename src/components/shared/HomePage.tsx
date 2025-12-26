@@ -1,7 +1,7 @@
 import headshot from "~/assets/headshots/colin_williams.webp";
 import awsBadge from "~/assets/badges/132x132_aws_badge.png";
 import unityBadge from "~/assets/badges/132x132_unity_badge.png";
-import { SocialBadges } from "./SocialBadges"; // oklch(0.9 0.08 70.42)
+import { SocialBadges } from "./SocialBadges";
 import { EmojiBadges } from "./EmojiBadges";
 import { CERT_BADGES } from "~/constants/icons/badges";
 
@@ -13,7 +13,8 @@ export function HomePage() {
           {/* Headshot Image */}
           <div className="shrink-0">
             <div className="avatar">
-              <div className="ring-accent ring-offset-current/75 ring-offset-3 rounded-tl-full rounded-b-full shadow-2xl drop-shadow-2xl animate-fade-in">
+              <div className="theme-abyss:ring-accent theme-winter:ring-primary-content/45 ring-offset-current/75 ring-2 ring-offset-4
+                theme:winter:ring-offset-6 rounded-tl-full rounded-b-full shadow-2xl drop-shadow-2xl animate-fade-in">
                 <img
                   src={headshot}
                   alt="Colin Williams"

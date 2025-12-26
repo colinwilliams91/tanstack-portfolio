@@ -9,42 +9,42 @@ export function TechnologiesPresenter() {
   return (
     <div className="grid grid-cols-[auto_1fr] gap-x-2 gap-y-2">
 
-      <div className="tech-base tech-category bg-base-300/50">
+      <div className="tech-base tech-category bg-base-300/50 theme-winter:bg-accent/50">
         Languages
       </div>
       <div>
         <TechsList techs={language} duration={5} styleClass="bg-secondary/50"/>
       </div>
 
-      <div className="tech-base tech-category bg-base-300/40">
+      <div className="tech-base tech-category bg-base-300/40 theme-winter:bg-accent/40">
         Client
       </div>
       <div>
         <TechsList techs={client} duration={4} styleClass="bg-secondary/40"/>
       </div>
 
-      <div className="tech-base tech-category bg-base-300/30">
+      <div className="tech-base tech-category bg-base-300/30 theme-winter:bg-accent/30">
         Server
       </div>
       <div>
         <TechsList techs={server} duration={3} styleClass="bg-secondary/30"/>
       </div>
 
-      <div className="tech-base tech-category bg-base-300/20">
+      <div className="tech-base tech-category bg-base-300/20 theme-winter:bg-accent/20">
         Database
       </div>
       <div>
         <TechsList techs={database} duration={2} styleClass="bg-secondary/20"/>
       </div>
 
-      <div className="tech-base tech-category bg-base-300/10">
+      <div className="tech-base tech-category bg-base-300/10 theme-winter:bg-accent/10">
         Methodologies
       </div>
       <div>
         <TechsList techs={methodology} duration={1} styleClass="bg-secondary/10"/>
       </div>
 
-      <div className="tech-base tech-category bg-base-300/05">
+      <div className="tech-base tech-category bg-base-300/05 theme-winter:bg-accent/05">
         DevOps
       </div>
       <div>

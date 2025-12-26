@@ -16,7 +16,8 @@ function AboutPage() {
       {/* Headshot Image with transition */}
       <div className="w-full md:w-1/3 flex justify-center md:justify-start md:mt-14">
         <div className="avatar">
-          <div className="ring-accent ring-offset-current/75 shadow-2xl drop-shadow-2xl ring-offset-6 rounded-tl-full rounded-b-full animate-fade-in">
+          <div className="ring-4 ring-accent theme-winter:ring-primary-content/45 ring-offset-current/75
+            ring-offset-6 theme-winter:ring-offset-8 rounded-tl-full rounded-b-full animate-fade-in shadow-2xl drop-shadow-2xl">
             <img
               src={friends}
               alt="Colin Williams and Evan You"
