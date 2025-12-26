@@ -6,7 +6,7 @@ export const TechsList = ({ techs, duration, styleClass }: { techs: readonly str
         <div className="flex flex-wrap gap-2">
             {techs.map((arr, groupIndex) => {
                 const rotationDuration = TEXT_ROTATE_DURATIONS[duration + groupIndex] || TEXT_ROTATE_DURATIONS[0];
-                const className = `text-rotate ${rotationDuration} rounded-field`;
+                const className = `text-rotate ${rotationDuration}`;
                 return (
                 <span key={arr[0] + groupIndex} className={className}>
                     <span>

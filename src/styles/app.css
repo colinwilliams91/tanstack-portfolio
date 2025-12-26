@@ -2,6 +2,7 @@
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
     themes: abyss --default --prefersdark, winter;
+    darkMode: "media";
 }
 
 @theme {
@@ -24,13 +25,26 @@
 @layer components {
   .nav-link {
     @apply relative transition-all duration-300 hover:scale-105
-           before:content-[''] before:absolute before:bottom-0 before:left-0
-           before:w-0 before:h-0.5 before:bg-primary before:transition-all
-           before:duration-300 hover:before:w-full;
+           before:content-[''] before:absolute before:bottom-0
+           before:left-0 before:w-0 before:h-0.5 before:bg-primary
+           before:transition-all before:duration-300 hover:before:w-full;
+  }
+
+  .tech-base {
+    @apply glass text-accent-content uppercase tracking-wider
+           inline-flex justify-center items-center rounded-b-box;
   }
 
   .tech-category {
-    @apply glass rounded-field px-2 font-medium w-32.5 text-accent-content;
+    @apply rounded-tl-box px-2 text-sm w-37;
+  }
+
+  .tech-tile {
+    @apply text-shadow-md text-xs w-48 sm:w-48 md:w-48 lg:w-48 px-3 shadow-2xs!;
+  }
+
+  .text-rotate:nth-of-type(even) .tech-tile {
+    @apply sm:rounded-tr-box md:rounded-tr-box lg:rounded-tr-box;
   }
 
   .animate-fade-in {
