@@ -2,12 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { ThemeToggle } from "./ThemeToggle";
 import { SearchBar } from "./SearchBar";
 import { Menu } from "./Menu";
-import { getYoeFromDate } from "~/handlers/utils";
 import { COPY } from "~/constants/copy";
 
 export function Header() {
   return (
-    <header className="navbar glass bg-base-200/90 opacity-90 px-2 sm:px-4 min-h-16 sticky top-0 z-50">
+    <header className="navbar bg-base-200/90 px-2 sm:px-4 min-h-16 sticky top-0 z-50">
       <div className="flex-1 flex items-center gap-3">
         <Link to="/" className="text-lg sm:text-xl font-bold text-shadow-2xl">
           Colin Williams
