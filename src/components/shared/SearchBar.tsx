@@ -41,6 +41,8 @@ export function SearchBar() {
     if (isModalOpen && dialogRef.current) {
       try {
         dialogRef.current.showModal();
+        // Allow background scrolling by removing overflow hidden from body
+        document.body.style.overflow = 'auto';
         // Focus input after modal is shown using requestAnimationFrame
         requestAnimationFrame(() => {
           mobileInputRef.current?.focus();
@@ -52,6 +54,8 @@ export function SearchBar() {
     } else if (!isModalOpen && dialogRef.current) {
       try {
         dialogRef.current.close();
+        // Restore default overflow behavior
+        document.body.style.overflow = '';
       } catch (error) {
         // Dialog might already be closed, ignore error
         console.warn("Dialog close error:", error);
