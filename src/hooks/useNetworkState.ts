@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * Connection type as reported by the Network Information API
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/type
+ */
 type ConnectionType = 
-  | 'bluetooth'
-  | 'cellular'
-  | 'ethernet'
-  | 'none'
-  | 'wifi'
-  | 'wimax'
-  | 'other'
-  | 'unknown';
+  | 'bluetooth'  // Bluetooth connection
+  | 'cellular'   // Mobile network (2G, 3G, 4G, 5G)
+  | 'ethernet'   // Wired ethernet connection
+  | 'none'       // No network connection
+  | 'wifi'       // WiFi connection
+  | 'wimax'      // WiMAX (Worldwide Interoperability for Microwave Access) connection
+  | 'other'      // Other or unknown connection type
+  | 'unknown';   // Connection type cannot be determined
 
 interface NetworkInformation extends EventTarget {
   readonly downlink?: number;

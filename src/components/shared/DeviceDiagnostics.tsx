@@ -4,6 +4,9 @@ import { useNetworkState } from "~/hooks/useNetworkState";
 import { Icon } from "./Icon";
 import { DOM_EVENTS } from "~/constants/events/dom-events";
 
+// Radial progress indicator size and styling constants
+const RADIAL_PROGRESS_SIZE = "3rem";
+
 export function DeviceDiagnostics() {
   const battery = useBattery();
   const network = useNetworkState();
@@ -69,7 +72,7 @@ export function DeviceDiagnostics() {
             {batteryPercentage !== null && (
               <div
                 className="radial-progress text-sm"
-                style={{ "--value": batteryPercentage, "--size": "3rem" } as React.CSSProperties}
+                style={{ "--value": batteryPercentage, "--size": RADIAL_PROGRESS_SIZE } as React.CSSProperties}
                 role="progressbar"
                 aria-valuenow={batteryPercentage}
                 aria-valuemin={0}

@@ -11,6 +11,11 @@ interface BatteryManager extends EventTarget {
   onlevelchange: ((this: BatteryManager, ev: Event) => any) | null;
 }
 
+/**
+ * Extended Navigator interface with Battery Status API support.
+ * Note: The Battery Status API is experimental and may not be available in all browsers.
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API
+ */
 interface NavigatorWithBattery extends Navigator {
   getBattery?: () => Promise<BatteryManager>;
 }
