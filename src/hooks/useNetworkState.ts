@@ -1,20 +1,22 @@
 import { useState, useEffect } from 'react';
 
+type ConnectionType = 
+  | 'bluetooth'
+  | 'cellular'
+  | 'ethernet'
+  | 'none'
+  | 'wifi'
+  | 'wimax'
+  | 'other'
+  | 'unknown';
+
 interface NetworkInformation extends EventTarget {
   readonly downlink?: number;
   readonly downlinkMax?: number;
   readonly effectiveType?: 'slow-2g' | '2g' | '3g' | '4g';
   readonly rtt?: number;
   readonly saveData?: boolean;
-  readonly type?: 
-    | 'bluetooth'
-    | 'cellular'
-    | 'ethernet'
-    | 'none'
-    | 'wifi'
-    | 'wimax'
-    | 'other'
-    | 'unknown';
+  readonly type?: ConnectionType;
   onchange?: ((this: NetworkInformation, ev: Event) => any) | null;
 }
 
@@ -31,15 +33,7 @@ interface NetworkState {
   effectiveType?: 'slow-2g' | '2g' | '3g' | '4g';
   rtt?: number;
   saveData?: boolean;
-  type?: 
-    | 'bluetooth'
-    | 'cellular'
-    | 'ethernet'
-    | 'none'
-    | 'wifi'
-    | 'wimax'
-    | 'other'
-    | 'unknown';
+  type?: ConnectionType;
 }
 
 export function useNetworkState(): NetworkState {

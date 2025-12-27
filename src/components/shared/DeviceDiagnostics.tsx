@@ -67,19 +67,17 @@ export function DeviceDiagnostics() {
           <div className="stat-title">Battery</div>
           <div className="stat-value text-primary flex items-center gap-3">
             {batteryPercentage !== null && (
-              <>
-                <div
-                  className="radial-progress text-sm"
-                  style={{ "--value": batteryPercentage, "--size": "3rem" } as React.CSSProperties}
-                  role="progressbar"
-                  aria-valuenow={batteryPercentage}
-                  aria-valuemin={0}
-                  aria-valuemax={100}
-                  aria-label={`Battery level ${batteryPercentage}%`}
-                >
-                  {batteryPercentage}%
-                </div>
-              </>
+              <div
+                className="radial-progress text-sm"
+                style={{ "--value": batteryPercentage, "--size": "3rem" } as React.CSSProperties}
+                role="progressbar"
+                aria-valuenow={batteryPercentage}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-label={`Battery level ${batteryPercentage}%`}
+              >
+                {batteryPercentage}%
+              </div>
             )}
           </div>
           <div className="stat-desc">
@@ -151,7 +149,7 @@ export function DeviceDiagnostics() {
         <Icon name="signal" className="w-6 h-6 fill-current" />
       </button>
 
-      {/* Mobile Modal - Similar to SearchBar modal */}
+      {/* Mobile Modal - Uses same glass background pattern as SearchBar modal for consistency */}
       {isModalOpen && (
         <div className="md:hidden fixed inset-2 shadow-2xl z-50 bg-base-100/60 rounded-box backdrop-blur-sm flex flex-col diagnostics-modal">
           {/* Modal Header */}
