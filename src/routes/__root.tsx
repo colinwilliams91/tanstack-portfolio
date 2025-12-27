@@ -8,6 +8,7 @@ import {
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Header } from "~c/shared/Header";
+import { DeviceDiagnostics } from "~c/shared/DeviceDiagnostics";
 import { queryClient } from "~/router";
 import { ThemeProvider, useTheme } from "~/providers/ThemeContext";
 import { ErrorLogComponent } from "~c/shared/errors/ErrorLog";
@@ -56,6 +57,7 @@ function RootDocument({ children }: { children: ReactNode }) {
         <QueryClientProvider client={queryClient}>
           <Header />
           <main className="container mx-auto px-4 py-8">{children}</main>
+          <DeviceDiagnostics />
         </QueryClientProvider>
         <Scripts />
         <TanStackRouterDevtools position="bottom-right" />
