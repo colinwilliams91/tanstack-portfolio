@@ -17,7 +17,9 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "~c/*": ["./src/components/*"]
+      "~c/*": ["./src/components/*"],
+      "~a/*": ["./src/assets/*"],
+      "~s/*": ["./src/components/shared/*"],
     },
     "noEmit": true,
     "types": ["vite/client"]

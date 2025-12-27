@@ -1,4 +1,4 @@
-import { useQuery, queryOptions } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { ProjectsPresenter } from "./projects.presenter";
 
 import { QUERY_OPTIONS } from "~/constants/queries/query-options";
