@@ -1,10 +1,10 @@
 import headshot from "~a/headshots/colin_williams.webp";
 import awsBadge from "~a/badges/132x132_aws_badge.png";
 import unityBadge from "~a/badges/132x132_unity_badge.png";
-import { SocialBadges } from "~s/SocialBadges";
-import { EmojiBadges } from "~s/EmojiBadges";
+import { SocialBadges } from "~s/badges/SocialBadges";
+import { EmojiBadges } from "~s/badges/EmojiBadges";
+import { CertBadge } from "~s/badges/CertBadge";
 import { CERT_BADGES } from "~/constants/icons/badges";
-import { CertBadge } from "~/components/shared/CertBadge";
 
 export function HomePagePresenter() {
   return (

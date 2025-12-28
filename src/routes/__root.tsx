@@ -8,7 +8,7 @@ import {
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Header } from "~c/shared/Header";
-import { DeviceDiagnostics } from "~c/shared/DeviceDiagnostics";
+import { DeviceDiagnosticsContainer } from "~c/shared/diagnostics/diagnostics.container";
 import { queryClient } from "~/router";
 import { ThemeProvider, useTheme } from "~/providers/ThemeContext";
 import { ErrorLogComponent } from "~c/shared/errors/ErrorLog";
@@ -57,10 +57,10 @@ function RootDocument({ children }: { children: ReactNode }) {
         <QueryClientProvider client={queryClient}>
           <Header />
           <main className="container mx-auto px-4 py-8">{children}</main>
-          <DeviceDiagnostics />
+          <DeviceDiagnosticsContainer />
         </QueryClientProvider>
         <Scripts />
-        <TanStackRouterDevtools position="bottom-right" />
+        <TanStackRouterDevtools position="bottom-left" />
         <footer className="container mx-auto px-6 py-6 opacity-60 text-xs text-center mt-auto">
           <div>
             ｡˚☁️©️ colin williams • {new Date().getFullYear()} ˚｡˚
