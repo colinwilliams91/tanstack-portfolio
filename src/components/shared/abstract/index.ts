@@ -1,5 +1,16 @@
 import { IconPathValue } from "~/constants/icons/svg-icons";
 
+export interface CertBadgeProps {
+  animationDelay?: string;
+  imgUrl: string;
+  href: string;
+}
+
+export interface IconProps extends React.SVGProps<SVGSVGElement> {
+  name: string;
+  className?: string;
+}
+
 export interface SvgIconProps {
   pathVal: IconPathValue;
 }
