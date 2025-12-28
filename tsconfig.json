@@ -20,6 +20,7 @@
       "~c/*": ["./src/components/*"],
       "~a/*": ["./src/assets/*"],
       "~s/*": ["./src/components/shared/*"],
+      "~t/*": ["./src/types/*"],
     },
     "noEmit": true,
     "types": ["vite/client"]

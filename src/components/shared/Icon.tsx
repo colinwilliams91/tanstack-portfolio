@@ -13,7 +13,7 @@ import { IconProps } from "./abstract/index";
 export function Icon({ name, className, ...props }: IconProps) {
   return (
     <svg className={className} {...props}>
-      <use href={`/sprite.svg#icon-${name}`} />
+      <use href={`/sprite.svg?v=10#icon-${name}`} />
     </svg>
   );
 }
