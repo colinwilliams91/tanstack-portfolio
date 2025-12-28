@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ICON_PATHS } from "~/constants/icons/svg-icons";
+import { Icon } from "../Icon";
 
 export function NotFound() {
   return (
@@ -7,20 +7,7 @@ export function NotFound() {
       <div className="card bg-base-200 w-full max-w-lg shadow-xl">
         <div className="card-body">
           <div className="flex items-center gap-2">
-            <svg
-              xmlns={ICON_PATHS.W3}
-              className="h-6 w-6 text-warning"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+            <Icon name="warning" className="h-6 w-6 text-error" />
             <h2 className="card-title text-warning">Page Not Found</h2>
           </div>
 
