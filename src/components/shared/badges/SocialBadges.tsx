@@ -1,5 +1,5 @@
 import { SOCIAL_BADGES } from "~/constants/icons/badges";
-import { Icon } from "./Icon";
+import { Icon } from "../Icon";
 
 export function SocialBadges() {
   return (
