@@ -1,33 +1,5 @@
 import { useState, useEffect } from 'react';
-
-interface BatteryManager extends EventTarget {
-  charging: boolean;
-  chargingTime: number;
-  dischargingTime: number;
-  level: number;
-  onchargingchange: ((this: BatteryManager, ev: Event) => any) | null;
-  onchargingtimechange: ((this: BatteryManager, ev: Event) => any) | null;
-  ondischargingtimechange: ((this: BatteryManager, ev: Event) => any) | null;
-  onlevelchange: ((this: BatteryManager, ev: Event) => any) | null;
-}
-
-/**
- * Extended Navigator interface with Battery Status API support.
- * Note: The Battery Status API is experimental and may not be available in all browsers.
- * @see https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API
- */
-interface NavigatorWithBattery extends Navigator {
-  getBattery?: () => Promise<BatteryManager>;
-}
-
-interface BatteryState {
-  supported: boolean;
-  loading: boolean;
-  level: number | null;
-  charging: boolean | null;
-  chargingTime: number | null;
-  dischargingTime: number | null;
-}
+import { type BatteryManager, type BatteryState, type NavigatorWithBattery } from '~/types/battery';
 
 export function useBattery(): BatteryState {
   const [state, setState] = useState<BatteryState>({
