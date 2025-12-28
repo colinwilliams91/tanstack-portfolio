@@ -1,4 +1,4 @@
-import { CertBadgeProps } from "./abstract";
+import { CertBadgeProps } from "../abstract";
 
 export const CertBadge = (
     { animationDelay = "0.0s", imgUrl, href }: CertBadgeProps

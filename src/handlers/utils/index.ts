@@ -2,10 +2,10 @@ import { setCookie } from "@tanstack/react-start/server";
 import { createServerOnlyFn } from "@tanstack/react-start";
 import { Theme } from "~/types/themes";
 
-import { ICON_PATHS } from "~/constants/icons/svg-icons";
 import { THEMES } from "~/constants/themes";
 import { COOKIES } from "~/constants/cookies";
 import { CAREER_EVENTS } from "~/constants/events/career-events";
+import { IconName } from "~/components/shared/abstract";
 
 /////////////////////
 //#region STYLES ////
@@ -93,6 +93,30 @@ export const getYoeFromDate = (startDate: Date = CAREER_EVENTS.START, roundUp: b
     years: years,
     months: months
   }
+};
+
+// Format battery level to percentage
+export const getBatteryPercentage = (batteryLevel: number | null): number | null => batteryLevel !== null ? Math.round(batteryLevel * 100) : null;
+
+export const getBatteryLevelIcon = (percentage: number): IconName => {
+  let iconName: IconName = "battery";
+  if (percentage === 100) iconName = "battery-full";
+  if (percentage >= 75 && percentage < 100) iconName = "battery-three";
+  if (percentage >= 50 && percentage < 75) iconName = "battery-two";
+  if (percentage >= 10 && percentage < 50) iconName = "battery-one";
+  return iconName;
+};
+
+// Get effective connection type display name
+export const getConnectionTypeName = (network: { online: boolean; type?: string; effectiveType?: string }) => {
+  if (!network.online) return "Offline";
+  if (network.type) {
+    return network.type.charAt(0).toUpperCase() + network.type.slice(1);
+  }
+  if (network.effectiveType) {
+    return network.effectiveType.toUpperCase();
+  }
+  return "Online";
 };
 
 /////////////////////

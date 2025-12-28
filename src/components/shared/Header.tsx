@@ -1,10 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { ThemeToggle } from "./ThemeToggle";
+import { ThemeToggle } from "./themes/ThemeToggle";
 import { SearchBar } from "./SearchBar";
 import { Menu } from "./Menu";
 import { COPY } from "~/constants/copy";
+import { useVibrate } from "~/hooks/useVibrate";
+import { Icon } from "./Icon";
 
 export function Header() {
+  const vibrate = useVibrate();
   return (
     <header className="navbar bg-base-200/90 px-2 sm:px-4 min-h-16 sticky top-0 z-50">
       <div className="flex-1 flex items-center gap-3">
@@ -20,31 +23,39 @@ export function Header() {
         <SearchBar />
         <Link
           to="/"
-          className="nav-link"
+          onClick={() => vibrate()}
+          className="tooltip tooltip-bottom hover:scale-105 transition-transform duration-150"
+          data-tip="home"
           activeProps={{ className: "text-primary font-semibold" }}
         >
-          Home
+          <Icon name={"home"} className="w-6 h-6 fill-current" stroke="currentColor" fill="none" aria-hidden="true" />
         </Link>
         <Link
           to="/about"
-          className="nav-link"
+          onClick={() => vibrate()}
+          className="tooltip tooltip-bottom hover:scale-105 transition-transform duration-150"
+          data-tip="about"
           activeProps={{ className: "text-primary font-semibold" }}
         >
-          About
+          <Icon name={"about"} className="w-6 h-6 fill-current" stroke="currentColor" fill="none" aria-hidden="true" />
         </Link>
         <Link
           to="/projects"
-          className="nav-link"
+          onClick={() => vibrate()}
+          className="tooltip tooltip-bottom hover:scale-105 transition-transform duration-150"
+          data-tip="projects"
           activeProps={{ className: "text-primary font-semibold" }}
         >
-          Projects
+          <Icon name={"projects"} className="w-7 h-7 fill-current" stroke="currentColor" fill="none" aria-hidden="true" />
         </Link>
         <Link
           to="/blogs"
-          className="nav-link"
+          onClick={() => vibrate()}
+          className="tooltip tooltip-bottom hover:scale-105 transition-transform duration-150"
+          data-tip="blogs"
           activeProps={{ className: "text-primary font-semibold" }}
         >
-          Blogs
+          <Icon name={"blogs"} className="w-6 h-6 fill-current" stroke="currentColor" fill="none" aria-hidden="true" />
         </Link>
         <ThemeToggle />
       </nav>
