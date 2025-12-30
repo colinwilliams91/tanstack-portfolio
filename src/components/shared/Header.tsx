@@ -24,7 +24,7 @@ export function Header() {
         <Link
           to="/"
           onClick={() => vibrate()}
-          className="tooltip tooltip-bottom hover:scale-105 transition-transform duration-150"
+          className="nav-button"
           data-tip="home"
           activeProps={{ className: "text-primary font-semibold" }}
         >
@@ -33,7 +33,7 @@ export function Header() {
         <Link
           to="/about"
           onClick={() => vibrate()}
-          className="tooltip tooltip-bottom hover:scale-105 transition-transform duration-150"
+          className="nav-button"
           data-tip="about"
           activeProps={{ className: "text-primary font-semibold" }}
         >
@@ -42,7 +42,7 @@ export function Header() {
         <Link
           to="/projects"
           onClick={() => vibrate()}
-          className="tooltip tooltip-bottom hover:scale-105 transition-transform duration-150"
+          className="nav-button"
           data-tip="projects"
           activeProps={{ className: "text-primary font-semibold" }}
         >
@@ -51,7 +51,7 @@ export function Header() {
         <Link
           to="/blogs"
           onClick={() => vibrate()}
-          className="tooltip tooltip-bottom hover:scale-105 transition-transform duration-150"
+          className="nav-button"
           data-tip="blogs"
           activeProps={{ className: "text-primary font-semibold" }}
         >
