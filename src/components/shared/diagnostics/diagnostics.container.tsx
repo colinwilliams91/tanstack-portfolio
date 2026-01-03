@@ -42,7 +42,7 @@ export function DeviceDiagnosticsContainer() {
         <div className="absolute bottom-20 right-5.5 sm:right-0 glass bg-base-300/30 backdrop-blur-sm rounded-box shadow-xl
             max-h-[80vh] overflow-y-auto w-80 max-w-[calc(100vw-2rem)] sm:w-76">
           {/* Card Header */}
-          <div className="flex items-center justify-between p-4 border-b border-base-300">
+          <div className="flex items-center justify-between p-4 shadow">
             <h2 className="text-lg font-semibold">Device Diagnostics</h2>
             <button
               className="btn btn-ghost btn-circle btn-sm"
@@ -59,7 +59,7 @@ export function DeviceDiagnosticsContainer() {
           </div>
 
           {/* Card Content */}
-          <div className="p-4">
+          <div className="py-4 px-7">
             <DiagnosticsPresenter battery={battery} network={network} />
           </div>
         </div>

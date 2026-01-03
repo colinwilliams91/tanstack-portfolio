@@ -10,7 +10,7 @@ export const DiagnosticsPresenter = ({ battery, network }: DiagnosticsContentPro
     const batteryIconName = getBatteryLevelIcon(batteryPercentage ?? 0);
     const networkConnectionType = getConnectionTypeName(network);
     return (
-        <div className="stats stats-vertical shadow-lg">
+        <div className="stats stats-vertical shadow-lg inline-block backdrop-blur-lg">
         {/* Battery Stat */}
         {battery.supported && !battery.loading && (
             <div className="stat">
@@ -22,7 +22,7 @@ export const DiagnosticsPresenter = ({ battery, network }: DiagnosticsContentPro
                 />
             </div>
             <div className="stat-title">Battery</div>
-            <div className="stat-value text-primary flex items-center gap-3">
+            <div className="stat-value text-primary">
                 {batteryPercentage !== null && (
                 <div
                     className="radial-progress text-sm"
@@ -52,7 +52,13 @@ export const DiagnosticsPresenter = ({ battery, network }: DiagnosticsContentPro
                     aria-hidden="true"
                 />
             </div>
-            <div className="stat-title">Network</div>
+            <div className="stat-title">
+                Network&nbsp;
+                <div className="inline-grid *:[grid-area:1/1]">
+                    <div className={`status ${network.online ? "status-success" : "status-error"} animate-ping`}></div>
+                    <div className={`status ${network.online ? "status-success" : "status-error"}`}></div>
+                </div>
+            </div>
             <div className="stat-value text-secondary text-2xl">
                 {networkConnectionType}
             </div>
