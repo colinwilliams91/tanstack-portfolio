@@ -7,7 +7,7 @@ export function SocialBadges() {
       {SOCIAL_BADGES.map((badge, index) => (
         <div
           key={badge.tooltip}
-          className="tooltip"
+          className="nav-button tooltip"
           data-tip={badge.tooltip}>
           <a
             href={badge.href}
