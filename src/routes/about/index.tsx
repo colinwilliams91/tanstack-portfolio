@@ -5,6 +5,12 @@ import { THEMES } from "~/constants/themes";
 import { useTheme } from "~/providers/ThemeContext";
 
 export const Route = createFileRoute("/about/")({
+  head: () => ({
+    meta: [
+      { title: "About Colin Williams - Software Engineer & Open Source Contributor" },
+      { name: "description", content: "Learn more about Colin Williams, a full-stack software engineer with expertise in React, TypeScript, .NET, and cloud technologies. Open source contributor to Microsoft Aspire and passionate about modern web development." },
+    ],
+  }),
   component: AboutPage,
 });
 

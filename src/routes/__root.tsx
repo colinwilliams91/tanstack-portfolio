@@ -20,7 +20,24 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Portfolio" },
+      { title: "Colin Williams - Full-Stack Software Engineer | Web Developer Portfolio" },
+      { name: "description", content: "Colin Williams is a full-stack software engineer and web developer specializing in React, TypeScript, TanStack, .NET, and cloud technologies. Explore projects, blog posts, and technical expertise." },
+      { name: "keywords", content: "Colin Williams, software engineer, web developer, full-stack developer, React developer, TypeScript, TanStack, .NET, AWS, cloud computing, software development portfolio" },
+      { name: "author", content: "Colin Williams" },
+      { name: "robots", content: "index, follow" },
+      
+      // Open Graph meta tags for social sharing
+      { property: "og:title", content: "Colin Williams - Full-Stack Software Engineer" },
+      { property: "og:description", content: "Full-stack software engineer specializing in React, TypeScript, TanStack, and cloud technologies. View my portfolio, projects, and technical blog." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://colin-williams.netlify.app" },
+      { property: "og:site_name", content: "Colin Williams Portfolio" },
+      
+      // Twitter Card meta tags
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Colin Williams - Full-Stack Software Engineer" },
+      { name: "twitter:description", content: "Full-stack software engineer specializing in React, TypeScript, TanStack, and cloud technologies." },
+      { name: "twitter:creator", content: "@colinwilliams91" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -28,6 +45,7 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
       },
+      { rel: "canonical", href: "https://colin-williams.netlify.app" },
     ],
   }),
   component: RootComponent,
