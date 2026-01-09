@@ -5,8 +5,15 @@ import { COPY } from "~/constants/copy";
 import { Icon } from "./Icon";
 import { useTheme } from "~/providers/ThemeContext";
 import { THEMES } from "~/constants/themes";
+import { useFeatureFlag } from "~/hooks/useFeatureFlag";
+import { FEATURE_FLAGS_KEYS } from "~/constants/feature-flags";
 
 export function SearchBar() {
+  const isSearchEnabled = useFeatureFlag(FEATURE_FLAGS_KEYS.SEARCH_BAR);
+
+  if (!isSearchEnabled) {
+    return null;
+  }
   // TODO: this is too much react state... make a state machine or some leaner solution...
   const [isExpanded, setIsExpanded] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
