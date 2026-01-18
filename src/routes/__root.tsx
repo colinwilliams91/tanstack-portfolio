@@ -5,7 +5,7 @@ import {
   Scripts,
   createRootRoute,
 } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+// import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Header } from "~c/shared/Header";
@@ -62,7 +62,7 @@ function RootDocument({ children }: { children: ReactNode }) {
           <ReactQueryDevtools buttonPosition="bottom-left"/>
         </QueryClientProvider>
         <Scripts />
-        <TanStackRouterDevtools position="bottom-left" />
+        {/* <TanStackRouterDevtools position="bottom-left" /> */}
         <footer className="container mx-auto px-6 py-6 opacity-60 text-xs text-center mt-auto">
           <div>
             ｡˚☁️©️ colin williams • {new Date().getFullYear()} ˚｡˚
