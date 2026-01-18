@@ -19,7 +19,7 @@ export function SearchBar() {
 
   // Use the search cache hook to get cached data and fetching status
   const { search, isFetching, isLoading } = useSearchCache();
-  
+
   // Get search results from cached data
   const searchResults = search(searchQuery);
 
@@ -143,8 +143,8 @@ export function SearchBar() {
           </svg>
           {/* Status indicator - show when fetching */}
           {isFetching && (
-            <span className="status status-primary status-xs absolute -top-0.5 -right-0.5">
-              <span className="status status-primary status-xs animate-ping absolute"></span>
+            <span className="status status-primary status-sm absolute top-1 right-1">
+                <span className="status status-primary status-sm animate-ping absolute"></span>
             </span>
           )}
         </div>
@@ -228,8 +228,8 @@ export function SearchBar() {
         </svg>
         {/* Status indicator - show when fetching */}
         {isFetching && (
-          <span className="status status-primary status-xs absolute top-2 right-2">
-            <span className="status status-primary status-xs animate-ping absolute"></span>
+          <span className="status status-primary status-sm absolute top-1 right-1">
+            <span className="status status-primary status-sm animate-ping absolute right-0"></span>
           </span>
         )}
       </button>
