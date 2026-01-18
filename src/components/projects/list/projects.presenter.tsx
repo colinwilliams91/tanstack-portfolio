@@ -22,7 +22,7 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
       </div>
       <div className="grid gap-4.5 md:grid-cols-2 lg:grid-cols-3">
         {data?.slice().sort((a, b) => b.stargazers_count - a.stargazers_count).map((project) => (
-          <a href={project.url} rel="noopener noreferrer" target="_blank" key={project.id} className="hover-3d">
+          <a href={project.html_url} rel="noopener noreferrer" target="_blank" key={project.id} className="hover-3d">
             <div className="card">
               <div className="card-body text-sm flex flex-col gap-2">
                 <h2 className="card-title">{project.name}</h2>

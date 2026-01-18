@@ -22,6 +22,8 @@ const listProjectsPageQueryOptions = queryOptions({
 const listBlogsPageQueryOptions = queryOptions({
   queryKey: QUERY_KEYS.BLOGS,
   queryFn: fetchBlogs,
+  staleTime: 1000 * 60 * 5, // 5 minutes (default 0 (never fresh))
+  gcTime: 1000 * 60 * 60, // 1 hour (default 5 minutes)
 });
 
 /**

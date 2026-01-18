@@ -3,7 +3,7 @@
  * Toggle flags here to control feature visibility across the application
  */
 export const FEATURE_FLAGS = {
-  SEARCH_BAR: false, // Search functionality in header
+  SEARCH_BAR: true, // Search functionality in header
 } as const;
 
 export type FeatureFlag = keyof typeof FEATURE_FLAGS;
