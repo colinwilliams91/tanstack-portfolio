@@ -6,6 +6,7 @@ import {
   createRootRoute,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Header } from "~c/shared/Header";
 import { queryClient } from "~/router";
@@ -56,6 +57,7 @@ function RootDocument({ children }: { children: ReactNode }) {
         <QueryClientProvider client={queryClient}>
           <Header />
           <main className="container mx-auto px-4 py-8">{children}</main>
+          <ReactQueryDevtools buttonPosition="bottom-left"/>
         </QueryClientProvider>
         <Scripts />
         <TanStackRouterDevtools position="bottom-right" />
