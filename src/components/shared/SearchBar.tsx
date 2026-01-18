@@ -2,11 +2,21 @@ import { useState, useRef, useEffect, type KeyboardEvent } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { KEYBOARD_EVENTS } from "~/constants/events/keyboard-events";
 import { DOM_EVENTS } from "~/constants/events/dom-events";
-import { ICON_PATHS } from "~/constants/icons/svg-icons";
 import { COPY } from "~/constants/copy";
+import { Icon } from "./Icon";
+import { useTheme } from "~/providers/ThemeContext";
+import { THEMES } from "~/constants/themes";
+import { useFeatureFlag } from "~/hooks/useFeatureFlag";
+import { FEATURE_FLAGS_KEYS } from "~/constants/feature-flags";
 import { useSearchCache } from "~/hooks/useSearchCache";
 
 export function SearchBar() {
+  const isSearchEnabled = useFeatureFlag(FEATURE_FLAGS_KEYS.SEARCH_BAR);
+
+  if (!isSearchEnabled) {
+    return null;
+  }
+  // TODO: this is too much react state... make a state machine or some leaner solution...
   const [isExpanded, setIsExpanded] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -15,6 +25,8 @@ export function SearchBar() {
   const inputRef = useRef<HTMLInputElement>(null);
   const mobileInputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const theme = useTheme().theme;
   const navigate = useNavigate();
 
   // Use the search cache hook to get cached data and fetching status
@@ -131,17 +143,10 @@ export function SearchBar() {
         onMouseEnter={() => setIsExpanded(true)}
         onMouseLeave={() => !isFocused && setIsExpanded(false)}
       >
-        {/* Search Icon with Status Indicator */}
+        {/* Search Icon */}
         <div className="flex items-center justify-center w-10 h-10 relative">
-          <svg
-            xmlns={ICON_PATHS.W3}
-            viewBox="0 0 512 512"
-            className="w-5 h-5 fill-current"
-            aria-hidden="true"
-          >
-            <path d={ICON_PATHS.SEARCH} />
-          </svg>
-          {/* Status indicator - show when fetching */}
+          <Icon name="search" className="w-5 h-5 fill-current" aria-hidden="true" />
+        {/* Status indicator - show when fetching */}
           {isFetching && (
             <span className="status status-primary status-sm absolute top-1 right-1">
                 <span className="status status-primary status-sm animate-ping absolute"></span>
@@ -219,19 +224,13 @@ export function SearchBar() {
         onClick={handleMobileIconClick}
         aria-label="Open search"
       >
-        <svg
-          xmlns={ICON_PATHS.W3}
-          viewBox="0 0 512 512"
-          className="w-5 h-5 fill-current"
-        >
-          <path d={ICON_PATHS.SEARCH} />
-        </svg>
+        <Icon name="search" className="w-5 h-5 fill-current" />
         {/* Status indicator - show when fetching */}
-        {isFetching && (
-          <span className="status status-primary status-sm absolute top-1 right-1">
-            <span className="status status-primary status-sm animate-ping absolute right-0"></span>
-          </span>
-        )}
+          {isFetching && (
+            <span className="status status-primary status-sm absolute top-1 right-1">
+              <span className="status status-primary status-sm animate-ping absolute right-0"></span>
+            </span>
+          )}
       </button>
 
       {/* Mobile Search Modal */}
@@ -244,20 +243,7 @@ export function SearchBar() {
               onClick={handleCloseModal}
               aria-label="Close search"
             >
-              <svg
-                xmlns={ICON_PATHS.W3}
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <Icon name="close" className="h-6 w-6" stroke="currentColor" fill="none" />
             </button>
             <input
               ref={mobileInputRef}
@@ -268,7 +254,7 @@ export function SearchBar() {
                 setSelectedIndex(-1);
               }}
               onKeyDown={handleKeyDown}
-              placeholder={COPY.SEARCH_BAR.PLACEHOLDER}
+              placeholder={theme === THEMES.WINTER ? COPY.SEARCH_BAR.TRUNCATED_L : COPY.SEARCH_BAR.TRUNCATED_D}
               className="input input-bordered w-full"
               aria-label="Search projects and blogs"
             />

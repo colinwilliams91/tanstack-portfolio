@@ -1,5 +1,5 @@
 import { SOCIAL_BADGES } from "~/constants/icons/badges";
-import { ICON_PATHS } from "~/constants/icons/svg-icons";
+import { Icon } from "../Icon";
 
 export function SocialBadges() {
   return (
@@ -7,7 +7,7 @@ export function SocialBadges() {
       {SOCIAL_BADGES.map((badge, index) => (
         <div
           key={badge.tooltip}
-          className="tooltip"
+          className="nav-button tooltip"
           data-tip={badge.tooltip}>
           <a
             href={badge.href}
@@ -17,13 +17,7 @@ export function SocialBadges() {
             style={{ animationDelay: `0.${index + 6}s`, animationFillMode: 'forwards' }}
             aria-label={badge.tooltip}
           >
-            <svg
-              xmlns={ICON_PATHS.W3}
-              viewBox={badge.viewBox}
-              className="h-6 w-6 fill-current"
-            >
-              <path d={badge.icon} />
-            </svg>
+            <Icon name={badge.iconName} className="h-6 w-6 fill-current" />
           </a>
         </div>
       ))}

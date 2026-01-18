@@ -1,25 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { ICON_PATHS } from "~/constants/icons/svg-icons";
+import { Icon } from "./Icon";
 
 
 export function Menu() {
     return (
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-            <svg
-              xmlns={ICON_PATHS.W3}
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={ICON_PATHS.MENU}
-              />
-            </svg>
+            <Icon name="menu" className="h-6 w-6" stroke="currentColor" fill="none" />
           </div>
           <ul
             className="menu menu-sm dropdown-content glass bg-base-200 rounded-xl z-1 mt-4.5 w-52 p-2 shadow-2xl"

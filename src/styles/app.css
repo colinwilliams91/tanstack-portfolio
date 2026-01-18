@@ -11,6 +11,9 @@
   --animate-fade-in: fade-in 0.8s ease-out;
 }
 
+@custom-variant theme-abyss (&:where([data-theme="abyss"] *));
+@custom-variant theme-winter (&:where([data-theme="winter"] *));
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -30,17 +33,23 @@
            before:transition-all before:duration-300 hover:before:w-full;
   }
 
+  .nav-button {
+    @apply tooltip tooltip-bottom hover:scale-105 transition-transform
+           duration-150 hover:rotate-6
+  }
+
   .tech-base {
-    @apply glass text-accent-content uppercase tracking-wider
+    @apply glass text-accent-content uppercase tracking-wider font-bold
            inline-flex justify-center items-center rounded-b-box;
   }
 
   .tech-category {
-    @apply rounded-tl-box px-2 text-sm w-37;
+    @apply rounded-tl-box px-2 text-sm w-37 font-family-mono;
   }
 
   .tech-tile {
-    @apply text-shadow-md text-xs w-48 sm:w-48 md:w-48 lg:w-48 px-3 shadow-2xs!;
+    @apply text-shadow-md text-xs shadow-2xs!
+           w-48 sm:w-48 md:w-48 lg:w-48 px-3;
   }
 
   .text-rotate:nth-of-type(even) .tech-tile {
