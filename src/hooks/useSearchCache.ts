@@ -2,14 +2,7 @@ import { useQueries } from "@tanstack/react-query";
 import { QUERY_OPTIONS } from "~/constants/queries/query-options";
 import type { Article } from "~/types/blogs";
 import type { GitHubRepository } from "~/types/projects";
-
-export interface SearchResult {
-  id: string;
-  title: string;
-  description: string;
-  type: "blog" | "project";
-  url: string;
-}
+import type { SearchResult } from "~/hooks/abstract";
 
 /**
  * Hook to access cached blogs and projects data for search functionality.
@@ -25,7 +18,7 @@ export function useSearchCache() {
 
   // Check if either query is fetching (initial load or background refresh)
   const isFetching = blogsQuery.isFetching || projectsQuery.isFetching;
-  
+
   // Check if either query is loading (initial load only)
   const isLoading = blogsQuery.isLoading || projectsQuery.isLoading;
 
@@ -48,7 +41,8 @@ export function useSearchCache() {
             blog.title.toLowerCase().includes(lowerQuery) ||
             (blog.description && blog.description.toLowerCase().includes(lowerQuery)) ||
             (blog.tags && blog.tags.toLowerCase().includes(lowerQuery)) ||
-            (blog.tag_list && blog.tag_list.some(tag => tag.toLowerCase().includes(lowerQuery)))
+            (blog.tag_list && blog.tag_list.some(tag => tag.toLowerCase().includes(lowerQuery))) ||
+            (lowerQuery === "blog") // Always match if searching for "blog"
           );
         })
         .map((blog: Article) => ({
@@ -58,7 +52,7 @@ export function useSearchCache() {
           type: "blog" as const,
           url: `/blogs/${blog.id}`,
         }));
-      
+
       results.push(...blogResults);
     }
 
@@ -70,7 +64,8 @@ export function useSearchCache() {
             project.name.toLowerCase().includes(lowerQuery) ||
             (project.description && project.description.toLowerCase().includes(lowerQuery)) ||
             (project.language && project.language.toLowerCase().includes(lowerQuery)) ||
-            (project.topics && project.topics.some(topic => topic.toLowerCase().includes(lowerQuery)))
+            (project.topics && project.topics.some(topic => topic.toLowerCase().includes(lowerQuery))) ||
+            (lowerQuery === "project") // Always match if searching for "project"
           );
         })
         .map((project: GitHubRepository) => ({
@@ -80,7 +75,7 @@ export function useSearchCache() {
           type: "project" as const,
           url: project.html_url,
         }));
-      
+
       results.push(...projectResults);
     }
 

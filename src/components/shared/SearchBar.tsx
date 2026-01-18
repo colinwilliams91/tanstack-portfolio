@@ -83,18 +83,10 @@ export function SearchBar() {
           window.open(selectedResult.url, "_blank", "noopener,noreferrer");
         }
         // Close search UI
-        setIsFocused(false);
-        setIsExpanded(false);
-        setSearchQuery("");
-        setSelectedIndex(-1);
-        setIsModalOpen(false);
+        handleCloseSearchUI();
       }
     } else if (e.key === KEYBOARD_EVENTS.ESCAPE) {
-      setIsFocused(false);
-      setIsExpanded(false);
-      setSearchQuery("");
-      setSelectedIndex(-1);
-      setIsModalOpen(false);
+      handleCloseSearchUI();
       inputRef.current?.blur();
       mobileInputRef.current?.blur();
     }
@@ -124,12 +116,16 @@ export function SearchBar() {
       window.open(result.url, "_blank", "noopener,noreferrer");
     }
     // Close search UI
+    handleCloseSearchUI();
+  };
+
+  const handleCloseSearchUI = () => {
     setIsFocused(false);
     setIsExpanded(false);
     setSearchQuery("");
     setSelectedIndex(-1);
     setIsModalOpen(false);
-  };
+  }
 
   const showDropdown = isFocused && searchQuery.length > 0;
   const showMobileResults = isModalOpen && searchQuery.length > 0;
