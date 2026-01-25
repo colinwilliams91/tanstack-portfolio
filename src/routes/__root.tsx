@@ -25,14 +25,14 @@ export const Route = createRootRoute({
       { name: "keywords", content: "Colin Williams, software engineer, web developer, full-stack developer, React developer, TypeScript, TanStack, .NET, AWS, cloud computing, software development portfolio" },
       { name: "author", content: "Colin Williams" },
       { name: "robots", content: "index, follow" },
-      
+
       // Open Graph meta tags for social sharing
       { property: "og:title", content: "Colin Williams - Full-Stack Software Engineer" },
       { property: "og:description", content: "Full-stack software engineer specializing in React, TypeScript, TanStack, and cloud technologies. View my portfolio, projects, and technical blog." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://colin-williams.netlify.app" },
       { property: "og:site_name", content: "Colin Williams Portfolio" },
-      
+
       // Twitter Card meta tags
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Colin Williams - Full-Stack Software Engineer" },
@@ -70,6 +70,10 @@ function RootDocument({ children }: { children: ReactNode }) {
     <html lang="en" data-theme={theme}>
       <head>
         <HeadContent />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className="min-h-screen bg-base-100 font-mono selection:bg-base-300/75 selection:text-accent-content">
         <QueryClientProvider client={queryClient}>
