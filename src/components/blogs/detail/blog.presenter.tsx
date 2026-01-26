@@ -76,6 +76,14 @@ export function BlogDetailPresenter({ blog, isLoading }: BlogDetailPresenterProp
                 {tag}
               </span>
             ))}
+            <div className="flex items-center gap-1 shrink-0 ml-auto">
+              <span className="label-text opacity-70 text-xs">👍</span>
+              <div className={`badge badge-primary border border-accent-content/15 w-7 h-7 rounded-full
+                flex items-center justify-center text-xs shadow-md underline underline-offset-1`}>
+                  {blog.public_reactions_count}
+              </div>
+              <span className="label-text opacity-70 text-xs">👍</span>
+            </div>
           </div>
 
           {/* Markdown content */}

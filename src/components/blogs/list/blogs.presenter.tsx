@@ -45,7 +45,9 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
                   <div className="flex items-center gap-1 shrink-0">
                     <span className="label-text opacity-70 text-xs">✨</span>
                     <div className={`badge bg-success/15 border border-accent-content/15 w-7 h-7 rounded-full
-                      flex items-center justify-center text-xs shadow-md`}>{blog.public_reactions_count}</div>
+                      flex items-center justify-center text-xs shadow-md`}>
+                        {blog.public_reactions_count}
+                    </div>
                   </div>
                 </div>
 

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 export function useVibrate() {
-  const vibrate = useCallback((pattern: number | number[] = 100) => {
+  const vibrate = useCallback((pattern: number | number[] = 200) => {
     // Feature detection
     if (!navigator.vibrate) {
       return false; // Not supported
