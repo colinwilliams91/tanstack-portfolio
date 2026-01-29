@@ -11,9 +11,9 @@ export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
   const themeContext = useTheme();
   const isDark = useMemo(() => themeContext.theme === THEMES.ABYSS, [themeContext.theme]);
 
-  const handleBlogHover = async (blogId: number) => {
+  const handleBlogHover = (blogId: number) => {
     // Prefetch the blog detail data when user hovers over a blog card
-    await queryClient.prefetchQuery(QUERY_OPTIONS.BLOGS.DETAIL(blogId));
+    queryClient.prefetchQuery(QUERY_OPTIONS.BLOGS.DETAIL(blogId));
   };
 
   if (isLoading) {
