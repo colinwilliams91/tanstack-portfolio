@@ -40,7 +40,7 @@ export function ContributorAvatars({ repository, maxAvatars = 5 }: ContributorAv
       {isLoading && Array.from({ length: placeholderCount }).map((_, index) => (
         <div key={`placeholder-${index}`} className="avatar avatar-placeholder">
           <div className="w-10 rounded-full bg-neutral text-neutral-content ring ring-base-300 ring-offset-base-100 ring-offset-2">
-            <span className="text-xs">{index + 1}</span>
+            <span className="text-xs">•</span>
           </div>
         </div>
       ))}

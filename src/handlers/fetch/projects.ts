@@ -20,8 +20,8 @@ export async function fetchProjects(): Promise<GitHubRepositoriesResponse> {
     if (import.meta.env.DEV) {
       const endTime = performance.now();
       console.log(`[fetchProjects] Fetched ${data.length} projects in ${(endTime - startTime).toFixed(2)}ms`);
+      console.dir(data);
     }
-    console.dir(data);
     return data;
   } catch (error) {
     console.warn("[fetchProjects] Failed to fetch from API, using mock data:", error);
