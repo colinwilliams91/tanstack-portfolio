@@ -2,7 +2,7 @@ import { TechnologiesContainerList } from "./list/technologies.container";
 import friends from "~/assets/headshots/colin_and_evan_you.webp";
 import { THEMES } from "~/constants/themes";
 import { AboutPresenterProps } from "./abstract";
-
+import { API_URLS } from "~/constants/public-api-urls";
 
 export const AboutPresenter = ({ theme, firstLetter }: AboutPresenterProps) => {
   /* firstLetter is currently unused as it was under construction and deemed temporarily undesirable */
@@ -36,7 +36,7 @@ export const AboutPresenter = ({ theme, firstLetter }: AboutPresenterProps) => {
         </div>
         <p>
           I'm Colin. Occasionally I enjoy karaoke with the creator of Vue.js, Evan You,
-          and when I'm not doing that I'm contributing to open source projects like <a href="https://github.com/dotnet/aspire/pull/8259" target="_blank" rel="noopener noreferrer">Microsoft Aspire v13</a>
+          and when I'm not doing that I'm contributing to open source projects like <a href={API_URLS.OSS.MICROSOFT_ASPIRE} target="_blank" rel="noopener noreferrer">Microsoft Aspire v13</a>
         </p>
         <h2>Technical Expertise</h2>
         <TechnologiesContainerList />

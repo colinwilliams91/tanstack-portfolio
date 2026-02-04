@@ -3,12 +3,13 @@ import { queryClient } from "~/router";
 import { BlogsContainerPage } from "~/components/blogs/list/blogs.container";
 
 import { QUERY_OPTIONS } from "~/constants/queries/query-options";
+import { META } from "~/constants/data";
 
 export const Route = createFileRoute("/blogs/")({
   head: () => ({
     meta: [
-      { title: "Blog by Colin Williams - Software Engineering Insights & Tutorials" },
-      { name: "description", content: "Read Colin Williams' blog posts about software engineering, web development, React, TypeScript, TanStack, and modern development practices. Technical articles and insights from a full-stack developer." },
+      { title: META.BLOGS.TITLE },
+      { name: "description", content: META.BLOGS.DESCRIPTION },
     ],
   }),
   loader: () =>

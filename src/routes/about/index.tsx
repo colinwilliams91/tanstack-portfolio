@@ -5,8 +5,8 @@ import { META } from "~/constants/data";
 export const Route = createFileRoute("/about/")({
   head: () => ({
     meta: [
-      { title: META.about.title },
-      { name: "description", content: META.about.description },
+      { title: META.ABOUT.TITLE },
+      { name: "description", content: META.ABOUT.DESCRIPTION },
     ],
   }),
   component: AboutPageContainer,

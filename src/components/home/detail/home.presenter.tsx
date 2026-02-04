@@ -5,43 +5,13 @@ import { SocialBadges } from "~s/badges/SocialBadges";
 import { EmojiBadges } from "~s/badges/EmojiBadges";
 import { CertBadge } from "~s/badges/CertBadge";
 import { CERT_BADGES } from "~/constants/icons/badges";
+import { META } from "~/constants/data";
 
 export function HomePagePresenter() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Colin Williams",
-    "jobTitle": "Full-Stack Software Engineer",
-    "description": "Full-stack software engineer specializing in React, TypeScript, TanStack, .NET, and cloud technologies",
-    "url": "https://colin-williams.netlify.app",
-    "sameAs": [
-      "https://github.com/colinwilliams91",
-      "https://www.linkedin.com/in/colin-williams-dev/",
-      "https://dev.to/colin-williams-dev"
-    ],
-    "knowsAbout": [
-      "React",
-      "TypeScript",
-      "JavaScript",
-      "TanStack",
-      ".NET",
-      "C#",
-      "AWS",
-      "Cloud Computing",
-      "Web Development",
-      "Full-Stack Development",
-      "Software Engineering"
-    ],
-    "alumniOf": {
-      "@type": "Organization",
-      "name": "AWS Certified Solutions Architect"
-    }
-  };
-
   return (
     <>
       <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
+        {JSON.stringify(META.STRUCTURED_DATA)}
       </script>
       <div className="hero min-h-[60vh]">
           <div className="hero-content flex-col lg:flex-row gap-3">
