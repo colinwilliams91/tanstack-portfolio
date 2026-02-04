@@ -14,22 +14,12 @@ import { queryClient } from "~/router";
 import { ThemeProvider, useTheme } from "~/providers/ThemeContext";
 import { ErrorLogComponent } from "~c/shared/errors/ErrorLog";
 import { NotFound } from "~c/shared/errors/NotFound";
-import appCss from "~/styles/app.css?url";
+import { META } from "~/constants/data";
 
 export const Route = createRootRoute({
   head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Portfolio" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-      },
-    ],
+    meta: META.ROOT.DATA,
+    links: META.ROOT.LINKS,
   }),
   component: RootComponent,
   errorComponent: ErrorLogComponent,
@@ -53,6 +43,10 @@ function RootDocument({ children }: { children: ReactNode }) {
     <html lang="en" data-theme={theme}>
       <head>
         <HeadContent />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className="min-h-screen bg-base-100 font-mono selection:bg-base-300/75 selection:text-accent-content">
         <QueryClientProvider client={queryClient}>
