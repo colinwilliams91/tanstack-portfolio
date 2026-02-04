@@ -86,7 +86,7 @@ export const META = {
       { name: "twitter:image:alt", content: "Colin Williams - Full-Stack Software Engineer" },
       { name: "twitter:creator", content: "@colinwilliams91" },
     ],
-    links: [
+    LINKS: [
       { rel: "stylesheet", href: appCss },
       {
         rel: "stylesheet",

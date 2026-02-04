@@ -18,6 +18,7 @@ import { META } from "~/constants/data";
 export const Route = createRootRoute({
   head: () => ({
     meta: META.ROOT.DATA,
+    links: META.ROOT.LINKS,
   }),
   component: RootComponent,
   errorComponent: ErrorLogComponent,
