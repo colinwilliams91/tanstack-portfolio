@@ -32,11 +32,17 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://colin-williams.netlify.app" },
       { property: "og:site_name", content: "Colin Williams Portfolio" },
+      { property: "og:image", content: "https://colin-williams.netlify.app/og-image.webp" },
+      { property: "og:image:width", content: "500" },
+      { property: "og:image:height", content: "752" },
+      { property: "og:image:alt", content: "Colin Williams - Full-Stack Software Engineer" },
       
       // Twitter Card meta tags
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Colin Williams - Full-Stack Software Engineer" },
       { name: "twitter:description", content: "Full-stack software engineer specializing in React, TypeScript, TanStack, and cloud technologies." },
+      { name: "twitter:image", content: "https://colin-williams.netlify.app/og-image.webp" },
+      { name: "twitter:image:alt", content: "Colin Williams - Full-Stack Software Engineer" },
       { name: "twitter:creator", content: "@colinwilliams91" },
     ],
     links: [
