@@ -4,12 +4,13 @@ import { ProjectsContainerPage } from "~c/projects/list/projects.container";
 
 import { QUERY_OPTIONS } from "~/constants/queries/query-options";
 import { GitHubRepositoriesResponse } from "~/types/projects";
+import { META } from "~/constants/data";
 
 export const Route = createFileRoute("/projects/")({
   head: () => ({
     meta: [
-      { title: "Projects by Colin Williams - Software Development Portfolio" },
-      { name: "description", content: "Explore Colin Williams' software development projects including React applications, TypeScript projects, and open source contributions. View GitHub repositories and technical work." },
+      { title:  META.PROJECTS.TITLE },
+      { name: "description", content: META.PROJECTS.DESCRIPTION },
     ],
   }),
   loader: (): Promise<GitHubRepositoriesResponse> =>
