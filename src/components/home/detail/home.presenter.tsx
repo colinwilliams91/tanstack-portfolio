@@ -41,12 +41,6 @@ export function HomePagePresenter() {
 
               {/* Social Badges and Content */}
               <div className="text-center lg:text-left max-w-md">
-                  <h1 className="text-4xl font-bold mb-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
-                      Colin Williams
-                  </h1>
-                  <h2 className="text-xl mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-                      Full-Stack Software Engineer
-                  </h2>
                   <SocialBadges />
                   <EmojiBadges />
               </div>
