@@ -1,3 +1,4 @@
+import type { LinkHTMLAttributes } from "react";
 import appCss from "~/styles/app.css?url";
 
 export const STRUCTURED_DATA = {
@@ -87,12 +88,23 @@ export const META = {
       { name: "twitter:creator", content: "@colinwilliams91" },
     ],
     LINKS: [
+      // Preconnect to Google Fonts to establish early connection
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" as const },
+
+      // Preload app.css for high priority but non-blocking load
+      { rel: "preload", href: appCss, as: "style" },
       { rel: "stylesheet", href: appCss },
+
+      // Defer Google Fonts loading (non-critical for first paint)
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap",
+        media: "print",
+        onLoad: "this.media='all'", // Runtime string for deferred loading
       },
+
       { rel: "canonical", href: "https://colin-williams.netlify.app" },
-    ]
+    ] as LinkHTMLAttributes<HTMLLinkElement>[],
     }
 };
