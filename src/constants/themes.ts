@@ -41,3 +41,5 @@ export const TECH_CELL_COLORS = [
   "bg-info/20",
   "bg-info/10",
 ] as const;
+
+export const FONT_URL = "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap";

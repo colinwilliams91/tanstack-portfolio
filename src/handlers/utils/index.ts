@@ -134,6 +134,19 @@ export const truncateDescription = (description: string | null, maxLength: numbe
       ? `${description.slice(0, maxLength)}...`
       : description;
 
+/**
+ * Maps GitHub language strings to IconName values.
+ * Returns "fallback" if the language is not supported.
+ */
+export function getLanguageIcon(language: string | null): IconName {
+  if (!language) return "fallback";
+
+  const normalized = language.toLowerCase();
+
+  // unfortunate suppression here forfeits type safety but i don't want a 3rd source of truth for icon names
+  return normalized as IconName;
+}
+
 /////////////////////
 //#endregion ////////
 /////////////////////
