@@ -15,6 +15,7 @@ import { ThemeProvider, useTheme } from "~/providers/ThemeContext";
 import { ErrorLogComponent } from "~c/shared/errors/ErrorLog";
 import { NotFound } from "~c/shared/errors/NotFound";
 import { META } from "~/constants/data";
+import { FONT_URL } from "~/constants/themes";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -47,6 +48,10 @@ function RootDocument({ children }: { children: ReactNode }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        {/* Fallback for deferred font loading when JS is disabled */}
+        <noscript>
+          <link rel="stylesheet" href={FONT_URL} />
+        </noscript>
       </head>
       <body className="min-h-screen bg-base-100 font-mono selection:bg-base-300/75 selection:text-accent-content">
         <QueryClientProvider client={queryClient}>
