@@ -1,20 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { useQueryClient } from "@tanstack/react-query";
 import { type BlogsPresenterProps } from "../abstract";
-import { useTheme } from "~/providers/ThemeContext";
-import { THEMES } from "~/constants/themes";
-import { QUERY_OPTIONS } from "~/constants/queries/query-options";
-import { useMemo } from "react";
 
-export function BlogsPresenter({ data, isLoading }: BlogsPresenterProps) {
-  const queryClient = useQueryClient();
-  const themeContext = useTheme();
-  const isDark = useMemo(() => themeContext.theme === THEMES.ABYSS, [themeContext.theme]);
-
-  const handleBlogHover = (blogId: number) => {
-    queryClient.prefetchQuery(QUERY_OPTIONS.BLOGS.DETAIL(blogId));
-  };
-
+export function BlogsPresenter({ data, isLoading, handleBlogHover }: BlogsPresenterProps) {
   if (isLoading) {
     return (
       <div className="flex justify-center py-8">

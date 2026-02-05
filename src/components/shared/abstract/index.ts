@@ -59,4 +59,15 @@ export type IconName =
   | "wifi"
   | "signal"
   | "about"
-  | "projects";
+  | "projects"
+  | "typescript"
+  | "javascript"
+  | "c#"
+  | "python"
+  | "powershell"
+  | "c"
+  | "go"
+  | "html"
+  | "css"
+  | "lua"
+  | "fallback";

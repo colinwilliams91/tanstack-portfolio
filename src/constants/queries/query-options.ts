@@ -33,6 +33,7 @@ const listBlogsPageQueryOptions = queryOptions({
 const blogDetailPageQueryOptions = (blogId: number) => queryOptions({
   queryKey: [...QUERY_KEYS.BLOG, blogId],
   queryFn: () => fetchBlogById(blogId),
+  gcTime: 1000 * 60 * 5, // 5 minutes
 });
 
 /**
