@@ -88,6 +88,10 @@ export const META = {
       { name: "twitter:creator", content: "@colinwilliams91" },
     ],
     LINKS: [
+      // Preconnect to external APIs for faster data fetching
+      { rel: "preconnect", href: "https://api.github.com" },
+      { rel: "preconnect", href: "https://dev.to" },
+      
       // Preconnect to Google Fonts to establish early connection
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" as const },
