@@ -1,6 +1,8 @@
-import headshot from "~a/headshots/colin_williams.webp";
-import awsBadge from "~a/badges/132x132_aws_badge.png";
-import unityBadge from "~a/badges/132x132_unity_badge.png";
+import headShotSm from "~a/headshots/colin_williams_320.webp";
+import headShotMd from "~a/headshots/colin_williams_500.webp";
+import headShotLg from "~a/headshots/colin_williams_640.webp";
+import awsBadge from "~a/badges/132x132_aws_badge.webp";
+import unityBadge from "~a/badges/132x132_unity_badge.webp";
 import { SocialBadges } from "~s/badges/SocialBadges";
 import { EmojiBadges } from "~s/badges/EmojiBadges";
 import { CertBadge } from "~s/badges/CertBadge";
@@ -22,7 +24,11 @@ export function HomePagePresenter() {
                           <div className="theme-abyss:ring-accent theme-winter:ring-primary-content/45 ring-offset-current/75 ring-2 ring-offset-4
                               theme:winter:ring-offset-6 rounded-tl-full rounded-b-full shadow-2xl drop-shadow-2xl animate-fade-in">
                               <img
-                              src={headshot}
+                              fetchPriority="high"
+                              src={headShotMd}
+                              srcSet={`${headShotSm} 320w, ${headShotMd} 500w, ${headShotLg} 640w`}
+                              width="256"
+                              height="368"
                               alt="Colin Williams - Full-Stack Software Engineer and Web Developer"
                               className="w-48 md:w-64 h-68 md:h-92"
                               />

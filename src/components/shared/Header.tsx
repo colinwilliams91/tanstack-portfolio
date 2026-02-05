@@ -22,6 +22,7 @@ export function Header() {
       <nav className="hidden md:flex items-center gap-4">
         <SearchBar />
         <Link
+          aria-label="home"
           to="/"
           onClick={() => vibrate()}
           className="nav-button"
@@ -31,6 +32,7 @@ export function Header() {
           <Icon name={"home"} className="w-6 h-6 fill-current" stroke="currentColor" fill="none" aria-hidden="true" />
         </Link>
         <Link
+          aria-label="about"
           to="/about"
           onClick={() => vibrate()}
           className="nav-button"
@@ -40,6 +42,7 @@ export function Header() {
           <Icon name={"about"} className="w-6 h-6 fill-current" stroke="currentColor" fill="none" aria-hidden="true" />
         </Link>
         <Link
+          aria-label="projects"
           to="/projects"
           onClick={() => vibrate()}
           className="nav-button"
@@ -49,6 +52,7 @@ export function Header() {
           <Icon name={"projects"} className="w-7 h-7 fill-current" stroke="currentColor" fill="none" aria-hidden="true" />
         </Link>
         <Link
+          aria-label="blogs"
           to="/blogs"
           onClick={() => vibrate()}
           className="nav-button"
