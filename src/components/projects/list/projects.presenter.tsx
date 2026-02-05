@@ -38,7 +38,7 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
                 >
                   {truncateDescription(project.description, 100)}
                 </div>
-                <div className="flex flex-wrap gap-2 mt-auto text-xs">
+                <div className="flex flex-wrap gap-2 mt-auto text-xs px-2">
                   <div className="badge badge-outline gap-1 glass">✨ {project.stargazers_count}</div>
                   <div className="badge badge-outline gap-1 glass">💻 {project.language?.length ? project.language : "N/A"}</div>
                   <div className="badge badge-outline gap-1 glass">🗓️ {getMostRecentDate([project.updated_at, project.pushed_at])}</div>
