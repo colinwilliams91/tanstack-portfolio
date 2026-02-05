@@ -2,6 +2,7 @@ import { formatDataSize, getMostRecentDate, truncateDescription } from "~/handle
 import { type ProjectsPresenterProps } from "../abstract";
 import { useTheme } from "~/providers/ThemeContext";
 import { COPY } from "~/constants/copy";
+import { ContributorAvatars } from "~/components/shared/ContributorAvatars";
 
 export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
   const { theme } = useTheme();
@@ -26,7 +27,7 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
             <div className="card">
               <div className="card-body text-sm flex flex-col gap-2">
                 <h2 className="card-title">{project.name}</h2>
-                <img className="mask mask-circle w-16 h-16" src={project.owner.avatar_url} alt={project.name} />
+                <ContributorAvatars repository={project} maxAvatars={5} />
                 <div className={`text-sm p-3 italic rounded-xl ${theme === "abyss" ? "bg-base-100/40" : "bg-winter/30"}
                   shadow-md backdrop-blur-lg border border-accent-content/10
                   min-h-21`}

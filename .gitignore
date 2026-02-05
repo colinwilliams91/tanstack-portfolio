@@ -147,3 +147,6 @@ app.config.timestamp-*
 
 # VSCode
 .vscode/
+
+# Mock data for development
+src/data/

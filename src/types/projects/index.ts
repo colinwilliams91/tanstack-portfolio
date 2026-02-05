@@ -199,6 +199,39 @@ export interface GitHubRepository {
 }
 
 /**
+ * GitHub Contributor
+ * Represents a contributor to a repository
+ * Source: https://docs.github.com/en/rest/repos/repos#list-repository-contributors
+ */
+export interface GitHubContributor {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string | null;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+  contributions: number;
+}
+
+/**
+ * Array of GitHub Contributors
+ * This is the response type for the List Contributors endpoint
+ */
+export type GitHubContributorsResponse = GitHubContributor[];
+
+/**
  * Array of GitHub Repositories
  * This is the response type for the List Repositories endpoints
  */
