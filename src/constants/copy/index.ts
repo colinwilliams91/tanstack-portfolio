@@ -12,6 +12,9 @@ export const COPY = {
     PROFESSIONAL_EXP: `Professional Software Engineer - ${getYoeFromDate(undefined, true).years} Years`,
   },
   PROJECTS_PRESENTER: {
-    DESCRIPTION: "Source repositories and libraries hosted on GitHub, Azure, NPM and NuGet. Games on Itch.io"
+    DESCRIPTION: "Source repositories and libraries hosted on GitHub, Azure, NPM and NuGet; Games on Itch.io"
+  },
+  BLOGS_PRESENTER: {
+    DESCRIPTION: "My writing on discoveries along the way. Historically, some people have found these useful 😎"
   },
 } as const;
