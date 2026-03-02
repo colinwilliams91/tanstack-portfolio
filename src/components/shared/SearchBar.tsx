@@ -192,13 +192,15 @@ export function SearchBar() {
                       onMouseEnter={() => setSelectedIndex(index)}
                       onClick={() => handleResultClick(result)}
                     >
+                      <Icon
+                        name={result.type === "blog" ? "blogs" : "projects"}
+                        className="w-4 h-4 fill-current shrink-0 opacity-70"
+                        aria-hidden="true"
+                      />
                       <div className="flex flex-col items-start">
                         <span className="font-semibold">{result.title}</span>
                         <span className="text-xs opacity-60 line-clamp-1">
                           {result.description}
-                        </span>
-                        <span className="text-xs opacity-60 capitalize">
-                          {result.type}
                         </span>
                       </div>
                     </button>
@@ -270,13 +272,15 @@ export function SearchBar() {
                         `}
                         onClick={() => handleResultClick(result)}
                       >
+                        <Icon
+                          name={result.type === "blog" ? "blogs" : "projects"}
+                          className="w-4 h-4 fill-current shrink-0 opacity-70"
+                          aria-hidden="true"
+                        />
                         <div className="flex flex-col items-start">
                           <span className="font-semibold">{result.title}</span>
                           <span className="text-xs opacity-60 line-clamp-1">
                             {result.description}
-                          </span>
-                          <span className="text-xs opacity-60 capitalize">
-                            {result.type}
                           </span>
                         </div>
                       </button>
