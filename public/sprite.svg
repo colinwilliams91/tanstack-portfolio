@@ -193,4 +193,9 @@
     </path>
   </symbol>
 
+  <!-- Favicon -->
+  <symbol id="icon-favicon" viewBox="0 0 100 100">
+    <text y="32" x="32">🍃</text>
+  </symbol>
+
 </svg>

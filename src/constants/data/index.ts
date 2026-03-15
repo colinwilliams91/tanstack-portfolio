@@ -1,5 +1,6 @@
 import type { LinkHTMLAttributes } from "react";
 import appCss from "~/styles/app.css?url";
+import { CACHE_BUSTER } from "../cache-buster";
 
 export const STRUCTURED_DATA = {
     "@context": "https://schema.org",
@@ -91,7 +92,7 @@ export const META = {
       // Preconnect to external APIs for faster data fetching
       { rel: "preconnect", href: "https://api.github.com" },
       { rel: "preconnect", href: "https://dev.to" },
-      
+
       // Preconnect to Google Fonts to establish early connection
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" as const },
@@ -99,6 +100,9 @@ export const META = {
       // Preload app.css for high priority but non-blocking load
       { rel: "preload", href: appCss, as: "style" },
       { rel: "stylesheet", href: appCss },
+
+      // Favicon // TODO: update site manifest with icon changes
+      { rel: "icon", href: `/sprite.svg?v=${CACHE_BUSTER}#icon-favicon"` },
 
       // Defer Google Fonts loading (non-critical for first paint)
       {
