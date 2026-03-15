@@ -14,7 +14,7 @@ export function Header() {
         <Link to="/" className="text-lg sm:text-xl sm:ml-0 ml-2.5 font-bold text-shadow-2xl">
           Colin Williams
         </Link>
-        <div className="text-xs opacity-50 pt-1.5">
+        <div className="text-xs opacity-50">
           {COPY.HEADER.PROFESSIONAL_EXP}
         </div>
       </div>

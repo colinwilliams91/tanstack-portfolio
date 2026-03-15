@@ -9,7 +9,8 @@ export const COPY = {
     START_TYPING: "Start typing to search through my projects and blogs...",
   },
   HEADER: {
-    PROFESSIONAL_EXP: `Professional Software Engineer - ${getYoeFromDate(undefined, true).years} Years`,
+    PROFESSIONAL_EXP: `Professional Software Engineer`,
+    PROFESSIONAL_EXP_YOE: `Professional Software Engineer - ${getYoeFromDate(undefined, true).years} Years`,
   },
   PROJECTS_PRESENTER: {
     DESCRIPTION: "Source repositories and libraries hosted on GitHub, Azure, NPM and NuGet; Games on Itch.io"

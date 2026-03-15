@@ -16,6 +16,7 @@ import { ErrorLogComponent } from "~c/shared/errors/ErrorLog";
 import { NotFound } from "~c/shared/errors/NotFound";
 import { META } from "~/constants/data";
 import { FONT_URL } from "~/constants/themes";
+import { Footer } from "~/components/shared/Footer";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -62,15 +63,7 @@ function RootDocument({ children }: { children: ReactNode }) {
         </QueryClientProvider>
         <Scripts />
         {/* <TanStackRouterDevtools position="bottom-left" /> */}
-        <footer className="container mx-auto px-6 py-6 opacity-60 text-xs text-center mt-auto">
-          <div>
-            ｡˚☁️©️ colin williams • {new Date().getFullYear()} ˚｡˚
-          </div>
-          <div>
-            ˚➶ ｡˚ ☁️build: {__BUILD_VERSION__}
-            {__BUILD_COMMIT__ ? ` · ${__BUILD_COMMIT__}` : ''} ˋ°•*⁀➷
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
