@@ -15,7 +15,7 @@ export const API_URLS = {
     PROFILE: "https://www.linkedin.com/in/colin-williams-dev/"
   },
   EMAIL: "mailto:colin.williams.dev@gmail.com",
-  RESUME: "https://docs.google.com/document/d/1RnFJQswy0fLqMHV6SfAWb_db2VUh3s7dh2bbxqi8Lm0/edit?usp=sharing",
+  RESUME: "https://drive.google.com/file/d/1OgmRRNLSo7SnLz08OdihfzCyEvk936oY/view?usp=drive_link",
   OSS: {
     MICROSOFT_ASPIRE: "https://github.com/dotnet/aspire/pull/8259"
   }
