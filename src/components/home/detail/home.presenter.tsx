@@ -6,6 +6,7 @@ import unityBadge from "~a/badges/132x132_unity_badge.webp";
 import { SocialBadges } from "~s/badges/SocialBadges";
 import { EmojiBadges } from "~s/badges/EmojiBadges";
 import { CertBadge } from "~s/badges/CertBadge";
+import { WhoamiLink } from "~/components/whoami/WhoamiLink";
 import { CERT_BADGES } from "~/constants/icons/badges";
 import { META } from "~/constants/data";
 
@@ -41,6 +42,7 @@ export function HomePagePresenter() {
                       <div className="flex flex-col justify-center gap-3">
                           <CertBadge animationDelay="0.2s" href={CERT_BADGES.AWS} imgUrl={awsBadge} />
                           <CertBadge animationDelay="0.4s" href={CERT_BADGES.UNITY} imgUrl={unityBadge} />
+                          <WhoamiLink animationDelay="0.6s" />
                       </div>
                   </div>
               </div>
