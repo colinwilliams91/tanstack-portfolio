@@ -8,6 +8,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
+const VIEWPORT_PADDING = 80;
+
 interface PdfViewerProps {
   filename: string;
   title: string;
@@ -101,7 +103,7 @@ export function PdfViewer({ filename, title }: PdfViewerProps) {
             <Page
               pageNumber={currentPage}
               className="shadow-xl"
-              width={Math.min(800, typeof window !== "undefined" ? window.innerWidth - 80 : 800)}
+              width={Math.min(800, typeof window !== "undefined" ? window.innerWidth - VIEWPORT_PADDING : 800)}
             />
           </Document>
         </div>
