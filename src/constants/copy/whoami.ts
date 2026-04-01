@@ -69,17 +69,17 @@ export const WHOAMI_COPY = {
         {
           title: "Document Alpha",
           description: "A collection of writings on the intersection of technology and literature.",
-          filename: "document_alpha.pdf",
+          filename: "BtAtStS_ZINE_I_format.pdf",
         },
         {
           title: "Document Beta",
           description: "Observations from the boundary between the digital and the analog.",
-          filename: "document_beta.pdf",
+          filename: "BtAtStS_ZINE_II_format.pdf",
         },
         {
           title: "Document Gamma",
           description: "Reflections on systems, patterns, and the architecture of thought.",
-          filename: "document_gamma.pdf",
+          filename: "BtAtStS_ZINE_III_format.pdf",
         },
       ],
     },
