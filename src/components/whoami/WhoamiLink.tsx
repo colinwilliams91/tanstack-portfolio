@@ -9,6 +9,7 @@ export function WhoamiLink({ animationDelay = "1.0s" }: { animationDelay?: strin
       <Link
         to="/whoami"
         className="whoami-link"
+        data-text="whoami"
         aria-label="whoami - personal interests and writings"
       >
         whoami<span className="whoami-underscore">_</span>
