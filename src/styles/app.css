@@ -61,8 +61,8 @@
   }
 
   .whoami-link {
-    @apply relative font-family-mono text-sm tracking-widest cursor-pointer
-           transition-all duration-300 opacity-70 hover:opacity-100;
+    @apply relative font-family-mono text-sm tracking-widest cursor-none
+           transition-all duration-300 opacity-70 hover:opacity-100 hover:text-black;
   }
 
   .whoami-link::before {
