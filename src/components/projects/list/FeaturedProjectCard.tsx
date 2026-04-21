@@ -23,16 +23,16 @@ export function FeaturedProjectCard({ meta, repo }: FeaturedProjectCardProps) {
       aria-label={`View ${meta.displayName} on ${registry.label}`}
     >
       <div
-        className={`card relative overflow-hidden min-h-80 cursor-default
+        className={`card relative overflow-hidden min-h-80 px-6 pt-6 cursor-default
           ${theme === "abyss" ? "bg-base-200/5" : "bg-base-100/60"}`}
       >
         {/* ── PRIMARY IMAGE ────────────────────────────────────────────── */}
         {meta.imageUrl && (
-          <figure className="h-36 overflow-hidden bg-base-200/60 flex items-center justify-center">
+          <figure>
             <img
               src={meta.imageUrl}
               alt={`${meta.displayName} preview`}
-              className="w-full h-full object-contain"
+              className="rounded-2xl w-full h-48 object-cover bg-white/90"
               loading="lazy"
             />
           </figure>
@@ -44,26 +44,29 @@ export function FeaturedProjectCard({ meta, repo }: FeaturedProjectCardProps) {
             transition-opacity duration-300 group-hover:opacity-0 group-hover:pointer-events-none"
         >
           {/* Title */}
-          <h2 className="card-title line-clamp-1 text-base">{meta.displayName}</h2>
+          {/* <h2 className="card-title line-clamp-1 text-base">{meta.displayName}</h2> */}
 
-          {/* Avatar + Language icon row */}
-          <div className="flex justify-between items-center px-2">
+          {/* Title + Avatar + Language icon row */}
+          <div className="flex gap-3 items-center px-2">
             {repo ? (
-              <img
-                className="mask mask-circle w-14 h-14"
-                src={repo.owner.avatar_url}
-                alt={repo.owner.login}
-              />
-            ) : (
-              <div className="mask mask-circle w-14 h-14 bg-base-300 flex items-center justify-center text-2xl">
-                👤
-              </div>
-            )}
+              <>
+                <img
+                  className="mask mask-circle w-14 h-14"
+                  src={repo.owner.avatar_url}
+                  alt={repo.owner.login}
+                />
+              </>
+              ) : (
+                <div className="mask mask-circle w-14 h-14 bg-base-300 flex items-center justify-center text-2xl">
+                  👤
+                </div>
+              )}
             <Icon
               name={getLanguageIcon(meta.language)}
               className="w-11 h-11"
               aria-label={`${meta.language} icon`}
             />
+            <h2 className="card-title line-clamp-1 text-base ml-auto">{meta.displayName}</h2>
           </div>
 
           {/* Registry label */}
@@ -76,7 +79,7 @@ export function FeaturedProjectCard({ meta, repo }: FeaturedProjectCardProps) {
           </div>
 
           {/* Badges */}
-          <div className="flex flex-col gap-1.5 mt-auto text-xs px-1">
+          <div className="flex flex-col gap-3 mt-1 text-xs">
             {/* Row 1: stars + language + date */}
             <div className="flex flex-wrap gap-1.5">
               {repo !== undefined && (
