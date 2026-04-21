@@ -1,8 +1,8 @@
 import { TechnologiesContainerList } from "./list/technologies.container";
 import friends from "~/assets/headshots/colin_and_evan_you.webp";
-import { THEMES } from "~/constants/themes";
 import { AboutPresenterProps } from "./abstract";
 import { API_URLS } from "~/constants/public-api-urls";
+import { ThemeEmoji } from "~/components/shared/ThemeEmoji";
 
 export const AboutPresenter = ({ theme, firstLetter }: AboutPresenterProps) => {
   /* firstLetter is currently unused as it was under construction and deemed temporarily undesirable */
@@ -25,14 +25,7 @@ export const AboutPresenter = ({ theme, firstLetter }: AboutPresenterProps) => {
       <div className="prose max-w-none flex-1 text-current">
         <div className="flex items-center gap-3">
           <h1 className="mb-0">About</h1>
-          <span className="relative inline-block text-5xl w-12 h-12">
-            <span className={`absolute inset-0 transition-all duration-300 ${theme === THEMES.WINTER ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-30 -rotate-45'}`}>
-              ✒️
-            </span>
-            <span className={`absolute inset-0 transition-all duration-300 ${theme === THEMES.WINTER ? 'opacity-0 scale-30 rotate-45' : 'opacity-100 scale-100 rotate-0'}`}>
-              🍃
-            </span>
-          </span>
+          <ThemeEmoji theme={theme} />
         </div>
         <p>
           I'm Colin. Occasionally I enjoy karaoke with the creator of Vue.js, Evan You,
