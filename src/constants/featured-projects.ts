@@ -28,7 +28,7 @@ export interface FeaturedProjectMeta {
 export const REGISTRY_LABELS: Record<RegistryType, { emoji: string; label: string }> = {
   nuget:  { emoji: "📦", label: "NuGet" },
   npm:    { emoji: "📦", label: "NPM" },
-  vscode: { emoji: "🔌", label: "VS Code" },
+  vscode: { emoji: "🔧", label: "VS Code Marketplace" },
 };
 
 export const FEATURED_PROJECTS: FeaturedProjectMeta[] = [
@@ -77,7 +77,7 @@ export const FEATURED_PROJECTS: FeaturedProjectMeta[] = [
       label: "53 installs in first 3 days · 89.83% conversion",
     },
     story:
-      "This VS Code extension was a learning experiment in multiple ways. As I was porting my AI-DDLC scaffolder to Go I was also learning the language. During that process I realized the error messages and diagnostics were pretty verbose and hard to parse in VS Code. I had gotten used to the quality of life afforded to me by one of my daily drivers: Pretty TypeScript Errors—an open-source VS Code extension. So, I checked out that repo and decided to build my own for Go.",
+      "This VS Code extension was a learning experiment in multiple ways. As I was porting my AI-DDLC scaffolder to Go I was also learning the language. During which I realized the diagnostics were pretty verbose in VS Code. I had gotten used to the QoL from one of my daily drivers: Pretty TypeScript Errors—an open-source VS Code extension. So, I checked out that repo and decided to build my own for Go.",
     summary:
       "A VS Code extension that reformats Go compiler errors and diagnostic reports into concise, readable inline annotations — inspired by Pretty TypeScript Errors and built by studying its open-source implementation.",
   },
