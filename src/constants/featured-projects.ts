@@ -74,7 +74,7 @@ export const FEATURED_PROJECTS: FeaturedProjectMeta[] = [
     language:    "typescript",
     stat: {
       emoji: "🚀",
-      label: "53 installs in first 3 days · 89.83% conversion",
+      label: "53 installs in first 3 days",
     },
     story:
       "This VS Code extension was a learning experiment in multiple ways. As I was porting my AI-DDLC scaffolder to Go I was also learning the language. During which I realized the diagnostics were pretty verbose in VS Code. I had gotten used to the QoL from one of my daily drivers: Pretty TypeScript Errors—an open-source VS Code extension. So, I checked out that repo and decided to build my own for Go.",
