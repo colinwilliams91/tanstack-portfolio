@@ -24,27 +24,27 @@ export function WhoamiPresenter() {
 
       {/* Navigation Tabs */}
       <div
-        className="opacity-0 animate-fade-in"
+        className="opacity-0 animate-fade-in cursor-pointer"
         style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
       >
         <div role="tablist" className="tabs tabs-border font-family-mono mb-8">
           <button
             role="tab"
-            className={`tab ${activeTab === "transmissions" ? "tab-active text-accent" : "text-base-content/50"}`}
+            className={`tab ${activeTab === "transmissions" ? "tab-active text-accent whoami-link" : "text-accent/90"}`}
             onClick={() => setActiveTab("transmissions")}
           >
             {WHOAMI_COPY.SECTIONS.TEXT.TITLE}
           </button>
           <button
             role="tab"
-            className={`tab ${activeTab === "artifacts" ? "tab-active text-accent" : "text-base-content/50"}`}
+            className={`tab ${activeTab === "artifacts" ? "tab-active whoami-persist whoami-link" : "text-neutral-700"}`}
             onClick={() => setActiveTab("artifacts")}
           >
             {WHOAMI_COPY.SECTIONS.IMAGES.TITLE}
           </button>
           <button
             role="tab"
-            className={`tab ${activeTab === "archives" ? "tab-active text-accent" : "text-base-content/50"}`}
+            className={`tab ${activeTab === "archives" ? "tab-active text-accent whoami-link" : "text-accent/90"}`}
             onClick={() => setActiveTab("archives")}
           >
             {WHOAMI_COPY.SECTIONS.PDFS.TITLE}
@@ -142,8 +142,8 @@ function ArchivesSection() {
             key={entry.filename}
             className={`card card-border text-left transition-all duration-300 ${
               activePdf === index
-                ? "border-accent bg-accent/10"
-                : "border-base-content/10 bg-base-200/30 hover:border-accent/50"
+                ? "whoami-link"
+                : "whoami-link"
             }`}
             onClick={() => setActivePdf(activePdf === index ? null : index)}
           >
@@ -151,9 +151,6 @@ function ArchivesSection() {
               <h3 className="font-family-mono text-sm text-accent">
                 {entry.title}
               </h3>
-              <p className="text-xs text-base-content/50 mt-1">
-                {entry.description}
-              </p>
               <div className="mt-2 text-xs font-family-mono text-base-content/30">
                 [{entry.filename}]
               </div>
@@ -166,7 +163,6 @@ function ArchivesSection() {
       {activePdf !== null && (
         <PdfViewer
           filename={ENTRIES[activePdf].filename}
-          title={ENTRIES[activePdf].title}
         />
       )}
     </section>

@@ -65,7 +65,7 @@
            transition-all duration-300 opacity-70 hover:opacity-100 hover:text-black;
   }
 
-  .whoami-link::before {
+  a.whoami-link::before {
     content: "> ";
     @apply text-accent opacity-0 transition-opacity duration-300;
   }
@@ -77,12 +77,13 @@
     clip-path: polygon(0 0, 0 0, 0 0, 0 0);
   }
 
-  .whoami-link:hover::before {
+  a.whoami-link:hover::before {
     @apply opacity-100;
   }
 
   .whoami-link:hover {
     animation: glitch 0.45s infinite, glitch-wave 4s ease-in-out infinite;
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><line x1='6' y1='1' x2='6' y2='11' stroke='%23000000' stroke-width='1.5'/><line x1='1' y1='6' x2='11' y2='6' stroke='%23000000' stroke-width='1.5'/></svg>") 6 6, crosshair;
   }
 
   .whoami-link:hover::after {
@@ -96,6 +97,10 @@
   .whoami-underscore {
     @apply opacity-0 transition-opacity duration-300;
     animation: blink-cursor 1s step-end infinite;
+  }
+
+  .whoami-persist {
+    animation: glitch 0.45s infinite, glitch-wave 4s ease-in-out infinite;
   }
 }
 

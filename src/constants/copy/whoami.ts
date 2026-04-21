@@ -1,8 +1,10 @@
+import {formatDateRelative, getYoeFromDate } from "../../handlers/utils/index";
+
 export const WHOAMI_COPY = {
   HEADING: "whoami",
-  SUBHEADING: "// beyond the terminal",
+  SUBHEADING: "// คิดถึงอดีตด้วยความรักและความโหยหา - Thinking of the past with love and longing",
   INTRO:
-    "Not all who wander are lost — some are just exploring different protocols. This is the space between the commits, where code meets consciousness and the personal bleeds into the programmatic.",
+    `experimental musician + guitarist of ${getYoeFromDate(new Date("2003-03-28")).years} years. former poetry zine author/publisher. nap evangelist + polyphasic sleeper.`,
 
   SECTIONS: {
     TEXT: {
@@ -67,18 +69,18 @@ export const WHOAMI_COPY = {
       SUBTITLE: "// sealed documents",
       ENTRIES: [
         {
-          title: "Document Alpha",
-          description: "A collection of writings on the intersection of technology and literature.",
+          title: "behind the active, the sad, the silent",
+          description: "zine distribution of my poetry circa 2013 - 2017.",
           filename: "BtAtStS_ZINE_I_format.pdf",
         },
         {
-          title: "Document Beta",
-          description: "Observations from the boundary between the digital and the analog.",
+          title: "behind the active, the sad, the silent",
+          description: "zine distribution of my poetry circa 2013 - 2017.",
           filename: "BtAtStS_ZINE_II_format.pdf",
         },
         {
-          title: "Document Gamma",
-          description: "Reflections on systems, patterns, and the architecture of thought.",
+          title: "behind the active, the sad, the silent",
+          description: "zine distribution of my poetry circa 2013 - 2017.",
           filename: "BtAtStS_ZINE_III_format.pdf",
         },
       ],
