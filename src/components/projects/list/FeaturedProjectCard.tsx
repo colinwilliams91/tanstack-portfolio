@@ -15,7 +15,13 @@ export function FeaturedProjectCard({ meta, repo }: FeaturedProjectCardProps) {
 
   return (
     /* hover-3d outer wrapper – must have exactly 9 children (content + 8 zones) */
-    <div className="hover-3d group">
+    <a
+      href={meta.packageUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover-3d group"
+      aria-label={`View ${meta.displayName} on ${registry.label}`}
+    >
       <div
         className={`card relative overflow-hidden min-h-80 cursor-default
           ${theme === "abyss" ? "bg-base-200/5" : "bg-base-100/60"}`}
@@ -151,6 +157,6 @@ export function FeaturedProjectCard({ meta, repo }: FeaturedProjectCardProps) {
       <div></div>
       <div></div>
       <div></div>
-    </div>
+    </a>
   );
 }
