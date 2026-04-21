@@ -2,8 +2,9 @@ import { type ProjectsPresenterProps } from "../abstract";
 import { COPY } from "~/constants/copy";
 import { FEATURED_PROJECTS } from "~/constants/featured-projects";
 import { FeaturedProjectCard } from "./FeaturedProjectCard";
+import { ThemeEmoji } from "~/components/shared/ThemeEmoji";
 
-export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
+export function ProjectsPresenter({ theme, data, isLoading }: ProjectsPresenterProps) {
   if (isLoading) {
     return (
       <div className="flex justify-center py-8">
@@ -15,7 +16,10 @@ export function ProjectsPresenter({ data, isLoading }: ProjectsPresenterProps) {
   return (
     <div>
       <div className="flex items-center justify-between gap-4 mb-6">
-        <h1 className="text-3xl font-bold">Projects</h1>
+        <div className="flex items-center gap-3">
+          <h1 className="text-3xl font-bold">Projects</h1>
+          <ThemeEmoji theme={theme} />
+        </div>
         <span className="text-xs opacity-40">{COPY.PROJECTS_PRESENTER.DESCRIPTION}</span>
       </div>
       <div className="grid gap-4.5 md:grid-cols-2 lg:grid-cols-3">

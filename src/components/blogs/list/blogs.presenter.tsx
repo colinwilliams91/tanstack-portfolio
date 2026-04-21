@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { type BlogsPresenterProps } from "../abstract";
 import { COPY } from "~/constants/copy";
+import { ThemeEmoji } from "~/components/shared/ThemeEmoji";
 
-export function BlogsPresenter({ data, isLoading, handleBlogHover }: BlogsPresenterProps) {
+export function BlogsPresenter({ theme, data, isLoading, handleBlogHover }: BlogsPresenterProps) {
   if (isLoading) {
     return (
       <div className="flex justify-center py-8">
@@ -14,7 +15,10 @@ export function BlogsPresenter({ data, isLoading, handleBlogHover }: BlogsPresen
   return (
     <div>
       <div className="flex items-center justify-between gap-4 mb-6">
-        <h1 className="text-3xl font-bold">Blogs</h1>
+        <div className="flex items-center gap-3">
+          <h1 className="text-3xl font-bold">Blogs</h1>
+          <ThemeEmoji theme={theme} />
+        </div>
         <span className="text-xs opacity-40">{COPY.BLOGS_PRESENTER.DESCRIPTION}</span>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
