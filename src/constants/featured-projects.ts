@@ -11,6 +11,8 @@ export interface FeaturedProjectMeta {
   displayName: string;
   githubUrl: string;
   packageUrl: string;
+  /** Primary preview image shown at the top of the card */
+  imageUrl?: string;
   registry: RegistryType;
   /** The primary coding language used */
   language: string;
@@ -37,6 +39,7 @@ export const FEATURED_PROJECTS: FeaturedProjectMeta[] = [
     displayName: "StaticFileOptionsExtender",
     githubUrl:   "https://github.com/colinwilliams91/StaticFileOptionsExtender",
     packageUrl:  "https://www.nuget.org/packages/CWDev.StaticFileOptionsExtender/",
+    imageUrl:    "/projects/nuget-logo-landscape.webp",
     registry:    "nuget",
     language:    "c#",
     stat: {
@@ -53,6 +56,7 @@ export const FEATURED_PROJECTS: FeaturedProjectMeta[] = [
     displayName: "gaitor-orchestrator-cli",
     githubUrl:   "https://github.com/colinwilliams91/gaitor-orchestrator-cli",
     packageUrl:  "https://www.npmjs.com/package/gaitor-orchestrator-cli",
+    imageUrl:    "/projects/gaitor-orchestrator-cli-logo-landscape.webp",
     registry:    "npm",
     language:    "go",
     stat: {
@@ -70,6 +74,7 @@ export const FEATURED_PROJECTS: FeaturedProjectMeta[] = [
     githubUrl:   "https://github.com/colinwilliams91/pretty-go-errors",
     packageUrl:
       "https://marketplace.visualstudio.com/items?itemName=CWDev.pretty-go-errors",
+    imageUrl:    "/projects/pretty-go-errors-logo-landscape.webp",
     registry:    "vscode",
     language:    "typescript",
     stat: {

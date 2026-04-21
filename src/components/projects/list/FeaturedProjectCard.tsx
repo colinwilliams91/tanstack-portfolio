@@ -26,6 +26,18 @@ export function FeaturedProjectCard({ meta, repo }: FeaturedProjectCardProps) {
         className={`card relative overflow-hidden min-h-80 cursor-default
           ${theme === "abyss" ? "bg-base-200/5" : "bg-base-100/60"}`}
       >
+        {/* ── PRIMARY IMAGE ────────────────────────────────────────────── */}
+        {meta.imageUrl && (
+          <figure className="h-36 overflow-hidden bg-base-200/60 flex items-center justify-center">
+            <img
+              src={meta.imageUrl}
+              alt={`${meta.displayName} preview`}
+              className="w-full h-full object-contain"
+              loading="lazy"
+            />
+          </figure>
+        )}
+
         {/* ── FRONT FACE (default visible) ─────────────────────────────── */}
         <div
           className="card-body flex flex-col gap-2 text-sm
