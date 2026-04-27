@@ -59,6 +59,7 @@ export const language:string[][] = [
         "SQL",
     ],
     [
+        "Go",
         "Git",
         "Powershell",
         "Bash",
