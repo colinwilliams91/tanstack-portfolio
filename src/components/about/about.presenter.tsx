@@ -16,6 +16,9 @@ export const AboutPresenter = ({ theme, firstLetter }: AboutPresenterProps) => {
             <img
               src={friends}
               alt="Colin Williams and Evan You"
+              fetchPriority="high"
+              width="360"
+              height="480"
             />
           </div>
         </div>
