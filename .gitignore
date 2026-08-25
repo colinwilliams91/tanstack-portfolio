@@ -147,3 +147,4 @@ app.config.timestamp-*
 
 # VSCode
 .vscode/
+.fallow/

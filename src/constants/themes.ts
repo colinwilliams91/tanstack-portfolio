@@ -15,31 +15,4 @@ export const TEXT_ROTATE_DURATIONS = [
   "duration-14000",
 ] as const;
 
-// export const TECH_CELL_COLORS = [
-//   "bg-gradient-to-br from-blue-100 to-orange-600",
-//   "bg-gradient-to-br from-blue-100 to-purple-600",
-//   "bg-gradient-to-br from-purple-100 to-blue-600",
-//   "bg-gradient-to-br from-purple-100 to-orange-600",
-//   "bg-gradient-to-br from-orange-100 to-blue-600",
-//   "bg-gradient-to-br from-orange-100 to-purple-600",
-// ] as const;
-
-// export const TECH_CELL_COLORS = [
-//   "bg-gradient-to-tl from-info/10 via-base-100/30 to-info/30",
-//   "bg-gradient-to-tl from-info/10 via-base-100/30 to-info/30",
-//   "bg-gradient-to-bl from-info/10 via-base-100/30 to-info/30",
-//   "bg-gradient-to-bl from-info/10 via-base-100/30 to-info/30",
-//   "bg-gradient-to-tl from-info/10 via-base-100/30 to-info/30",
-//   "bg-gradient-to-tl from-info/10 via-base-100/30 to-info/30",
-// ] as const;
-
-export const TECH_CELL_COLORS = [
-  "bg-info/50",
-  "bg-info/40",
-  "bg-info/40",
-  "bg-info/30",
-  "bg-info/20",
-  "bg-info/10",
-] as const;
-
 export const FONT_URL = "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap";

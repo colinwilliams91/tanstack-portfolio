@@ -51,5 +51,3 @@ export const DOM_EVENTS = {
   DRAG_OVER: 'dragover',
   DROP: 'drop',
 } as const;
-
-export type DOMEventType = typeof DOM_EVENTS[keyof typeof DOM_EVENTS];

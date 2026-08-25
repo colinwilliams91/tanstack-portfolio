@@ -1,9 +1,6 @@
-import { setCookie } from "@tanstack/react-start/server";
-import { createServerOnlyFn } from "@tanstack/react-start";
 import { Theme } from "~/types/themes";
 
 import { THEMES } from "~/constants/themes";
-import { COOKIES } from "~/constants/cookies";
 import { CAREER_EVENTS } from "~/constants/events/career-events";
 import { IconName } from "~/components/shared/abstract";
 
@@ -25,16 +22,6 @@ export const getClientThemeCookie = (): Theme => {
   return THEMES.ABYSS;
 }
 
-export const setThemeCookie = createServerOnlyFn(
-  (theme: Theme) => {
-    setCookie(
-      THEMES.KEY,
-      theme,
-      { path: "/", maxAge: COOKIES.AGE.MONTH }
-    );
-  }
-);
-
 /////////////////////
 //#endregion ////////
 /////////////////////
@@ -42,29 +29,6 @@ export const setThemeCookie = createServerOnlyFn(
 /////////////////////
 //#region MATH //////
 /////////////////////
-
-export const formatDataSize = (sizeInKb: number): string => {
-  if (sizeInKb < 1024) {
-    return `${sizeInKb} KB`;
-  } else {
-    const sizeInMb = (sizeInKb / 1024).toFixed(2);
-    return `${sizeInMb} MB`;
-  }
-};
-
-export const formatDateRelative = (dateString: string): string => {
-  const date = new Date(dateString);
-  const now = new Date();
-  const diffInMs = now.getTime() - date.getTime();
-  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-  if (diffInDays < 1) {
-    return "Today";
-  } else if (diffInDays === 1) {
-    return "Yesterday";
-  } else {
-    return `${diffInDays} days ago`;
-  }
-};
 
 export const getMostRecentDate = (dates: (string | null)[]): string => {
   if (dates.length === 0)
@@ -126,13 +90,6 @@ export const getConnectionTypeName = (network: { online: boolean; type?: string;
 /////////////////////
 //#region PROJECTS //
 /////////////////////
-
-export const truncateDescription = (description: string | null, maxLength: number = 100): string =>
-  !description?.length
-    ? "No description available"
-    : description.length > maxLength
-      ? `${description.slice(0, maxLength)}...`
-      : description;
 
 /**
  * Maps GitHub language strings to IconName values.

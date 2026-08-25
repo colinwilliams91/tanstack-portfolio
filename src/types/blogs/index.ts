@@ -77,11 +77,3 @@ export interface ArticleDetail extends Article {
   body_html: string; // HTML content of the article
   body_markdown: string; // Markdown content of the article
 }
-
-/**
- * Legacy type aliases for backward compatibility
- * These map to the new Dev.to API types
- */
-export type Blog = Article;
-export type BlogDetail = ArticleDetail;
-export type Author = SharedUser;
